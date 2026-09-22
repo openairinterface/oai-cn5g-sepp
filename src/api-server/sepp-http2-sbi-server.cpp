@@ -228,16 +228,11 @@ bool sepp_http2_sbi_server::handle_telescopic_mapping(
   if (!sepp_app_inst)
     return false;
 
-  std::string telescopicMapping;
-  if (!sepp_app_inst->get_telescopic_mapping(foreignFqdn, telescopicLabel,
-                                             telescopicMapping)) {
-    return false;
-  }
-
-  mapping_model.setTelescopicLabel(telescopicLabel);
-  mapping_model.setForeignFqdn(foreignFqdn);
-
-  return true;
+  // Return the TelescopicMapping resolved by the SEPP (TS 29.573): the
+  // telescopic label and seppDomain for a foreign FQDN, or the foreign FQDN
+  // for a telescopic label.
+  return sepp_app_inst->get_telescopic_mapping(foreignFqdn, telescopicLabel,
+                                               mapping_model);
 }
 //------------------------------------------------------------------------------
 bool sepp_http2_sbi_server::handle_nf_service_request(

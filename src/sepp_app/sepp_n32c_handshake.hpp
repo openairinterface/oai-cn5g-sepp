@@ -1,3 +1,7 @@
+/*
+ * SPDX-License-Identifier: LicenseRef-CSSL-1.0
+ */
+
 #ifndef FILE_SEPP_N32C_HANDSHAKE_HPP_SEEN
 #define FILE_SEPP_N32C_HANDSHAKE_HPP_SEEN
 
@@ -96,7 +100,10 @@ private:
 
   std::string m_n32c_context_id;
   std::string m_peer_sepp_fqdn;
-  std::string m_sender_fqdn{"sepp.5gc.mnc22.mcc208.3gppnetwork.org"};
+  // FQDN of this SEPP, sent as "sender" in the N32-c handshake messages
+  // (TS 29.573, SecNegotiateReqData/RspData and SecParamExchReqData/RspData).
+  // Set by sepp_app from the local SEPP host in the configuration.
+  std::string m_sender_fqdn;
   bool m_peer_target_api_root_supported{false};
 
   std::string m_selected_sec_capability{"PRINS"};

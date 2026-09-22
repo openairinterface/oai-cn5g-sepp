@@ -44,11 +44,17 @@ sepp_app::sepp_app(sepp_event &ev) : m_event_sub(ev) {
 
     m_roaming_partners = sepp_cfg->get_roaming_config().get_roaming_partners();
 
+    // FQDN of this SEPP (nfs.sepp.host), e.g.
+    // sepp.5gc.mnc<MNC>.mcc<MCC>.3gppnetwork.org (TS 23.003)
+    const std::string &local_sepp_fqdn = sepp_cfg->local().get_sbi().get_host();
+
     m_sepp_telescopic_fqdn_mapping =
         std::make_unique<sepp_telescopic_fqdn_mapping>();
     m_sepp_telescopic_fqdn_mapping->set_roaming_partners(m_roaming_partners);
+    m_sepp_telescopic_fqdn_mapping->set_sepp_domain(local_sepp_fqdn);
 
-    m_sepp_n32c_handshake_inst = std::make_unique<sepp_n32c_handshake>();
+    m_sepp_n32c_handshake_inst =
+        std::make_unique<sepp_n32c_handshake>(local_sepp_fqdn);
     m_sepp_n32f_forward_inst = std::make_unique<sepp_n32f_forward>();
 
     const std::string &sec_capability = sepp_cfg->get_security();

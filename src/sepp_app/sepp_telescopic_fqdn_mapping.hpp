@@ -12,6 +12,7 @@
 
 #include <string>
 #include <unordered_set>
+#include <utility>
 #include <vector>
 
 namespace oai::sepp::app {
@@ -26,6 +27,13 @@ public:
   void set_roaming_partners(
       const std::vector<oai::config::plmn_config> &roaming_partners) {
     m_roaming_partners = roaming_partners;
+  }
+
+  // SEPP domain returned in the TelescopicMapping (TS 29.573, seppDomain):
+  // the FQDN of this SEPP, to which the telescopic label is prepended
+  // (TS 23.003, telescopic FQDN).
+  void set_sepp_domain(std::string sepp_domain) {
+    m_sepp_domain = std::move(sepp_domain);
   }
 
   // Model-based mapping resolution
@@ -59,7 +67,8 @@ private:
 
   std::vector<oai::config::plmn_config> m_roaming_partners;
 
-  const std::string m_sepp_domain = "sepp.5gc.mnc001.mcc001.3gppnetwork.org";
+  // Set by sepp_app from the local SEPP host in the configuration
+  std::string m_sepp_domain;
 };
 
 } // namespace oai::sepp::app

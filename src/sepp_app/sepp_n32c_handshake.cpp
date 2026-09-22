@@ -109,8 +109,9 @@ bool sepp_n32c_handshake::handle_exchange_capability_request(
         selected_cap.c_str(), m_selected_sec_capability.c_str());
   }
 
-  // Build SecNegotiateRspData payload according to 3GPP TS 29.573
-  resp_data["sender"] = sepp_cfg->local().get_nbi().get_url();
+  // Build SecNegotiateRspData payload according to 3GPP TS 29.573. "sender"
+  // is of type Fqdn: the FQDN of this SEPP, as in the requests it sends.
+  resp_data["sender"] = m_sender_fqdn;
   resp_data["selectedSecCapability"] = m_selected_sec_capability;
   resp_data["3GppSbiTargetApiRootSupported"] = true;
 
@@ -132,6 +133,7 @@ bool sepp_n32c_handshake::create_exchange_capability_req(
   Logger::sepp_app().info(
       "Creating N32-c capability exchange request via model");
 
+  // TS 29.573 SecNegotiateReqData: "sender" is the FQDN of this SEPP
   req_obj.setSender(m_sender_fqdn);
   req_obj.setR3GppSbiTargetApiRootSupported(true);
 
@@ -226,6 +228,7 @@ bool sepp_n32c_handshake::create_exchange_params_req(
   }
 
   req_obj.setN32fContextId(m_n32c_context_id);
+  // TS 29.573 SecParamExchReqData: "sender" is the FQDN of this SEPP
   req_obj.setSender(m_sender_fqdn);
   req_obj.setJweCipherSuiteList({"A128GCM", "A256GCM"});
   req_obj.setJwsCipherSuiteList({"ES256", "RS256"});
@@ -285,7 +288,8 @@ bool sepp_n32c_handshake::handle_exchange_params(
 
   SecParamExchRspData resp_obj;
   resp_obj.setN32fContextId(m_n32c_context_id);
-  resp_obj.setSender(sepp_cfg->local().get_nbi().get_url());
+  // TS 29.573 SecParamExchRspData: "sender" is the FQDN of this SEPP
+  resp_obj.setSender(m_sender_fqdn);
 
   std::string selected_jwe = "A128GCM";
   if (req_obj.jweCipherSuiteListIsSet() &&

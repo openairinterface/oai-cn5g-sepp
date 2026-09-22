@@ -73,13 +73,28 @@ void sepp_nrf::generate_sepp_profile() {
 
   m_nf_instance_profile.add_nf_service(nf_service);
 
-  // SEPP info
+  // SEPP info (3GPP TS 29.510, SeppInfo data type)
   sepp_info_t sepp_info_item;
   sepp_info_item.m_SeppPrefix = "oai-sepp-prefix";
-  sepp_info_item.m_SeppPorts.emplace("n32f", 443);
-  sepp_info_item.m_SeppPorts.emplace("n32c", 443);
-  sepp_info_item.m_RemotePlmnList.emplace_back(plmn_t{"262", "10"});
+
+  // seppPorts: port on which the peer SEPP reaches this SEPP over N32, i.e.
+  // the NBI (inter-PLMN) interface. TS 29.510 keys the map with "http" or
+  // "https", which follows the TLS setting (sepp.disable_tls).
+  const std::string sepp_port_scheme =
+      sepp_cfg->is_tls_enabled() ? "https" : "http";
+  sepp_info_item.m_SeppPorts.emplace(sepp_port_scheme,
+                                     sepp_cfg->local().get_nbi().get_port());
+
+  // remotePlmnList: PLMNs reachable through this SEPP. They are the roaming
+  // partners of enable_roaming.roaming_partners in the configuration.
+  for (const auto &partner :
+       sepp_cfg->get_roaming_config().get_roaming_partners()) {
+    sepp_info_item.m_RemotePlmnList.emplace_back(
+        plmn_t{partner.mcc.get_value(), partner.mnc.get_value()});
+  }
   // ToDo: sepp_info_item.m_RemoteSnpnList.emplace_back()
+
+  // n32Purposes: N32 purposes supported by this SEPP (TS 29.573, N32Purpose)
   sepp_info_item.m_n32Purposes.push_back("ROAMING");
 
   m_nf_instance_profile.set_sepp_info(sepp_info_item);
