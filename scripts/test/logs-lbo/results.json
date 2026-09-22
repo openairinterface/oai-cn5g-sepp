@@ -1,5 +1,5 @@
 {
-  "tested_at_utc": "2026-09-19T19:52:54.163955+00:00",
+  "tested_at_utc": "2026-09-22T19:06:20.973894+00:00",
   "registration": "PASS",
   "lbo_pdu_session": "PASS",
   "lbo_data_traffic": {
@@ -7,7 +7,7 @@
     "received": 3,
     "loss_percent": 0
   },
-  "supi": "imsi-262100000000031",
+  "supi": "imsi-999100000000031",
   "dnn": "oai",
   "slice": {
     "sst": 222,
@@ -15,12 +15,14 @@
   },
   "amf_ue_state": "5GMM-REGISTERED",
   "pcap": "oai-5gc-lbo-roaming.pcap",
-  "captured_packets": 6024,
+  "captured_packets": 4952,
   "capture_kernel_drops": 0,
   "packet_counts_by_filter": {
-    "NGAP/SCTP": 48,
-    "PFCP": 64,
-    "GTP-U": 12,
-    "ICMP": 12
-  }
+    "NGAP/SCTP": 28,
+    "PFCP": 68,
+    "GTP-U": 6,
+    "ICMP": 6
+  },
+  "scenario": "LBO roaming, UE of 999/10 in 999/20",
+  "ue_ipv4": "12.1.1.130"
 }

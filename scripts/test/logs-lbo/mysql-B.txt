@@ -1,15 +1,57 @@
-2026-09-19T18:58:20.254609633Z 2026-09-19 20:58:20+02:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.6.0-1.el9 started.
-2026-09-19T18:58:20.915698150Z 2026-09-19 20:58:20+02:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
-2026-09-19T18:58:20.935015532Z 2026-09-19 20:58:20+02:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.6.0-1.el9 started.
-2026-09-19T18:58:21.788768456Z '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
-2026-09-19T18:58:22.272684505Z 2026-09-19T18:58:21.829539Z 0 [System] [MY-015015] [Server] MySQL Server - start.
-2026-09-19T18:58:22.272733958Z 2026-09-19T18:58:22.266049Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 9.6.0) starting as process 1
-2026-09-19T18:58:22.272746143Z 2026-09-19T18:58:22.266094Z 0 [System] [MY-015590] [Server] MySQL Server has access to 8 logical CPUs.
-2026-09-19T18:58:22.272755693Z 2026-09-19T18:58:22.266119Z 0 [System] [MY-015590] [Server] MySQL Server has access to 24501673984 bytes of physical memory.
-2026-09-19T18:58:22.280970284Z 2026-09-19T18:58:22.280807Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
-2026-09-19T18:58:23.178457611Z 2026-09-19T18:58:23.178195Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
-2026-09-19T18:58:23.915403357Z 2026-09-19T18:58:23.913565Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
-2026-09-19T18:58:23.915424632Z 2026-09-19T18:58:23.913803Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
-2026-09-19T18:58:23.925015433Z 2026-09-19T18:58:23.924867Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
-2026-09-19T18:58:23.998301095Z 2026-09-19T18:58:23.998075Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
-2026-09-19T18:58:23.998352987Z 2026-09-19T18:58:23.998263Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '9.6.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2026-09-22T19:03:29.858296342Z 2026-09-22 21:03:29+02:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.6.0-1.el9 started.
+2026-09-22T19:03:30.987671535Z 2026-09-22 21:03:30+02:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+2026-09-22T19:03:31.002626180Z 2026-09-22 21:03:31+02:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 9.6.0-1.el9 started.
+2026-09-22T19:03:31.346510708Z 2026-09-22 21:03:31+02:00 [Note] [Entrypoint]: Initializing database files
+2026-09-22T19:03:31.371692287Z 2026-09-22T19:03:31.365657Z 0 [System] [MY-015017] [Server] MySQL Server Initialization - start.
+2026-09-22T19:03:31.401312373Z 2026-09-22T19:03:31.368563Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 9.6.0) initializing of server in progress as process 80
+2026-09-22T19:03:31.428948443Z 2026-09-22T19:03:31.428853Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-09-22T19:03:33.542133470Z 2026-09-22T19:03:33.542057Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-09-22T19:03:36.584038294Z 2026-09-22T19:03:36.583944Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+2026-09-22T19:03:41.237653574Z 2026-09-22T19:03:41.237515Z 0 [System] [MY-015018] [Server] MySQL Server Initialization - end.
+2026-09-22T19:03:41.267133212Z 2026-09-22 21:03:41+02:00 [Note] [Entrypoint]: Database files initialized
+2026-09-22T19:03:41.268807303Z 2026-09-22 21:03:41+02:00 [Note] [Entrypoint]: Starting temporary server
+2026-09-22T19:03:41.568694987Z 2026-09-22T19:03:41.288402Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2026-09-22T19:03:41.568756506Z 2026-09-22T19:03:41.550112Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 9.6.0) starting as process 117
+2026-09-22T19:03:41.568767377Z 2026-09-22T19:03:41.550123Z 0 [System] [MY-015590] [Server] MySQL Server has access to 8 logical CPUs.
+2026-09-22T19:03:41.568771142Z 2026-09-22T19:03:41.550134Z 0 [System] [MY-015590] [Server] MySQL Server has access to 24501665792 bytes of physical memory.
+2026-09-22T19:03:41.614916044Z 2026-09-22T19:03:41.614559Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-09-22T19:03:42.436486876Z 2026-09-22T19:03:42.436360Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-09-22T19:03:42.931149728Z 2026-09-22T19:03:42.931032Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-09-22T19:03:42.931171935Z 2026-09-22T19:03:42.931062Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-09-22T19:03:42.937790272Z 2026-09-22T19:03:42.937661Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-09-22T19:03:42.971009790Z 2026-09-22T19:03:42.970868Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+2026-09-22T19:03:42.971083802Z 2026-09-22T19:03:42.971007Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '9.6.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+2026-09-22T19:03:42.986914087Z 2026-09-22 21:03:42+02:00 [Note] [Entrypoint]: Temporary server started.
+2026-09-22T19:03:43.015573412Z '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+2026-09-22T19:03:43.791343568Z Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+2026-09-22T19:03:43.791367839Z Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+2026-09-22T19:03:43.791372395Z Warning: Unable to load '/usr/share/zoneinfo/leapseconds' as time zone. Skipping it.
+2026-09-22T19:03:45.062098298Z Warning: Unable to load '/usr/share/zoneinfo/tzdata.zi' as time zone. Skipping it.
+2026-09-22T19:03:45.062222144Z Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+2026-09-22T19:03:45.062350617Z Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+2026-09-22T19:03:45.311581672Z 2026-09-22 21:03:45+02:00 [Note] [Entrypoint]: Creating database oai_db
+2026-09-22T19:03:45.337064564Z 2026-09-22 21:03:45+02:00 [Note] [Entrypoint]: Creating user test
+2026-09-22T19:03:45.355625105Z 2026-09-22 21:03:45+02:00 [Note] [Entrypoint]: Giving user test access to schema oai_db
+2026-09-22T19:03:45.367064182Z 
+2026-09-22T19:03:45.368886067Z 2026-09-22 21:03:45+02:00 [Note] [Entrypoint]: /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/oai_db.sql
+2026-09-22T19:03:45.730288690Z 
+2026-09-22T19:03:45.730323540Z 
+2026-09-22T19:03:45.733680708Z 2026-09-22 21:03:45+02:00 [Note] [Entrypoint]: Stopping temporary server
+2026-09-22T19:03:45.760728484Z 2026-09-22T19:03:45.760566Z 15 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 9.6.0).
+2026-09-22T19:03:47.346298120Z 2026-09-22T19:03:47.345680Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 9.6.0)  MySQL Community Server - GPL.
+2026-09-22T19:03:47.346319706Z 2026-09-22T19:03:47.345693Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+2026-09-22T19:03:47.770868907Z 2026-09-22 21:03:47+02:00 [Note] [Entrypoint]: Temporary server stopped
+2026-09-22T19:03:47.770937435Z 
+2026-09-22T19:03:47.778454000Z 2026-09-22 21:03:47+02:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+2026-09-22T19:03:47.778523972Z 
+2026-09-22T19:03:48.112063284Z 2026-09-22T19:03:47.857440Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2026-09-22T19:03:48.112081775Z 2026-09-22T19:03:48.109689Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 9.6.0) starting as process 1
+2026-09-22T19:03:48.112084786Z 2026-09-22T19:03:48.109701Z 0 [System] [MY-015590] [Server] MySQL Server has access to 8 logical CPUs.
+2026-09-22T19:03:48.112087200Z 2026-09-22T19:03:48.109712Z 0 [System] [MY-015590] [Server] MySQL Server has access to 24501665792 bytes of physical memory.
+2026-09-22T19:03:48.116588352Z 2026-09-22T19:03:48.116465Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2026-09-22T19:03:48.785628699Z 2026-09-22T19:03:48.785474Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2026-09-22T19:03:49.309115281Z 2026-09-22T19:03:49.308971Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2026-09-22T19:03:49.309133247Z 2026-09-22T19:03:49.309017Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2026-09-22T19:03:49.314342815Z 2026-09-22T19:03:49.314217Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2026-09-22T19:03:49.389812722Z 2026-09-22T19:03:49.389718Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2026-09-22T19:03:49.389855455Z 2026-09-22T19:03:49.389810Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '9.6.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.

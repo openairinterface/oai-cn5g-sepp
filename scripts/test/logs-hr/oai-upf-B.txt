@@ -1,582 +1,572 @@
-2026-09-21T22:19:16.574939706Z 
-2026-09-21T22:19:16.574976432Z                   [94m▓▓▓▓▓▓[97m╗  [94m▓▓▓▓▓[97m╗ [94m▓▓[97m╗  [92m▓▓  [97m▓▓  [97m▓▓[92m▓▓▓▓  [92m▓▓[97m▓▓[92m▓▓[97m▓▓[0m
-2026-09-21T22:19:16.574985001Z                  [94m▓▓[97m╔═══[94m▓▓[97m╗[94m▓▓[97m╔══[94m▓▓[97m╗[94m▓▓[97m║  [97m▓▓  [92m▓▓  [92m▓▓  [97m▓▓  [92m▓▓      [0m
-2026-09-21T22:19:16.574989696Z                  [94m▓▓[97m║   [94m▓▓[97m║[94m▓▓▓▓▓▓▓[97m║[94m▓▓[97m║  [92m▓▓  [97m▓▓  [97m▓▓[92m▓▓▓▓  [92m▓▓▓▓[97m▓▓  [0m
-2026-09-21T22:19:16.574992851Z                  [94m▓▓[97m║   [94m▓▓[97m║[94m▓▓[97m╔══[94m▓▓[97m║[94m▓▓[97m║  [97m▓▓  [92m▓▓  [92m▓▓      [97m▓▓      [0m
-2026-09-21T22:19:16.574995840Z                  [97m╚[94m▓▓▓▓▓▓[97m╔╝[94m▓▓[97m║  [94m▓▓[97m║[94m▓▓[97m║  [92m▓▓[97m▓▓[92m▓▓  [92m▓▓      [97m▓▓  [33mv3.0[0m
-2026-09-21T22:19:16.575018190Z                   [97m╚═════╝ ╚═╝  ╚═╝╚═╝[0m
-2026-09-21T22:19:16.575020914Z                  [2;37m───────────────────────────────────────────────────────────────[0m
-2026-09-21T22:19:16.575023861Z                  [96mOpenAirInterface[2;37m  ·  [92mUser Plane Function[2;37m  ·  [92m5G Core · N4[0m
-2026-09-21T22:19:16.575026592Z                  [37m3GPP TS 29.244  ·  PFCP V17.10.0  ·  Release 17[0m
-2026-09-21T22:19:16.575029027Z                  [33m© OpenAirInterface Software Alliance[0m
-2026-09-21T22:19:16.575031440Z 
-2026-09-21T22:19:16.575033661Z Trying to read .yaml configuration file: /openair-upf/etc/config.yaml
-2026-09-21T22:19:16.575035977Z LTTNG Tracing disabled at build-time!
-2026-09-21T22:19:16.575038264Z [2026-09-22 00:19:16.574] [upf_app] [start] ==============================================================================
-2026-09-21T22:19:16.575040680Z [2026-09-22 00:19:16.574] [upf_app] [start]                      5G User Plane Function (UPF)
-2026-09-21T22:19:16.575042984Z [2026-09-22 00:19:16.574] [upf_app] [start]                         OpenAirInterface
-2026-09-21T22:19:16.575045283Z [2026-09-22 00:19:16.574] [upf_app] [start]                       3GPP Rel-17 Compliant
-2026-09-21T22:19:16.575048426Z [2026-09-22 00:19:16.574] [upf_app] [start] ==============================================================================
-2026-09-21T22:19:16.575050820Z [2026-09-22 00:19:16.574] [upf_app] [start] 
-2026-09-21T22:19:16.575053342Z [2026-09-22 00:19:16.574] [upf_app] [start] ┌─────────────────────────────────────────────────────────────────────────────┐
-2026-09-21T22:19:16.575061162Z [2026-09-22 00:19:16.574] [upf_app] [start] │                           VERSION INFORMATION                               │
-2026-09-21T22:19:16.575063880Z [2026-09-22 00:19:16.574] [upf_app] [start] ├──────────────────────────────┬──────────────────────────────────────────────┤
-2026-09-21T22:19:16.575066960Z [2026-09-22 00:19:16.574] [upf_app] [start] │ Git Branch                   │ develop                                      │
-2026-09-21T22:19:16.575069401Z [2026-09-22 00:19:16.574] [upf_app] [start] │ Git Commit Hash              │ 4b9190a                                      │
-2026-09-21T22:19:16.575071781Z [2026-09-22 00:19:16.574] [upf_app] [start] │ Git Commit Date              │ Wed Sep 9 11:42:19 2026 +0200                │
-2026-09-21T22:19:16.575074149Z [2026-09-22 00:19:16.574] [upf_app] [start] │ Build Time                   │ 2026-09-21 21:26:41                          │
-2026-09-21T22:19:16.575076522Z [2026-09-22 00:19:16.574] [upf_app] [start] │ 3GPP Release                 │ Rel-17                                       │
-2026-09-21T22:19:16.575078916Z [2026-09-22 00:19:16.574] [upf_app] [start] ├──────────────────────────────┼──────────────────────────────────────────────┤
-2026-09-21T22:19:16.575081911Z [2026-09-22 00:19:16.574] [upf_app] [start] │ Kernel Version               │ 7.0.0-30-generic                             │
-2026-09-21T22:19:16.575084663Z [2026-09-22 00:19:16.574] [upf_app] [start] │ libbpf Version               │ 1.5                                          │
-2026-09-21T22:19:16.575087081Z [2026-09-22 00:19:16.574] [upf_app] [start] │ Compiler                     │ GCC 11.4.0                                   │
-2026-09-21T22:19:16.575089446Z [2026-09-22 00:19:16.574] [upf_app] [start] │ Architecture                 │ x86_64                                       │
-2026-09-21T22:19:16.575091813Z [2026-09-22 00:19:16.574] [upf_app] [start] │ System Uptime                │ 8d 15h 19m                                   │
-2026-09-21T22:19:16.575094186Z [2026-09-22 00:19:16.574] [upf_app] [start] │ UPF Process Uptime           │ 0d 0h 0m                                     │
-2026-09-21T22:19:16.575096586Z [2026-09-22 00:19:16.574] [upf_app] [start] ├──────────────────────────────┼──────────────────────────────────────────────┤
-2026-09-21T22:19:16.575099773Z [2026-09-22 00:19:16.574] [upf_app] [start] │ Bug Reports                  │ openaircn-user@lists.eurecom.fr              │
-2026-09-21T22:19:16.575102189Z [2026-09-22 00:19:16.574] [upf_app] [start] └──────────────────────────────┴──────────────────────────────────────────────┘
-2026-09-21T22:19:16.575107608Z [2026-09-22 00:19:16.574] [upf_app] [start] 
-2026-09-21T22:19:16.575109904Z [2026-09-22 00:19:16.574] [upf_app] [start] Options parsed
-2026-09-21T22:19:16.575112195Z [2026-09-22 00:19:16.574] [config ] [info] Reading NF configuration from /openair-upf/etc/config.yaml
-2026-09-21T22:19:16.591361118Z [2026-09-22 00:19:16.591] [config ] [debug] Unknown NF amf in configuration. Ignored
-2026-09-21T22:19:16.591378480Z [2026-09-22 00:19:16.591] [config ] [debug] Unknown NF udm in configuration. Ignored
-2026-09-21T22:19:16.591382637Z [2026-09-22 00:19:16.591] [config ] [debug] Unknown NF udr in configuration. Ignored
-2026-09-21T22:19:16.591387076Z [2026-09-22 00:19:16.591] [config ] [debug] Unknown NF ausf in configuration. Ignored
-2026-09-21T22:19:16.591391333Z [2026-09-22 00:19:16.591] [config ] [debug] Unknown NF sepp in configuration. Ignored
-2026-09-21T22:19:16.591399122Z [2026-09-22 00:19:16.591] [config ] [warning] SNAT (Source Network Address Translation) requested but not implemented within UPF - forcing to disabled. Check the Ext-DN for SNAT configuration
-2026-09-21T22:19:16.592830047Z [2026-09-22 00:19:16.592] [config ] [debug] Validating configuration of log_level
-2026-09-21T22:19:16.592848333Z [2026-09-22 00:19:16.592] [config ] [debug] Validating configuration of register_nf
-2026-09-21T22:19:16.592853350Z [2026-09-22 00:19:16.592] [config ] [debug] Validating configuration of http_version
-2026-09-21T22:19:16.592857446Z [2026-09-22 00:19:16.592] [config ] [debug] Validating configuration of http_request_timeout
-2026-09-21T22:19:16.592861446Z [2026-09-22 00:19:16.592] [config ] [debug] Validating configuration of NRF
-2026-09-21T22:19:16.593862469Z [2026-09-22 00:19:16.593] [config ] [debug] Validating configuration of SMF
-2026-09-21T22:19:16.593875269Z [2026-09-22 00:19:16.593] [config ] [debug] Validating configuration of UPF Configuration
-2026-09-21T22:19:16.596790383Z [2026-09-22 00:19:16.596] [config ] [debug] Validating configuration of DNN
-2026-09-21T22:19:16.597331213Z [2026-09-22 00:19:16.597] [config ] [debug] Validating configuration of DNN
-2026-09-21T22:19:16.598065089Z [2026-09-22 00:19:16.598] [config ] [debug] Validating configuration of DNN
-2026-09-21T22:19:16.598655519Z [2026-09-22 00:19:16.598] [config ] [debug] Validating configuration of DNN
-2026-09-21T22:19:16.599378805Z [2026-09-22 00:19:16.599] [config ] [warning] The IPv6 prefix / length  is not valid
-2026-09-21T22:19:16.599392012Z [2026-09-22 00:19:16.599] [config ] [debug] Validating configuration of database
-2026-09-21T22:19:16.599397899Z [2026-09-22 00:19:16.599] [common] [debug] Resolving a DNS (name localhost)
-2026-09-21T22:19:16.599402958Z [2026-09-22 00:19:16.599] [common] [debug] Resolving DNS Try #0
-2026-09-21T22:19:16.599749555Z [2026-09-22 00:19:16.599] [common] [debug] Resolved a DNS (name localhost, protocol http): Ip Addr ::1, port 80
-2026-09-21T22:19:16.599787896Z [2026-09-22 00:19:16.599] [common] [debug] Resolved a DNS (name localhost, protocol http): Ip Addr 127.0.0.1, port 80
-2026-09-21T22:19:16.599791630Z [2026-09-22 00:19:16.599] [config ] [info] Datapath configuration transferred: max_pdu_sessions=100, max_upf_interfaces=4, max_arp_entries=256
-2026-09-21T22:19:16.599794893Z [2026-09-22 00:19:16.599] [config ] [debug] PDN Network validation for UE Subnet:  12.2.1.128 
-2026-09-21T22:19:16.599797976Z [2026-09-22 00:19:16.599] [config ] [debug] IP Pool :  12.2.1.129 - 12.2.1.254
-2026-09-21T22:19:16.599800917Z [2026-09-22 00:19:16.599] [config ] [debug] PDN Network validation for UE Subnet:  12.1.1.64 
-2026-09-21T22:19:16.599803846Z [2026-09-22 00:19:16.599] [config ] [debug] IP Pool :  12.1.1.65 - 12.1.1.126
-2026-09-21T22:19:16.599807098Z [2026-09-22 00:19:16.599] [config ] [debug] PDN Network validation for UE Subnet:  12.1.1.0 
-2026-09-21T22:19:16.599810146Z [2026-09-22 00:19:16.599] [config ] [debug] IP Pool :  12.1.1.1 - 12.1.1.62
-2026-09-21T22:19:16.599814321Z [2026-09-22 00:19:16.599] [config ] [debug] PDN Network validation for UE Subnet:  14.1.1.2 
-2026-09-21T22:19:16.599817475Z [2026-09-22 00:19:16.599] [config ] [debug] IP Pool :  14.1.1.1 - 14.1.1.254
-2026-09-21T22:19:16.599911938Z [2026-09-22 00:19:16.599] [config ] [info] ==== OPENAIRINTERFACE upf vBranch: develop Abrev. Hash: 4b9190a Date: Wed Sep 9 11:42:19 2026 +0200 ====
-2026-09-21T22:19:16.599917461Z [2026-09-22 00:19:16.599] [config ] [info] Basic Configuration:
-2026-09-21T22:19:16.599920003Z [2026-09-22 00:19:16.599] [config ] [info]   - log_level..................................: debug
-2026-09-21T22:19:16.599923322Z [2026-09-22 00:19:16.599] [config ] [info]   - register_nf................................: Yes
-2026-09-21T22:19:16.599926775Z [2026-09-22 00:19:16.599] [config ] [info]   - http_version...............................: 2
-2026-09-21T22:19:16.599930206Z [2026-09-22 00:19:16.599] [config ] [info]   TLS:
-2026-09-21T22:19:16.599933817Z [2026-09-22 00:19:16.599] [config ] [info]     - Enable TLS.................................: No
-2026-09-21T22:19:16.599937175Z [2026-09-22 00:19:16.599] [config ] [info]   - HTTP Request Timeout.......................: 3000 (ms)
-2026-09-21T22:19:16.599940666Z [2026-09-22 00:19:16.599] [config ] [info] UPF Configuration:
-2026-09-21T22:19:16.599944280Z [2026-09-22 00:19:16.599] [config ] [info]   - host.......................................: upf.5gc.mnc10.mcc262.3gppnetwork.org
-2026-09-21T22:19:16.599947962Z [2026-09-22 00:19:16.599] [config ] [info]   - SBI
-2026-09-21T22:19:16.599951681Z [2026-09-22 00:19:16.599] [config ] [info]     + URL......................................: upf.5gc.mnc10.mcc262.3gppnetwork.org:8080
-2026-09-21T22:19:16.599955927Z [2026-09-22 00:19:16.599] [config ] [info]     + API Version..............................: v1
-2026-09-21T22:19:16.599960333Z [2026-09-22 00:19:16.599] [config ] [info]     + IPv4 Address ............................: 192.168.73.139
-2026-09-21T22:19:16.599964761Z [2026-09-22 00:19:16.599] [config ] [info]   - N3:
-2026-09-21T22:19:16.599968856Z [2026-09-22 00:19:16.599] [config ] [info]     + Port.....................................: 2152
-2026-09-21T22:19:16.599982918Z [2026-09-22 00:19:16.599] [config ] [info]     + IPv4 Address ............................: 192.168.73.139
-2026-09-21T22:19:16.599987197Z [2026-09-22 00:19:16.599] [config ] [info]     + MTU......................................: 1500
-2026-09-21T22:19:16.599991317Z [2026-09-22 00:19:16.599] [config ] [info]     + Interface name: .........................: eth0
-2026-09-21T22:19:16.599995819Z [2026-09-22 00:19:16.599] [config ] [info]     + Network Instance.........................: access.oai.org
-2026-09-21T22:19:16.599999962Z [2026-09-22 00:19:16.599] [config ] [info]   - N4:
-2026-09-21T22:19:16.600004253Z [2026-09-22 00:19:16.599] [config ] [info]     + Port.....................................: 8805
-2026-09-21T22:19:16.600008631Z [2026-09-22 00:19:16.599] [config ] [info]     + IPv4 Address ............................: 192.168.73.139
-2026-09-21T22:19:16.600012842Z [2026-09-22 00:19:16.599] [config ] [info]     + MTU......................................: 1500
-2026-09-21T22:19:16.600017281Z [2026-09-22 00:19:16.599] [config ] [info]     + Interface name: .........................: eth0
-2026-09-21T22:19:16.600021429Z [2026-09-22 00:19:16.599] [config ] [info]   - N6:
-2026-09-21T22:19:16.600025417Z [2026-09-22 00:19:16.599] [config ] [info]     + Port.....................................: 2152
-2026-09-21T22:19:16.600029843Z [2026-09-22 00:19:16.599] [config ] [info]     + IPv4 Address ............................: 192.168.73.139
-2026-09-21T22:19:16.600033868Z [2026-09-22 00:19:16.599] [config ] [info]     + MTU......................................: 1500
-2026-09-21T22:19:16.600037436Z [2026-09-22 00:19:16.599] [config ] [info]     + Interface name: .........................: eth0
-2026-09-21T22:19:16.600040757Z [2026-09-22 00:19:16.599] [config ] [info]     + Network Instance.........................: core.oai.org
-2026-09-21T22:19:16.600044639Z [2026-09-22 00:19:16.599] [config ] [info]   - Instance ID................................: 0
-2026-09-21T22:19:16.600048554Z [2026-09-22 00:19:16.599] [config ] [info]   - Remote N6 Gateway..........................: localhost
-2026-09-21T22:19:16.600052249Z [2026-09-22 00:19:16.599] [config ] [info]   - Support Features:
-2026-09-21T22:19:16.600054661Z [2026-09-22 00:19:16.599] [config ] [info]     + Enable BPF Datapath......................: No
-2026-09-21T22:19:16.600056971Z [2026-09-22 00:19:16.599] [config ] [info]     + Enable QoS Enforcement  (QER)............: No
-2026-09-21T22:19:16.600059285Z [2026-09-22 00:19:16.599] [config ] [info]     + Enable Usage Reporting  (URR)............: No
-2026-09-21T22:19:16.600062355Z [2026-09-22 00:19:16.599] [config ] [info]     + Enable Buffering Action (BAR)............: No
-2026-09-21T22:19:16.600064686Z [2026-09-22 00:19:16.599] [config ] [info]     + Enable Multi Access     (MAR)............: No
-2026-09-21T22:19:16.600066979Z [2026-09-22 00:19:16.599] [config ] [info]     + Enable SNAT..............................: Yes
-2026-09-21T22:19:16.600069285Z [2026-09-22 00:19:16.599] [config ] [info]     + Enable Framed Routing....................: No
-2026-09-21T22:19:16.600074308Z [2026-09-22 00:19:16.599] [config ] [info]     + Enable Ethernet PDU Sessions.............: No
-2026-09-21T22:19:16.600077108Z [2026-09-22 00:19:16.599] [config ] [info]   + upf_info:
-2026-09-21T22:19:16.600080334Z [2026-09-22 00:19:16.599] [config ] [info]     - snssai_upf_info_item:
-2026-09-21T22:19:16.600083696Z [2026-09-22 00:19:16.599] [config ] [info]       + snssai:
-2026-09-21T22:19:16.600086568Z [2026-09-22 00:19:16.599] [config ] [info]         - sst..................................: 1
-2026-09-21T22:19:16.600089869Z [2026-09-22 00:19:16.599] [config ] [info]         - sd...................................: FFFFFF
-2026-09-21T22:19:16.600093052Z [2026-09-22 00:19:16.599] [config ] [info]       + dnns:
-2026-09-21T22:19:16.600096079Z [2026-09-22 00:19:16.599] [config ] [info]         - dnn..................................: oai
-2026-09-21T22:19:16.600099778Z [2026-09-22 00:19:16.599] [config ] [info]     - snssai_upf_info_item:
-2026-09-21T22:19:16.600104002Z [2026-09-22 00:19:16.599] [config ] [info]       + snssai:
-2026-09-21T22:19:16.600106883Z [2026-09-22 00:19:16.599] [config ] [info]         - sst..................................: 1
-2026-09-21T22:19:16.600110436Z [2026-09-22 00:19:16.599] [config ] [info]         - sd...................................: 000001
-2026-09-21T22:19:16.600113493Z [2026-09-22 00:19:16.599] [config ] [info]       + dnns:
-2026-09-21T22:19:16.600117311Z [2026-09-22 00:19:16.599] [config ] [info]         - dnn..................................: oai.ipv4
-2026-09-21T22:19:16.600120124Z [2026-09-22 00:19:16.599] [config ] [info]     - snssai_upf_info_item:
-2026-09-21T22:19:16.600123838Z [2026-09-22 00:19:16.599] [config ] [info]       + snssai:
-2026-09-21T22:19:16.600127217Z [2026-09-22 00:19:16.599] [config ] [info]         - sst..................................: 222
-2026-09-21T22:19:16.600130766Z [2026-09-22 00:19:16.599] [config ] [info]         - sd...................................: 00007b
-2026-09-21T22:19:16.600134739Z [2026-09-22 00:19:16.599] [config ] [info]       + dnns:
-2026-09-21T22:19:16.600138055Z [2026-09-22 00:19:16.599] [config ] [info]         - dnn..................................: default
-2026-09-21T22:19:16.600141236Z [2026-09-22 00:19:16.599] [config ] [info]         - dnn..................................: oai
-2026-09-21T22:19:16.600144820Z [2026-09-22 00:19:16.599] [config ] [info] Peer NF Configuration:
-2026-09-21T22:19:16.600149121Z [2026-09-22 00:19:16.599] [config ] [info]   NRF:
-2026-09-21T22:19:16.600153472Z [2026-09-22 00:19:16.599] [config ] [info]     - host.....................................: nrf.5gc.mnc10.mcc262.3gppnetwork.org
-2026-09-21T22:19:16.600155995Z [2026-09-22 00:19:16.599] [config ] [info]     - SBI
-2026-09-21T22:19:16.600158417Z [2026-09-22 00:19:16.599] [config ] [info]       + URL....................................: nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080
-2026-09-21T22:19:16.600160869Z [2026-09-22 00:19:16.599] [config ] [info]       + API Version............................: v1
-2026-09-21T22:19:16.600167393Z [2026-09-22 00:19:16.599] [config ] [info]   SMF:
-2026-09-21T22:19:16.600171011Z [2026-09-22 00:19:16.599] [config ] [info]     - host.....................................: smf.5gc.mnc10.mcc262.3gppnetwork.org
-2026-09-21T22:19:16.600174797Z [2026-09-22 00:19:16.599] [config ] [info]     - SBI
-2026-09-21T22:19:16.600177951Z [2026-09-22 00:19:16.599] [config ] [info]       + URL....................................: smf.5gc.mnc10.mcc262.3gppnetwork.org:8080
-2026-09-21T22:19:16.600182228Z [2026-09-22 00:19:16.599] [config ] [info]       + API Version............................: v1
-2026-09-21T22:19:16.600184679Z [2026-09-22 00:19:16.599] [config ] [info] DNNs:
-2026-09-21T22:19:16.600186914Z [2026-09-22 00:19:16.599] [config ] [info] - DNN:
-2026-09-21T22:19:16.600189189Z [2026-09-22 00:19:16.599] [config ] [info]     + DNN......................................: oai
-2026-09-21T22:19:16.600191508Z [2026-09-22 00:19:16.599] [config ] [info]     + PDU session type.........................: IPV4
-2026-09-21T22:19:16.600193837Z [2026-09-22 00:19:16.600] [config ] [info]     + IPv4 subnet..............................: 12.2.1.128/25
-2026-09-21T22:19:16.600196149Z [2026-09-22 00:19:16.600] [config ] [info]     + DNS Settings:
-2026-09-21T22:19:16.600198419Z [2026-09-22 00:19:16.600] [config ] [info]       - primary_dns_ipv4.......................: 8.8.8.8
-2026-09-21T22:19:16.600200770Z [2026-09-22 00:19:16.600] [config ] [info]       - secondary_dns_ipv4.....................: 1.1.1.1
-2026-09-21T22:19:16.600203134Z [2026-09-22 00:19:16.600] [config ] [info] - DNN:
-2026-09-21T22:19:16.600205382Z [2026-09-22 00:19:16.600] [config ] [info]     + DNN......................................: oai.ipv4
-2026-09-21T22:19:16.600207672Z [2026-09-22 00:19:16.600] [config ] [info]     + PDU session type.........................: IPV4
-2026-09-21T22:19:16.600209958Z [2026-09-22 00:19:16.600] [config ] [info]     + IPv4 subnet..............................: 12.1.1.64/26
-2026-09-21T22:19:16.600212404Z [2026-09-22 00:19:16.600] [config ] [info]     + DNS Settings:
-2026-09-21T22:19:16.600215609Z [2026-09-22 00:19:16.600] [config ] [info]       - primary_dns_ipv4.......................: 8.8.8.8
-2026-09-21T22:19:16.600217954Z [2026-09-22 00:19:16.600] [config ] [info]       - secondary_dns_ipv4.....................: 1.1.1.1
-2026-09-21T22:19:16.600220298Z [2026-09-22 00:19:16.600] [config ] [info] - DNN:
-2026-09-21T22:19:16.600222558Z [2026-09-22 00:19:16.600] [config ] [info]     + DNN......................................: default
-2026-09-21T22:19:16.600224858Z [2026-09-22 00:19:16.600] [config ] [info]     + PDU session type.........................: IPV4
-2026-09-21T22:19:16.600227149Z [2026-09-22 00:19:16.600] [config ] [info]     + IPv4 subnet..............................: 12.1.1.0/26
-2026-09-21T22:19:16.600229522Z [2026-09-22 00:19:16.600] [config ] [info]     + DNS Settings:
-2026-09-21T22:19:16.600231848Z [2026-09-22 00:19:16.600] [config ] [info]       - primary_dns_ipv4.......................: 8.8.8.8
-2026-09-21T22:19:16.600236630Z [2026-09-22 00:19:16.600] [config ] [info]       - secondary_dns_ipv4.....................: 1.1.1.1
-2026-09-21T22:19:16.600239052Z [2026-09-22 00:19:16.600] [upf_app] [info] HTTP Client successfully initiated on interface eth0 with timeout 3000 ms, HTTP version 2
-2026-09-21T22:19:16.600241789Z [2026-09-22 00:19:16.600] [common] [start] Starting...
-2026-09-21T22:19:16.600244067Z [2026-09-22 00:19:16.600] [common] [start] Started
-2026-09-21T22:19:16.600246339Z [2026-09-22 00:19:16.600] [asc_cmd] [start] Starting...
-2026-09-21T22:19:16.600248611Z [2026-09-22 00:19:16.600] [common] [info] Starting timer_manager_task
-2026-09-21T22:19:16.601298892Z [2026-09-22 00:19:16.601] [asc_cmd] [start] Started
-2026-09-21T22:19:16.601312404Z [2026-09-22 00:19:16.601] [upf_app] [start] UPF initialization started
-2026-09-21T22:19:16.602484183Z [2026-09-22 00:19:16.602] [udp    ] [debug] Creating new listen socket on address 192.168.73.139 and port 8805
-2026-09-21T22:19:16.602497666Z 
-2026-09-21T22:19:16.602500561Z [2026-09-22 00:19:16.602] [udp    ] [debug] udp_server::udp_server(192.168.73.139:8805)
-2026-09-21T22:19:16.602502914Z [2026-09-22 00:19:16.602] [udp    ] [debug] Creating new listen socket on address 192.168.73.139 and port 0
-2026-09-21T22:19:16.602505261Z 
-2026-09-21T22:19:16.602507558Z [2026-09-22 00:19:16.602] [udp    ] [debug] udp_server::udp_server(192.168.73.139:0)
-2026-09-21T22:19:16.602509955Z [2026-09-22 00:19:16.602] [pfcp   ] [info] pfcp_l4_stack created listening to 192.168.73.139:8805
-2026-09-21T22:19:16.602897425Z [2026-09-22 00:19:16.602] [upf_n4 ] [start] Starting...
-2026-09-21T22:19:16.604007657Z [2026-09-22 00:19:16.603] [upf_n4 ] [start] Started
-2026-09-21T22:19:16.604018495Z [2026-09-22 00:19:16.603] [udp    ] [debug] Creating new listen socket on address 192.168.73.139 and port 2152
-2026-09-21T22:19:16.604021635Z 
-2026-09-21T22:19:16.604029623Z [2026-09-22 00:19:16.603] [udp    ] [debug] udp_server::udp_server(192.168.73.139:2152)
-2026-09-21T22:19:16.604035458Z [2026-09-22 00:19:16.604] [gtpv1_u] [info] gtpu_l4_stack created listening to 192.168.73.139:2152
-2026-09-21T22:19:16.604210832Z [2026-09-22 00:19:16.604] [upf_n3 ] [start] Starting...
-2026-09-21T22:19:16.605416154Z [2026-09-22 00:19:16.605] [upf_n3 ] [start] Started
-2026-09-21T22:19:16.616333258Z [2026-09-22 00:19:16.616] [pfcp_switch] [info] Source NAT added
-2026-09-21T22:19:16.618602090Z [2026-09-22 00:19:16.618] [pfcp_switch] [info] Route created
-2026-09-21T22:19:16.620610071Z [2026-09-22 00:19:16.620] [pfcp_switch] [info] Source NAT added
-2026-09-21T22:19:16.622789887Z [2026-09-22 00:19:16.622] [pfcp_switch] [info] Route created
-2026-09-21T22:19:16.624920802Z [2026-09-22 00:19:16.624] [pfcp_switch] [info] Source NAT added
-2026-09-21T22:19:16.626830743Z Error: Invalid prefix for given prefix length.
-2026-09-21T22:19:16.627008575Z [2026-09-22 00:19:16.626] [pfcp_switch] [warning] Route information not correct or does exists!
-2026-09-21T22:19:16.629044702Z [2026-09-22 00:19:16.628] [pfcp_switch] [info] Source NAT added
-2026-09-21T22:19:16.629057663Z [2026-09-22 00:19:16.629] [upf_app] [start] Starting...
-2026-09-21T22:19:16.630229585Z [2026-09-22 00:19:16.630] [upf_app] [debug] - NF instance info
-2026-09-21T22:19:16.630242409Z [2026-09-22 00:19:16.630] [upf_app] [debug]     Instance ID: 92c3fce2-b011-474a-af87-0a74174bcb40
-2026-09-21T22:19:16.630247159Z [2026-09-22 00:19:16.630] [upf_app] [debug]     Instance name: OAI-UPF
-2026-09-21T22:19:16.630250438Z [2026-09-22 00:19:16.630] [upf_app] [debug]     Instance type: UPF
-2026-09-21T22:19:16.630253701Z [2026-09-22 00:19:16.630] [upf_app] [debug]     Instance fqdn: 
-2026-09-21T22:19:16.630257141Z [2026-09-22 00:19:16.630] [upf_app] [debug]     Status: REGISTERED
-2026-09-21T22:19:16.630260519Z [2026-09-22 00:19:16.630] [upf_app] [debug]     HeartBeat timer: 50
-2026-09-21T22:19:16.630264048Z [2026-09-22 00:19:16.630] [upf_app] [debug]     Priority: 1
-2026-09-21T22:19:16.630266474Z [2026-09-22 00:19:16.630] [upf_app] [debug]     Capacity: 100
-2026-09-21T22:19:16.630268800Z [2026-09-22 00:19:16.630] [upf_app] [debug]     SNSSAI:
-2026-09-21T22:19:16.630271106Z [2026-09-22 00:19:16.630] [upf_app] [debug]         SST, SD: 1, FFFFFF
-2026-09-21T22:19:16.630273398Z [2026-09-22 00:19:16.630] [upf_app] [debug]         SST, SD: 1, 000001
-2026-09-21T22:19:16.630275651Z [2026-09-22 00:19:16.630] [upf_app] [debug]         SST, SD: 222, 00007b
-2026-09-21T22:19:16.630277940Z [2026-09-22 00:19:16.630] [upf_app] [debug]     IPv4 Addr:
-2026-09-21T22:19:16.630280272Z [2026-09-22 00:19:16.630] [upf_app] [debug]         192.168.73.139
-2026-09-21T22:19:16.630282556Z [2026-09-22 00:19:16.630] [upf_app] [debug]     UPF Info:
-2026-09-21T22:19:16.630285045Z [2026-09-22 00:19:16.630] [upf_app] [debug]         SNSSAI (SST 1, SD FFFFFF)
-2026-09-21T22:19:16.630287397Z [2026-09-22 00:19:16.630] [upf_app] [debug]             DNN oai
-2026-09-21T22:19:16.630289686Z [2026-09-22 00:19:16.630] [upf_app] [debug]         SNSSAI (SST 1, SD 000001)
-2026-09-21T22:19:16.630291942Z [2026-09-22 00:19:16.630] [upf_app] [debug]             DNN oai.ipv4
-2026-09-21T22:19:16.630294256Z [2026-09-22 00:19:16.630] [upf_app] [debug]         SNSSAI (SST 222, SD 00007b)
-2026-09-21T22:19:16.630296552Z [2026-09-22 00:19:16.630] [upf_app] [debug]             DNN oai
-2026-09-21T22:19:16.630298792Z [2026-09-22 00:19:16.630] [upf_app] [debug]             DNN default
-2026-09-21T22:19:16.630301076Z [2026-09-22 00:19:16.630] [upf_app] [info] Send NF Instance Registration to NRF
-2026-09-21T22:19:16.630305064Z [2026-09-22 00:19:16.630] [upf_app] [debug] UPF profile to JSON:
-2026-09-21T22:19:16.630307549Z  {"capacity":100,"fqdn":"","heartBeatTimer":50,"ipv4Addresses":["192.168.73.139"],"nfInstanceId":"92c3fce2-b011-474a-af87-0a74174bcb40","nfInstanceName":"OAI-UPF","nfStatus":"REGISTERED","nfType":"UPF","priority":1,"sNssais":[{"sd":"FFFFFF","sst":1},{"sd":"000001","sst":1},{"sd":"00007b","sst":222}],"upfInfo":{"sNssaiUpfInfoList":[{"dnnUpfInfoList":[{"dnn":"oai"}],"sNssai":{"sd":"FFFFFF","sst":1}},{"dnnUpfInfoList":[{"dnn":"oai.ipv4"}],"sNssai":{"sd":"000001","sst":1}},{"dnnUpfInfoList":[{"dnn":"oai"},{"dnn":"default"}],"sNssai":{"sd":"00007b","sst":222}}]}}
-2026-09-21T22:19:16.630320097Z [2026-09-22 00:19:16.630] [upf_app] [debug] Send NF Instance Registration to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:19:16.630322720Z [2026-09-22 00:19:16.630] [upf_app] [debug] Send NF Instance Registration to NRF, msg body: 
-2026-09-21T22:19:16.630325120Z  {"capacity":100,"fqdn":"","heartBeatTimer":50,"ipv4Addresses":["192.168.73.139"],"nfInstanceId":"92c3fce2-b011-474a-af87-0a74174bcb40","nfInstanceName":"OAI-UPF","nfStatus":"REGISTERED","nfType":"UPF","priority":1,"sNssais":[{"sd":"FFFFFF","sst":1},{"sd":"000001","sst":1},{"sd":"00007b","sst":222}],"upfInfo":{"sNssaiUpfInfoList":[{"dnnUpfInfoList":[{"dnn":"oai"}],"sNssai":{"sd":"FFFFFF","sst":1}},{"dnnUpfInfoList":[{"dnn":"oai.ipv4"}],"sNssai":{"sd":"000001","sst":1}},{"dnnUpfInfoList":[{"dnn":"oai"},{"dnn":"default"}],"sNssai":{"sd":"00007b","sst":222}}]}}
-2026-09-21T22:19:16.630334390Z [2026-09-22 00:19:16.630] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:19:16.632454122Z [2026-09-22 00:19:16.632] [upf_app] [info] Response from NRF, JSON data: 
-2026-09-21T22:19:16.633507852Z  {"capacity":100,"heartBeatTimer":10,"ipv4Addresses":["192.168.73.139"],"json_data":null,"nfInstanceId":"92c3fce2-b011-474a-af87-0a74174bcb40","nfInstanceName":"OAI-UPF","nfServices":[],"nfStatus":"REGISTERED","nfType":"UPF","priority":1,"sNssais":[{"sd":"FFFFFF","sst":1},{"sd":"000001","sst":1},{"sd":"00007b","sst":222}],"upfInfo":{"sNssaiUpfInfoList":[{"dnnUpfInfoList":[{"dnn":"oai"}],"sNssai":{"sd":"ffffff","sst":1}},{"dnnUpfInfoList":[{"dnn":"oai.ipv4"}],"sNssai":{"sd":"000001","sst":1}},{"dnnUpfInfoList":[{"dnn":"default"},{"dnn":"oai"}],"sNssai":{"sd":"00007b","sst":222}}]}}
-2026-09-21T22:19:16.633528120Z [2026-09-22 00:19:16.632] [upf_app] [debug] - NF instance info
-2026-09-21T22:19:16.633532740Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Instance ID: 92c3fce2-b011-474a-af87-0a74174bcb40
-2026-09-21T22:19:16.633536352Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Instance name: OAI-UPF
-2026-09-21T22:19:16.633539694Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Instance type: UPF
-2026-09-21T22:19:16.633543042Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Instance fqdn: 
-2026-09-21T22:19:16.633546686Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Status: REGISTERED
-2026-09-21T22:19:16.633549491Z [2026-09-22 00:19:16.632] [upf_app] [debug]     HeartBeat timer: 10
-2026-09-21T22:19:16.633552561Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Priority: 1
-2026-09-21T22:19:16.633555322Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Capacity: 100
-2026-09-21T22:19:16.633557704Z [2026-09-22 00:19:16.632] [upf_app] [debug]     SNSSAI:
-2026-09-21T22:19:16.633567087Z [2026-09-22 00:19:16.632] [upf_app] [debug]         SST, SD: 1, FFFFFF
-2026-09-21T22:19:16.633570414Z [2026-09-22 00:19:16.632] [upf_app] [debug]         SST, SD: 1, 000001
-2026-09-21T22:19:16.633587561Z [2026-09-22 00:19:16.632] [upf_app] [debug]         SST, SD: 222, 00007b
-2026-09-21T22:19:16.633590687Z [2026-09-22 00:19:16.632] [upf_app] [debug]     IPv4 Addr:
-2026-09-21T22:19:16.633593776Z [2026-09-22 00:19:16.632] [upf_app] [debug]         192.168.73.139
-2026-09-21T22:19:16.633596969Z [2026-09-22 00:19:16.632] [upf_app] [debug]         192.168.73.139
-2026-09-21T22:19:16.633600245Z [2026-09-22 00:19:16.632] [upf_app] [debug]     UPF Info:
-2026-09-21T22:19:16.633603202Z [2026-09-22 00:19:16.632] [upf_app] [debug]         SNSSAI (SST 1, SD ffffff)
-2026-09-21T22:19:16.633606689Z [2026-09-22 00:19:16.632] [upf_app] [debug]             DNN oai
-2026-09-21T22:19:16.633609958Z [2026-09-22 00:19:16.632] [upf_app] [debug]         SNSSAI (SST 1, SD 000001)
-2026-09-21T22:19:16.633612930Z [2026-09-22 00:19:16.632] [upf_app] [debug]             DNN oai.ipv4
-2026-09-21T22:19:16.633615909Z [2026-09-22 00:19:16.632] [upf_app] [debug]         SNSSAI (SST 222, SD 00007b)
-2026-09-21T22:19:16.633619374Z [2026-09-22 00:19:16.632] [upf_app] [debug]             DNN oai
-2026-09-21T22:19:16.633623846Z [2026-09-22 00:19:16.632] [upf_app] [debug]             DNN default
-2026-09-21T22:19:16.633626566Z [2026-09-22 00:19:16.632] [upf_app] [debug] Updated UPF profile
-2026-09-21T22:19:16.633629216Z [2026-09-22 00:19:16.632] [upf_app] [debug] - NF instance info
-2026-09-21T22:19:16.633632377Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Instance ID: 92c3fce2-b011-474a-af87-0a74174bcb40
-2026-09-21T22:19:16.633635315Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Instance name: OAI-UPF
-2026-09-21T22:19:16.633638278Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Instance type: UPF
-2026-09-21T22:19:16.633641968Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Instance fqdn: 
-2026-09-21T22:19:16.633644766Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Status: REGISTERED
-2026-09-21T22:19:16.633647644Z [2026-09-22 00:19:16.632] [upf_app] [debug]     HeartBeat timer: 10
-2026-09-21T22:19:16.633650633Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Priority: 1
-2026-09-21T22:19:16.633653563Z [2026-09-22 00:19:16.632] [upf_app] [debug]     Capacity: 100
-2026-09-21T22:19:16.633656726Z [2026-09-22 00:19:16.632] [upf_app] [debug]     SNSSAI:
-2026-09-21T22:19:16.633660058Z [2026-09-22 00:19:16.632] [upf_app] [debug]         SST, SD: 1, FFFFFF
-2026-09-21T22:19:16.633663055Z [2026-09-22 00:19:16.632] [upf_app] [debug]         SST, SD: 1, 000001
-2026-09-21T22:19:16.633666669Z [2026-09-22 00:19:16.632] [upf_app] [debug]         SST, SD: 222, 00007b
-2026-09-21T22:19:16.633670224Z [2026-09-22 00:19:16.632] [upf_app] [debug]     IPv4 Addr:
-2026-09-21T22:19:16.633673413Z [2026-09-22 00:19:16.632] [upf_app] [debug]         192.168.73.139
-2026-09-21T22:19:16.633681816Z [2026-09-22 00:19:16.632] [upf_app] [debug]         192.168.73.139
-2026-09-21T22:19:16.633684861Z [2026-09-22 00:19:16.632] [upf_app] [debug]     UPF Info:
-2026-09-21T22:19:16.633687507Z [2026-09-22 00:19:16.632] [upf_app] [debug]         SNSSAI (SST 1, SD ffffff)
-2026-09-21T22:19:16.633689968Z [2026-09-22 00:19:16.632] [upf_app] [debug]             DNN oai
-2026-09-21T22:19:16.633692645Z [2026-09-22 00:19:16.632] [upf_app] [debug]         SNSSAI (SST 1, SD 000001)
-2026-09-21T22:19:16.633695646Z [2026-09-22 00:19:16.632] [upf_app] [debug]             DNN oai.ipv4
-2026-09-21T22:19:16.633698172Z [2026-09-22 00:19:16.632] [upf_app] [debug]         SNSSAI (SST 222, SD 00007b)
-2026-09-21T22:19:16.633700555Z [2026-09-22 00:19:16.632] [upf_app] [debug]             DNN oai
-2026-09-21T22:19:16.633703726Z [2026-09-22 00:19:16.632] [upf_app] [debug]             DNN default
-2026-09-21T22:19:16.633706820Z [2026-09-22 00:19:16.632] [upf_app] [start] Started
-2026-09-21T22:19:17.313548893Z [2026-09-22 00:19:17.313] [upf_n4 ] [info] handle_receive(63 bytes)
-2026-09-21T22:19:17.313567608Z [2026-09-22 00:19:17.313] [upf_n4 ] [info] Handle SX ASSOCIATION SETUP REQUEST
-2026-09-21T22:19:19.314495642Z [2026-09-22 00:19:19.314] [upf_n4 ] [info] handle_receive(63 bytes)
-2026-09-21T22:19:19.314510474Z [2026-09-22 00:19:19.314] [upf_n4 ] [info] Handle SX ASSOCIATION SETUP REQUEST
-2026-09-21T22:19:26.633064769Z [2026-09-22 00:19:26.632] [upf_app] [info] TIME-OUT event timer id 1
-2026-09-21T22:19:26.633078419Z [2026-09-22 00:19:26.632] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:19:26.633081046Z [2026-09-22 00:19:26.632] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:19:26.633083325Z [2026-09-22 00:19:26.632] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:19:26.633086224Z [2026-09-22 00:19:26.632] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:19:26.633088548Z [2026-09-22 00:19:26.633] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:19:26.684888538Z [2026-09-22 00:19:26.684] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:19:26.684925011Z [2026-09-22 00:19:26.684] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:19:27.316557073Z [2026-09-22 00:19:27.316] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:19:27.316580982Z [2026-09-22 00:19:27.316] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:19:36.685164013Z [2026-09-22 00:19:36.684] [upf_app] [info] TIME-OUT event timer id 4
-2026-09-21T22:19:36.685238769Z [2026-09-22 00:19:36.684] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:19:36.685261307Z [2026-09-22 00:19:36.684] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:19:36.685278751Z [2026-09-22 00:19:36.684] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:19:36.685334715Z [2026-09-22 00:19:36.684] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:19:36.685354375Z [2026-09-22 00:19:36.684] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:19:36.690694134Z [2026-09-22 00:19:36.690] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:19:36.690731195Z [2026-09-22 00:19:36.690] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:19:37.317678245Z [2026-09-22 00:19:37.317] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:19:37.317741017Z [2026-09-22 00:19:37.317] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:19:46.690384170Z [2026-09-22 00:19:46.690] [upf_app] [info] TIME-OUT event timer id 6
-2026-09-21T22:19:46.690407923Z [2026-09-22 00:19:46.690] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:19:46.690410731Z [2026-09-22 00:19:46.690] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:19:46.690412913Z [2026-09-22 00:19:46.690] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:19:46.690415555Z [2026-09-22 00:19:46.690] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:19:46.690418065Z [2026-09-22 00:19:46.690] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:19:46.691501487Z [2026-09-22 00:19:46.691] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:19:46.691509072Z [2026-09-22 00:19:46.691] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:19:47.318636676Z [2026-09-22 00:19:47.318] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:19:47.318711102Z [2026-09-22 00:19:47.318] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:19:56.691693868Z [2026-09-22 00:19:56.691] [upf_app] [info] TIME-OUT event timer id 8
-2026-09-21T22:19:56.691724559Z [2026-09-22 00:19:56.691] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:19:56.691731459Z [2026-09-22 00:19:56.691] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:19:56.691737583Z [2026-09-22 00:19:56.691] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:19:56.691744990Z [2026-09-22 00:19:56.691] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:19:56.691751282Z [2026-09-22 00:19:56.691] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:19:56.693188693Z [2026-09-22 00:19:56.693] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:19:56.693207977Z [2026-09-22 00:19:56.693] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:19:57.320006499Z [2026-09-22 00:19:57.319] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:19:57.320094751Z [2026-09-22 00:19:57.319] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:20:06.693743766Z [2026-09-22 00:20:06.693] [upf_app] [info] TIME-OUT event timer id 10
-2026-09-21T22:20:06.693811586Z [2026-09-22 00:20:06.693] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:20:06.693830143Z [2026-09-22 00:20:06.693] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:20:06.693846481Z [2026-09-22 00:20:06.693] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:20:06.693861898Z [2026-09-22 00:20:06.693] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:20:06.693871060Z [2026-09-22 00:20:06.693] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:20:06.698038366Z [2026-09-22 00:20:06.697] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:20:06.698086362Z [2026-09-22 00:20:06.697] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:20:07.321013315Z [2026-09-22 00:20:07.320] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:20:07.321073539Z [2026-09-22 00:20:07.320] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:20:12.253945803Z [2026-09-22 00:20:12.253] [upf_n4 ] [info] handle_receive(252 bytes)
-2026-09-21T22:20:12.254216434Z [2026-09-22 00:20:12.253] [upf_app] [info] 
-2026-09-21T22:20:12.254248701Z [2026-09-22 00:20:12.254] [upf_app] [info] ╔═════════════════════════════════════════════════════════════════════════════╗
-2026-09-21T22:20:12.254271987Z [2026-09-22 00:20:12.254] [upf_app] [info] │             Received N4_SESSION_ESTABLISHMENT_REQUEST seid 0x1              │
-2026-09-21T22:20:12.254284647Z [2026-09-22 00:20:12.254] [upf_app] [info] ╚═════════════════════════════════════════════════════════════════════════════╝
-2026-09-21T22:20:12.254297544Z [2026-09-22 00:20:12.254] [upf_n4 ] [info] pfcp_session::add(far) seid 0x1 FAR=1
-2026-09-21T22:20:12.254307569Z [2026-09-22 00:20:12.254] [upf_n4 ] [info]   └─ Adding new FAR 1 to session 0x1
-2026-09-21T22:20:12.254317640Z [2026-09-22 00:20:12.254] [upf_n4 ] [debug]      • Apply Action: FORW 
-2026-09-21T22:20:12.254330687Z [2026-09-22 00:20:12.254] [upf_n4 ] [debug]      • Destination Interface: CORE
-2026-09-21T22:20:12.254345033Z [2026-09-22 00:20:12.254] [upf_n4 ] [debug]      • Total FARs in session: 1
-2026-09-21T22:20:12.254358277Z [2026-09-22 00:20:12.254] [upf_n4 ] [info] pfcp_session::set(fteid) seid 0x1 
-2026-09-21T22:20:12.254377571Z [2026-09-22 00:20:12.254] [upf_n4 ] [info] pfcp_session::get(fteid) seid 0x1 
-2026-09-21T22:20:12.254426003Z [2026-09-22 00:20:12.254] [upf_n4 ] [info] pfcp_session::add(pdr) seid 0x1 PDR=1
-2026-09-21T22:20:12.254478323Z [2026-09-22 00:20:12.254] [upf_n4 ] [info]   └─ Adding new PDR 1 to session 0x1
-2026-09-21T22:20:12.254494005Z [2026-09-22 00:20:12.254] [upf_n4 ] [debug]      • Source Interface: ACCESS (Uplink)
-2026-09-21T22:20:12.254505632Z [2026-09-22 00:20:12.254] [upf_n4 ] [debug]      • Local F-TEID: 0x1
-2026-09-21T22:20:12.254515824Z [2026-09-22 00:20:12.254] [upf_n4 ] [debug]      • UE IP Address: 12.2.1.130
-2026-09-21T22:20:12.254527152Z [2026-09-22 00:20:12.254] [upf_n4 ] [debug]      • Precedence: 0
-2026-09-21T22:20:12.254538972Z [2026-09-22 00:20:12.254] [upf_n4 ] [debug]      • Linked FAR: 1
-2026-09-21T22:20:12.254550139Z [2026-09-22 00:20:12.254] [upf_n4 ] [debug]      • Linked QER: 1
-2026-09-21T22:20:12.254561859Z [2026-09-22 00:20:12.254] [upf_n4 ] [debug]      • Total PDRs in session: 1
-2026-09-21T22:20:12.258550150Z 
-2026-09-21T22:20:12.258685411Z   ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-2026-09-21T22:20:12.258722944Z   │                                                                                PDU SESSION RULES - Session 0x1                                                                                │
-2026-09-21T22:20:12.258742140Z   ├────────┬───────┬───────┬───────┬───────┬───────┬────────────┬───────────┬─────────────────┬────────────┬────────────┬───────┬────────────────────────────────┬────────────────────────────────┤
-2026-09-21T22:20:12.258771677Z   │  PDR   │  FAR  │  QER  │  URR  │  BAR  │  MAR  │ Precedence │ Direction │    UE IPv4      │   Action   │  Dest If   │  QFI  │       Create Outer Hdr         │       Remove Outer Hdr         │
-2026-09-21T22:20:12.258794356Z   ├────────┼───────┼───────┼───────┼───────┼───────┼────────────┼───────────┼─────────────────┼────────────┼────────────┼───────┼────────────────────────────────┼────────────────────────────────┤
-2026-09-21T22:20:12.258822454Z   │ 1      │ 1     │ -     │ -     │ -     │ -     │ 0          │ UL        │ 12.2.1.130      │ FORW       │ CORE       │ -     │ -                              │ GTP TEID:0x1                   │
-2026-09-21T22:20:12.258892483Z   └────────┴───────┴───────┴───────┴───────┴───────┴────────────┴───────────┴─────────────────┴────────────┴────────────┴───────┴────────────────────────────────┴────────────────────────────────┘
-2026-09-21T22:20:12.258924830Z 
-2026-09-21T22:20:12.258939178Z [2026-09-22 00:20:12.258] [upf_n4 ] [info] handle_receive(191 bytes)
-2026-09-21T22:20:12.258963027Z [2026-09-22 00:20:12.258] [upf_app] [info] 
-2026-09-21T22:20:12.258979248Z [2026-09-22 00:20:12.258] [upf_app] [info] ╔═════════════════════════════════════════════════════════════════════════════╗
-2026-09-21T22:20:12.258998785Z [2026-09-22 00:20:12.258] [upf_app] [info] │             Received N4_SESSION_MODIFICATION_REQUEST seid 0x1               │
-2026-09-21T22:20:12.259013653Z [2026-09-22 00:20:12.258] [upf_app] [info] ╚═════════════════════════════════════════════════════════════════════════════╝
-2026-09-21T22:20:12.259028414Z [2026-09-22 00:20:12.258] [upf_n4 ] [info] pfcp_session::add(far) seid 0x1 FAR=2
-2026-09-21T22:20:12.259040132Z [2026-09-22 00:20:12.258] [upf_n4 ] [info]   └─ Adding new FAR 2 to session 0x1
-2026-09-21T22:20:12.259050772Z [2026-09-22 00:20:12.258] [upf_n4 ] [debug]      • Apply Action: FORW 
-2026-09-21T22:20:12.259062024Z [2026-09-22 00:20:12.258] [upf_n4 ] [debug]      • Destination Interface: ACCESS
-2026-09-21T22:20:12.259073566Z [2026-09-22 00:20:12.258] [upf_n4 ] [debug]      • Outer Header TEID: 0x80000001
-2026-09-21T22:20:12.259086703Z [2026-09-22 00:20:12.258] [upf_n4 ] [debug]      • Remote IP: 192.168.71.139
-2026-09-21T22:20:12.259099211Z [2026-09-22 00:20:12.258] [upf_n4 ] [debug]      • Total FARs in session: 2
-2026-09-21T22:20:12.259111663Z [2026-09-22 00:20:12.258] [upf_n4 ] [info] pfcp_session::add(pdr) seid 0x1 PDR=2
-2026-09-21T22:20:12.259125596Z [2026-09-22 00:20:12.258] [upf_n4 ] [info]   └─ Adding new PDR 2 to session 0x1
-2026-09-21T22:20:12.259138099Z [2026-09-22 00:20:12.258] [upf_n4 ] [debug]      • Source Interface: CORE (Downlink)
-2026-09-21T22:20:12.259149941Z [2026-09-22 00:20:12.258] [upf_n4 ] [debug]      • UE IP Address: 12.2.1.130
-2026-09-21T22:20:12.259162282Z [2026-09-22 00:20:12.258] [upf_n4 ] [debug]      • Precedence: 0
-2026-09-21T22:20:12.259175206Z [2026-09-22 00:20:12.258] [upf_n4 ] [debug]      • Linked FAR: 2
-2026-09-21T22:20:12.259189206Z [2026-09-22 00:20:12.258] [upf_n4 ] [debug]      • Linked QER: 2
-2026-09-21T22:20:12.259203122Z [2026-09-22 00:20:12.258] [upf_n4 ] [debug]      • Total PDRs in session: 2
-2026-09-21T22:20:12.380822880Z 
-2026-09-21T22:20:12.380878491Z   ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-2026-09-21T22:20:12.380900421Z   │                                                                                PDU SESSION RULES - Session 0x1                                                                                │
-2026-09-21T22:20:12.380912963Z   ├────────┬───────┬───────┬───────┬───────┬───────┬────────────┬───────────┬─────────────────┬────────────┬────────────┬───────┬────────────────────────────────┬────────────────────────────────┤
-2026-09-21T22:20:12.380930185Z   │  PDR   │  FAR  │  QER  │  URR  │  BAR  │  MAR  │ Precedence │ Direction │    UE IPv4      │   Action   │  Dest If   │  QFI  │       Create Outer Hdr         │       Remove Outer Hdr         │
-2026-09-21T22:20:12.380945159Z   ├────────┼───────┼───────┼───────┼───────┼───────┼────────────┼───────────┼─────────────────┼────────────┼────────────┼───────┼────────────────────────────────┼────────────────────────────────┤
-2026-09-21T22:20:12.380961046Z   │ 1      │ 1     │ -     │ -     │ -     │ -     │ 0          │ UL        │ 12.2.1.130      │ FORW       │ CORE       │ -     │ -                              │ GTP TEID:0x1                   │
-2026-09-21T22:20:12.380972751Z   │ 2      │ 2     │ -     │ -     │ -     │ -     │ 0          │ DL        │ 12.2.1.130      │ FORW       │ ACCESS     │ -     │ GTP → 192.168.71.139:0x80000001 │ -                              │
-2026-09-21T22:20:12.380984494Z   └────────┴───────┴───────┴───────┴───────┴───────┴────────────┴───────────┴─────────────────┴────────────┴────────────┴───────┴────────────────────────────────┴────────────────────────────────┘
-2026-09-21T22:20:12.381000399Z 
-2026-09-21T22:20:12.381009589Z [2026-09-22 00:20:12.380] [pfcp_switch] [info] PDR/PDI IP is 8201020c 
-2026-09-21T22:20:12.381047375Z [2026-09-22 00:20:12.380] [pfcp_switch] [info] Upstream IP is 8201020c 
-2026-09-21T22:20:13.382481034Z [2026-09-22 00:20:13.382] [pfcp_switch] [info] PDR/PDI IP is 8201020c 
-2026-09-21T22:20:13.382539902Z [2026-09-22 00:20:13.382] [pfcp_switch] [info] Upstream IP is 8201020c 
-2026-09-21T22:20:14.383531023Z [2026-09-22 00:20:14.383] [pfcp_switch] [info] PDR/PDI IP is 8201020c 
-2026-09-21T22:20:14.383698194Z [2026-09-22 00:20:14.383] [pfcp_switch] [info] Upstream IP is 8201020c 
-2026-09-21T22:20:16.697961039Z [2026-09-22 00:20:16.697] [upf_app] [info] TIME-OUT event timer id 12
-2026-09-21T22:20:16.697986789Z [2026-09-22 00:20:16.697] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:20:16.697992114Z [2026-09-22 00:20:16.697] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:20:16.697995211Z [2026-09-22 00:20:16.697] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:20:16.697998936Z [2026-09-22 00:20:16.697] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:20:16.698002289Z [2026-09-22 00:20:16.697] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:20:16.699380232Z [2026-09-22 00:20:16.699] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:20:16.699394109Z [2026-09-22 00:20:16.699] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:20:17.321765685Z [2026-09-22 00:20:17.321] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:20:17.321788625Z [2026-09-22 00:20:17.321] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:20:26.699948427Z [2026-09-22 00:20:26.699] [upf_app] [info] TIME-OUT event timer id 16
-2026-09-21T22:20:26.700009200Z [2026-09-22 00:20:26.699] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:20:26.700035069Z [2026-09-22 00:20:26.699] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:20:26.700053713Z [2026-09-22 00:20:26.699] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:20:26.700070357Z [2026-09-22 00:20:26.699] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:20:26.700084180Z [2026-09-22 00:20:26.699] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:20:26.703919710Z [2026-09-22 00:20:26.703] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:20:26.703977072Z [2026-09-22 00:20:26.703] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:20:27.322257532Z [2026-09-22 00:20:27.322] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:20:27.322275016Z [2026-09-22 00:20:27.322] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:20:28.434666356Z [2026-09-22 00:20:28.434] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:20:28.434733335Z [2026-09-22 00:20:28.434] [upf_app] [info] 
-2026-09-21T22:20:28.434775595Z [2026-09-22 00:20:28.434] [upf_app] [info] ╔═════════════════════════════════════════════════════════════════════════════╗
-2026-09-21T22:20:28.434814420Z [2026-09-22 00:20:28.434] [upf_app] [info] │             Received N4_SESSION_DELETION_REQUEST seid 0x1               │
-2026-09-21T22:20:28.434828090Z [2026-09-22 00:20:28.434] [upf_app] [info] ╚═════════════════════════════════════════════════════════════════════════════╝
-2026-09-21T22:20:36.704153065Z [2026-09-22 00:20:36.703] [upf_app] [info] TIME-OUT event timer id 18
-2026-09-21T22:20:36.704214543Z [2026-09-22 00:20:36.703] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:20:36.704233538Z [2026-09-22 00:20:36.703] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:20:36.704249680Z [2026-09-22 00:20:36.703] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:20:36.704268355Z [2026-09-22 00:20:36.703] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:20:36.704284591Z [2026-09-22 00:20:36.703] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:20:36.708222457Z [2026-09-22 00:20:36.707] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:20:36.708268109Z [2026-09-22 00:20:36.707] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:20:37.326105429Z [2026-09-22 00:20:37.324] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:20:37.326159803Z [2026-09-22 00:20:37.324] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:20:39.311980852Z [2026-09-22 00:20:39.310] [upf_n4 ] [info] handle_receive(252 bytes)
-2026-09-21T22:20:39.312021061Z [2026-09-22 00:20:39.310] [upf_app] [info] 
-2026-09-21T22:20:39.312037381Z [2026-09-22 00:20:39.310] [upf_app] [info] ╔═════════════════════════════════════════════════════════════════════════════╗
-2026-09-21T22:20:39.312052216Z [2026-09-22 00:20:39.310] [upf_app] [info] │             Received N4_SESSION_ESTABLISHMENT_REQUEST seid 0x2              │
-2026-09-21T22:20:39.312063567Z [2026-09-22 00:20:39.310] [upf_app] [info] ╚═════════════════════════════════════════════════════════════════════════════╝
-2026-09-21T22:20:39.312080007Z [2026-09-22 00:20:39.310] [upf_n4 ] [info] pfcp_session::add(far) seid 0x2 FAR=1
-2026-09-21T22:20:39.312094652Z [2026-09-22 00:20:39.310] [upf_n4 ] [info]   └─ Adding new FAR 1 to session 0x2
-2026-09-21T22:20:39.312107194Z [2026-09-22 00:20:39.311] [upf_n4 ] [debug]      • Apply Action: FORW 
-2026-09-21T22:20:39.312182027Z [2026-09-22 00:20:39.311] [upf_n4 ] [debug]      • Destination Interface: CORE
-2026-09-21T22:20:39.312199975Z [2026-09-22 00:20:39.311] [upf_n4 ] [debug]      • Total FARs in session: 1
-2026-09-21T22:20:39.312214946Z [2026-09-22 00:20:39.311] [upf_n4 ] [info] pfcp_session::set(fteid) seid 0x2 
-2026-09-21T22:20:39.312229453Z [2026-09-22 00:20:39.311] [upf_n4 ] [info] pfcp_session::get(fteid) seid 0x2 
-2026-09-21T22:20:39.312244233Z [2026-09-22 00:20:39.311] [upf_n4 ] [info] pfcp_session::add(pdr) seid 0x2 PDR=1
-2026-09-21T22:20:39.312258964Z [2026-09-22 00:20:39.311] [upf_n4 ] [info]   └─ Adding new PDR 1 to session 0x2
-2026-09-21T22:20:39.312273703Z [2026-09-22 00:20:39.311] [upf_n4 ] [debug]      • Source Interface: ACCESS (Uplink)
-2026-09-21T22:20:39.312316520Z [2026-09-22 00:20:39.311] [upf_n4 ] [debug]      • Local F-TEID: 0x2
-2026-09-21T22:20:39.312335204Z [2026-09-22 00:20:39.311] [upf_n4 ] [debug]      • UE IP Address: 12.2.1.130
-2026-09-21T22:20:39.312351181Z [2026-09-22 00:20:39.311] [upf_n4 ] [debug]      • Precedence: 0
-2026-09-21T22:20:39.312366346Z [2026-09-22 00:20:39.311] [upf_n4 ] [debug]      • Linked FAR: 1
-2026-09-21T22:20:39.312380758Z [2026-09-22 00:20:39.311] [upf_n4 ] [debug]      • Linked QER: 1
-2026-09-21T22:20:39.312394680Z [2026-09-22 00:20:39.311] [upf_n4 ] [debug]      • Total PDRs in session: 1
-2026-09-21T22:20:39.315229803Z 
-2026-09-21T22:20:39.315259720Z   ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-2026-09-21T22:20:39.315287804Z   │                                                                                PDU SESSION RULES - Session 0x2                                                                                │
-2026-09-21T22:20:39.315304754Z   ├────────┬───────┬───────┬───────┬───────┬───────┬────────────┬───────────┬─────────────────┬────────────┬────────────┬───────┬────────────────────────────────┬────────────────────────────────┤
-2026-09-21T22:20:39.315329061Z   │  PDR   │  FAR  │  QER  │  URR  │  BAR  │  MAR  │ Precedence │ Direction │    UE IPv4      │   Action   │  Dest If   │  QFI  │       Create Outer Hdr         │       Remove Outer Hdr         │
-2026-09-21T22:20:39.315347604Z   ├────────┼───────┼───────┼───────┼───────┼───────┼────────────┼───────────┼─────────────────┼────────────┼────────────┼───────┼────────────────────────────────┼────────────────────────────────┤
-2026-09-21T22:20:39.315467581Z   │ 1      │ 1     │ -     │ -     │ -     │ -     │ 0          │ UL        │ 12.2.1.130      │ FORW       │ CORE       │ -     │ -                              │ GTP TEID:0x2                   │
-2026-09-21T22:20:39.315486640Z   └────────┴───────┴───────┴───────┴───────┴───────┴────────────┴───────────┴─────────────────┴────────────┴────────────┴───────┴────────────────────────────────┴────────────────────────────────┘
-2026-09-21T22:20:39.315512149Z 
-2026-09-21T22:20:39.315523005Z [2026-09-22 00:20:39.315] [upf_n4 ] [info] handle_receive(191 bytes)
-2026-09-21T22:20:39.315555281Z [2026-09-22 00:20:39.315] [upf_app] [info] 
-2026-09-21T22:20:39.315707809Z [2026-09-22 00:20:39.315] [upf_app] [info] ╔═════════════════════════════════════════════════════════════════════════════╗
-2026-09-21T22:20:39.315747038Z [2026-09-22 00:20:39.315] [upf_app] [info] │             Received N4_SESSION_MODIFICATION_REQUEST seid 0x2               │
-2026-09-21T22:20:39.315764347Z [2026-09-22 00:20:39.315] [upf_app] [info] ╚═════════════════════════════════════════════════════════════════════════════╝
-2026-09-21T22:20:39.315782374Z [2026-09-22 00:20:39.315] [upf_n4 ] [info] pfcp_session::add(far) seid 0x2 FAR=2
-2026-09-21T22:20:39.315794602Z [2026-09-22 00:20:39.315] [upf_n4 ] [info]   └─ Adding new FAR 2 to session 0x2
-2026-09-21T22:20:39.315810240Z [2026-09-22 00:20:39.315] [upf_n4 ] [debug]      • Apply Action: FORW 
-2026-09-21T22:20:39.315823392Z [2026-09-22 00:20:39.315] [upf_n4 ] [debug]      • Destination Interface: ACCESS
-2026-09-21T22:20:39.315840317Z [2026-09-22 00:20:39.315] [upf_n4 ] [debug]      • Outer Header TEID: 0x80000002
-2026-09-21T22:20:39.315851816Z [2026-09-22 00:20:39.315] [upf_n4 ] [debug]      • Remote IP: 192.168.71.139
-2026-09-21T22:20:39.315863089Z [2026-09-22 00:20:39.315] [upf_n4 ] [debug]      • Total FARs in session: 2
-2026-09-21T22:20:39.315884098Z [2026-09-22 00:20:39.315] [upf_n4 ] [info] pfcp_session::add(pdr) seid 0x2 PDR=2
-2026-09-21T22:20:39.315899355Z [2026-09-22 00:20:39.315] [upf_n4 ] [info]   └─ Adding new PDR 2 to session 0x2
-2026-09-21T22:20:39.315912444Z [2026-09-22 00:20:39.315] [upf_n4 ] [debug]      • Source Interface: CORE (Downlink)
-2026-09-21T22:20:39.315951647Z [2026-09-22 00:20:39.315] [upf_n4 ] [debug]      • UE IP Address: 12.2.1.130
-2026-09-21T22:20:39.315967932Z [2026-09-22 00:20:39.315] [upf_n4 ] [debug]      • Precedence: 0
-2026-09-21T22:20:39.315981861Z [2026-09-22 00:20:39.315] [upf_n4 ] [debug]      • Linked FAR: 2
-2026-09-21T22:20:39.315996948Z [2026-09-22 00:20:39.315] [upf_n4 ] [debug]      • Linked QER: 2
-2026-09-21T22:20:39.316010021Z [2026-09-22 00:20:39.315] [upf_n4 ] [debug]      • Total PDRs in session: 2
-2026-09-21T22:20:39.384199187Z 
-2026-09-21T22:20:39.384217321Z   ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-2026-09-21T22:20:39.384230841Z   │                                                                                PDU SESSION RULES - Session 0x2                                                                                │
-2026-09-21T22:20:39.384238354Z   ├────────┬───────┬───────┬───────┬───────┬───────┬────────────┬───────────┬─────────────────┬────────────┬────────────┬───────┬────────────────────────────────┬────────────────────────────────┤
-2026-09-21T22:20:39.384250980Z   │  PDR   │  FAR  │  QER  │  URR  │  BAR  │  MAR  │ Precedence │ Direction │    UE IPv4      │   Action   │  Dest If   │  QFI  │       Create Outer Hdr         │       Remove Outer Hdr         │
-2026-09-21T22:20:39.384261930Z   ├────────┼───────┼───────┼───────┼───────┼───────┼────────────┼───────────┼─────────────────┼────────────┼────────────┼───────┼────────────────────────────────┼────────────────────────────────┤
-2026-09-21T22:20:39.384273478Z   │ 1      │ 1     │ -     │ -     │ -     │ -     │ 0          │ UL        │ 12.2.1.130      │ FORW       │ CORE       │ -     │ -                              │ GTP TEID:0x2                   │
-2026-09-21T22:20:39.384282744Z   │ 2      │ 2     │ -     │ -     │ -     │ -     │ 0          │ DL        │ 12.2.1.130      │ FORW       │ ACCESS     │ -     │ GTP → 192.168.71.139:0x80000002 │ -                              │
-2026-09-21T22:20:39.384288785Z   └────────┴───────┴───────┴───────┴───────┴───────┴────────────┴───────────┴─────────────────┴────────────┴────────────┴───────┴────────────────────────────────┴────────────────────────────────┘
-2026-09-21T22:20:39.384307244Z 
-2026-09-21T22:20:39.384312139Z [2026-09-22 00:20:39.384] [pfcp_switch] [info] PDR/PDI IP is 8201020c 
-2026-09-21T22:20:39.384317000Z [2026-09-22 00:20:39.384] [pfcp_switch] [info] Upstream IP is 8201020c 
-2026-09-21T22:20:40.387277150Z [2026-09-22 00:20:40.387] [pfcp_switch] [info] PDR/PDI IP is 8201020c 
-2026-09-21T22:20:40.387325990Z [2026-09-22 00:20:40.387] [pfcp_switch] [info] Upstream IP is 8201020c 
-2026-09-21T22:20:41.388297680Z [2026-09-22 00:20:41.388] [pfcp_switch] [info] PDR/PDI IP is 8201020c 
-2026-09-21T22:20:41.388356507Z [2026-09-22 00:20:41.388] [pfcp_switch] [info] Upstream IP is 8201020c 
-2026-09-21T22:20:46.708385779Z [2026-09-22 00:20:46.708] [upf_app] [info] TIME-OUT event timer id 21
-2026-09-21T22:20:46.708460666Z [2026-09-22 00:20:46.708] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:20:46.708475193Z [2026-09-22 00:20:46.708] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:20:46.708485647Z [2026-09-22 00:20:46.708] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:20:46.708498625Z [2026-09-22 00:20:46.708] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:20:46.708509454Z [2026-09-22 00:20:46.708] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:20:46.713045410Z [2026-09-22 00:20:46.712] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:20:46.713100601Z [2026-09-22 00:20:46.712] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:20:47.327536889Z [2026-09-22 00:20:47.327] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:20:47.332371663Z [2026-09-22 00:20:47.327] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:20:56.713195277Z [2026-09-22 00:20:56.712] [upf_app] [info] TIME-OUT event timer id 25
-2026-09-21T22:20:56.713257806Z [2026-09-22 00:20:56.712] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:20:56.713278911Z [2026-09-22 00:20:56.712] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:20:56.713292143Z [2026-09-22 00:20:56.713] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:20:56.713305124Z [2026-09-22 00:20:56.713] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:20:56.713315921Z [2026-09-22 00:20:56.713] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:20:56.717042355Z [2026-09-22 00:20:56.716] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:20:56.717086612Z [2026-09-22 00:20:56.716] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:20:57.328348199Z [2026-09-22 00:20:57.328] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:20:57.328364587Z [2026-09-22 00:20:57.328] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:21:06.717041159Z [2026-09-22 00:21:06.716] [upf_app] [info] TIME-OUT event timer id 27
-2026-09-21T22:21:06.717068063Z [2026-09-22 00:21:06.716] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:21:06.717075818Z [2026-09-22 00:21:06.716] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:21:06.717079347Z [2026-09-22 00:21:06.716] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:21:06.717083141Z [2026-09-22 00:21:06.716] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:21:06.717086538Z [2026-09-22 00:21:06.716] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:21:06.718139268Z [2026-09-22 00:21:06.718] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:21:06.718155373Z [2026-09-22 00:21:06.718] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:21:07.329222226Z [2026-09-22 00:21:07.328] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:21:07.329285230Z [2026-09-22 00:21:07.329] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:21:16.718429496Z [2026-09-22 00:21:16.718] [upf_app] [info] TIME-OUT event timer id 29
-2026-09-21T22:21:16.718512260Z [2026-09-22 00:21:16.718] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:21:16.718539348Z [2026-09-22 00:21:16.718] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:21:16.718558921Z [2026-09-22 00:21:16.718] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:21:16.718749277Z [2026-09-22 00:21:16.718] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:21:16.718785926Z [2026-09-22 00:21:16.718] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:21:16.724481500Z [2026-09-22 00:21:16.724] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:21:16.724546629Z [2026-09-22 00:21:16.724] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:21:17.330695056Z [2026-09-22 00:21:17.330] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:21:17.330759119Z [2026-09-22 00:21:17.330] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:21:26.724690444Z [2026-09-22 00:21:26.724] [upf_app] [info] TIME-OUT event timer id 31
-2026-09-21T22:21:26.724765952Z [2026-09-22 00:21:26.724] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:21:26.724791011Z [2026-09-22 00:21:26.724] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:21:26.724850559Z [2026-09-22 00:21:26.724] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:21:26.724876636Z [2026-09-22 00:21:26.724] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:21:26.724893465Z [2026-09-22 00:21:26.724] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:21:26.728834165Z [2026-09-22 00:21:26.728] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:21:26.728889616Z [2026-09-22 00:21:26.728] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:21:27.331660426Z [2026-09-22 00:21:27.331] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:21:27.331728640Z [2026-09-22 00:21:27.331] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:21:36.729100521Z [2026-09-22 00:21:36.728] [upf_app] [info] TIME-OUT event timer id 33
-2026-09-21T22:21:36.729175550Z [2026-09-22 00:21:36.728] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:21:36.729201018Z [2026-09-22 00:21:36.728] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:21:36.729221155Z [2026-09-22 00:21:36.728] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:21:36.729249999Z [2026-09-22 00:21:36.728] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:21:36.729262728Z [2026-09-22 00:21:36.728] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:21:36.733281789Z [2026-09-22 00:21:36.732] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:21:36.733333358Z [2026-09-22 00:21:36.733] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:21:37.332919761Z [2026-09-22 00:21:37.332] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:21:37.332979873Z [2026-09-22 00:21:37.332] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:21:46.733461407Z [2026-09-22 00:21:46.733] [upf_app] [info] TIME-OUT event timer id 35
-2026-09-21T22:21:46.733529490Z [2026-09-22 00:21:46.733] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:21:46.733555624Z [2026-09-22 00:21:46.733] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:21:46.733633206Z [2026-09-22 00:21:46.733] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:21:46.733671553Z [2026-09-22 00:21:46.733] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:21:46.733695226Z [2026-09-22 00:21:46.733] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:21:46.737754206Z [2026-09-22 00:21:46.737] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:21:46.737815463Z [2026-09-22 00:21:46.737] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:21:47.333399990Z [2026-09-22 00:21:47.333] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:21:47.333415598Z [2026-09-22 00:21:47.333] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
-2026-09-21T22:21:56.737950544Z [2026-09-22 00:21:56.737] [upf_app] [info] TIME-OUT event timer id 37
-2026-09-21T22:21:56.738029608Z [2026-09-22 00:21:56.737] [upf_app] [debug] Send Heartbeat to NRF
-2026-09-21T22:21:56.738049652Z [2026-09-22 00:21:56.737] [upf_app] [info] Send NF Update to NRF
-2026-09-21T22:21:56.738061154Z [2026-09-22 00:21:56.737] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
-2026-09-21T22:21:56.738075166Z [2026-09-22 00:21:56.737] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/92c3fce2-b011-474a-af87-0a74174bcb40)
-2026-09-21T22:21:56.738087026Z [2026-09-22 00:21:56.737] [upf_app] [debug] Send a simple HTTP request
-2026-09-21T22:21:56.742202225Z [2026-09-22 00:21:56.741] [upf_app] [info] Got successful response from NRF
-2026-09-21T22:21:56.742261795Z [2026-09-22 00:21:56.741] [upf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:21:57.334396074Z [2026-09-22 00:21:57.334] [upf_n4 ] [info] handle_receive(16 bytes)
-2026-09-21T22:21:57.334456117Z [2026-09-22 00:21:57.334] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:07:25.619197885Z 
+2026-09-22T19:07:25.619220591Z                   [94m▓▓▓▓▓▓[97m╗  [94m▓▓▓▓▓[97m╗ [94m▓▓[97m╗  [92m▓▓  [97m▓▓  [97m▓▓[92m▓▓▓▓  [92m▓▓[97m▓▓[92m▓▓[97m▓▓[0m
+2026-09-22T19:07:25.619226368Z                  [94m▓▓[97m╔═══[94m▓▓[97m╗[94m▓▓[97m╔══[94m▓▓[97m╗[94m▓▓[97m║  [97m▓▓  [92m▓▓  [92m▓▓  [97m▓▓  [92m▓▓      [0m
+2026-09-22T19:07:25.619229901Z                  [94m▓▓[97m║   [94m▓▓[97m║[94m▓▓▓▓▓▓▓[97m║[94m▓▓[97m║  [92m▓▓  [97m▓▓  [97m▓▓[92m▓▓▓▓  [92m▓▓▓▓[97m▓▓  [0m
+2026-09-22T19:07:25.619233347Z                  [94m▓▓[97m║   [94m▓▓[97m║[94m▓▓[97m╔══[94m▓▓[97m║[94m▓▓[97m║  [97m▓▓  [92m▓▓  [92m▓▓      [97m▓▓      [0m
+2026-09-22T19:07:25.619236541Z                  [97m╚[94m▓▓▓▓▓▓[97m╔╝[94m▓▓[97m║  [94m▓▓[97m║[94m▓▓[97m║  [92m▓▓[97m▓▓[92m▓▓  [92m▓▓      [97m▓▓  [33mv3.0[0m
+2026-09-22T19:07:25.619240063Z                   [97m╚═════╝ ╚═╝  ╚═╝╚═╝[0m
+2026-09-22T19:07:25.619242604Z                  [2;37m───────────────────────────────────────────────────────────────[0m
+2026-09-22T19:07:25.619256000Z                  [96mOpenAirInterface[2;37m  ·  [92mUser Plane Function[2;37m  ·  [92m5G Core · N4[0m
+2026-09-22T19:07:25.619262858Z                  [37m3GPP TS 29.244  ·  PFCP V17.10.0  ·  Release 17[0m
+2026-09-22T19:07:25.619266457Z                  [33m© OpenAirInterface Software Alliance[0m
+2026-09-22T19:07:25.619270005Z 
+2026-09-22T19:07:25.619272993Z Trying to read .yaml configuration file: /openair-upf/etc/config.yaml
+2026-09-22T19:07:25.619276105Z LTTNG Tracing disabled at build-time!
+2026-09-22T19:07:25.619278448Z [2026-09-22 21:07:25.610] [upf_app] [start] ==============================================================================
+2026-09-22T19:07:25.619280790Z [2026-09-22 21:07:25.619] [upf_app] [start]                      5G User Plane Function (UPF)
+2026-09-22T19:07:25.619283078Z [2026-09-22 21:07:25.619] [upf_app] [start]                         OpenAirInterface
+2026-09-22T19:07:25.619285350Z [2026-09-22 21:07:25.619] [upf_app] [start]                       3GPP Rel-17 Compliant
+2026-09-22T19:07:25.619288664Z [2026-09-22 21:07:25.619] [upf_app] [start] ==============================================================================
+2026-09-22T19:07:25.619291049Z [2026-09-22 21:07:25.619] [upf_app] [start] 
+2026-09-22T19:07:25.619293358Z [2026-09-22 21:07:25.619] [upf_app] [start] ┌─────────────────────────────────────────────────────────────────────────────┐
+2026-09-22T19:07:25.619300897Z [2026-09-22 21:07:25.619] [upf_app] [start] │                           VERSION INFORMATION                               │
+2026-09-22T19:07:25.619303622Z [2026-09-22 21:07:25.619] [upf_app] [start] ├──────────────────────────────┬──────────────────────────────────────────────┤
+2026-09-22T19:07:25.619306600Z [2026-09-22 21:07:25.619] [upf_app] [start] │ Git Branch                   │ develop                                      │
+2026-09-22T19:07:25.619309071Z [2026-09-22 21:07:25.619] [upf_app] [start] │ Git Commit Hash              │ 4b9190a                                      │
+2026-09-22T19:07:25.619311419Z [2026-09-22 21:07:25.619] [upf_app] [start] │ Git Commit Date              │ Wed Sep 9 11:42:19 2026 +0200                │
+2026-09-22T19:07:25.619313735Z [2026-09-22 21:07:25.619] [upf_app] [start] │ Build Time                   │ 2026-09-21 21:26:41                          │
+2026-09-22T19:07:25.619316059Z [2026-09-22 21:07:25.619] [upf_app] [start] │ 3GPP Release                 │ Rel-17                                       │
+2026-09-22T19:07:25.619318430Z [2026-09-22 21:07:25.619] [upf_app] [start] ├──────────────────────────────┼──────────────────────────────────────────────┤
+2026-09-22T19:07:25.619321428Z [2026-09-22 21:07:25.619] [upf_app] [start] │ Kernel Version               │ 7.0.0-30-generic                             │
+2026-09-22T19:07:25.619324161Z [2026-09-22 21:07:25.619] [upf_app] [start] │ libbpf Version               │ 1.5                                          │
+2026-09-22T19:07:25.619326503Z [2026-09-22 21:07:25.619] [upf_app] [start] │ Compiler                     │ GCC 11.4.0                                   │
+2026-09-22T19:07:25.619328826Z [2026-09-22 21:07:25.619] [upf_app] [start] │ Architecture                 │ x86_64                                       │
+2026-09-22T19:07:25.619331147Z [2026-09-22 21:07:25.619] [upf_app] [start] │ System Uptime                │ 0d 8h 9m                                     │
+2026-09-22T19:07:25.619333465Z [2026-09-22 21:07:25.619] [upf_app] [start] │ UPF Process Uptime           │ 0d 0h 0m                                     │
+2026-09-22T19:07:25.619335811Z [2026-09-22 21:07:25.619] [upf_app] [start] ├──────────────────────────────┼──────────────────────────────────────────────┤
+2026-09-22T19:07:25.619338745Z [2026-09-22 21:07:25.619] [upf_app] [start] │ Bug Reports                  │ openaircn-user@lists.eurecom.fr              │
+2026-09-22T19:07:25.619341081Z [2026-09-22 21:07:25.619] [upf_app] [start] └──────────────────────────────┴──────────────────────────────────────────────┘
+2026-09-22T19:07:25.619346353Z [2026-09-22 21:07:25.619] [upf_app] [start] 
+2026-09-22T19:07:25.619348684Z [2026-09-22 21:07:25.619] [upf_app] [start] Options parsed
+2026-09-22T19:07:25.619861279Z [2026-09-22 21:07:25.619] [config ] [info] Reading NF configuration from /openair-upf/etc/config.yaml
+2026-09-22T19:07:25.638831073Z [2026-09-22 21:07:25.638] [config ] [debug] Unknown NF amf in configuration. Ignored
+2026-09-22T19:07:25.638852990Z [2026-09-22 21:07:25.638] [config ] [debug] Unknown NF udm in configuration. Ignored
+2026-09-22T19:07:25.638856686Z [2026-09-22 21:07:25.638] [config ] [debug] Unknown NF udr in configuration. Ignored
+2026-09-22T19:07:25.638859679Z [2026-09-22 21:07:25.638] [config ] [debug] Unknown NF ausf in configuration. Ignored
+2026-09-22T19:07:25.638862410Z [2026-09-22 21:07:25.638] [config ] [debug] Unknown NF sepp in configuration. Ignored
+2026-09-22T19:07:25.638877415Z [2026-09-22 21:07:25.638] [config ] [warning] SNAT (Source Network Address Translation) requested but not implemented within UPF - forcing to disabled. Check the Ext-DN for SNAT configuration
+2026-09-22T19:07:25.647667441Z [2026-09-22 21:07:25.647] [config ] [debug] Validating configuration of log_level
+2026-09-22T19:07:25.647697298Z [2026-09-22 21:07:25.647] [config ] [debug] Validating configuration of register_nf
+2026-09-22T19:07:25.647700836Z [2026-09-22 21:07:25.647] [config ] [debug] Validating configuration of http_version
+2026-09-22T19:07:25.647703641Z [2026-09-22 21:07:25.647] [config ] [debug] Validating configuration of http_request_timeout
+2026-09-22T19:07:25.647710154Z [2026-09-22 21:07:25.647] [config ] [debug] Validating configuration of NRF
+2026-09-22T19:07:25.649749563Z [2026-09-22 21:07:25.649] [config ] [debug] Validating configuration of SMF
+2026-09-22T19:07:25.649759617Z [2026-09-22 21:07:25.649] [config ] [debug] Validating configuration of UPF Configuration
+2026-09-22T19:07:25.654230342Z [2026-09-22 21:07:25.654] [config ] [debug] Validating configuration of DNN
+2026-09-22T19:07:25.655203842Z [2026-09-22 21:07:25.655] [config ] [debug] Validating configuration of DNN
+2026-09-22T19:07:25.655685206Z [2026-09-22 21:07:25.655] [config ] [debug] Validating configuration of DNN
+2026-09-22T19:07:25.656231551Z [2026-09-22 21:07:25.656] [config ] [debug] Validating configuration of DNN
+2026-09-22T19:07:25.656995838Z [2026-09-22 21:07:25.656] [config ] [warning] The IPv6 prefix / length  is not valid
+2026-09-22T19:07:25.657004336Z [2026-09-22 21:07:25.656] [config ] [debug] Validating configuration of database
+2026-09-22T19:07:25.657482532Z [2026-09-22 21:07:25.657] [common] [debug] Resolving a DNS (name localhost)
+2026-09-22T19:07:25.657492287Z [2026-09-22 21:07:25.657] [common] [debug] Resolving DNS Try #0
+2026-09-22T19:07:25.659960185Z [2026-09-22 21:07:25.659] [common] [debug] Resolved a DNS (name localhost, protocol http): Ip Addr ::1, port 80
+2026-09-22T19:07:25.659987185Z [2026-09-22 21:07:25.659] [common] [debug] Resolved a DNS (name localhost, protocol http): Ip Addr 127.0.0.1, port 80
+2026-09-22T19:07:25.659991946Z [2026-09-22 21:07:25.659] [config ] [info] Datapath configuration transferred: max_pdu_sessions=100, max_upf_interfaces=4, max_arp_entries=256
+2026-09-22T19:07:25.659995394Z [2026-09-22 21:07:25.659] [config ] [debug] PDN Network validation for UE Subnet:  12.2.1.128 
+2026-09-22T19:07:25.659998625Z [2026-09-22 21:07:25.659] [config ] [debug] IP Pool :  12.2.1.129 - 12.2.1.254
+2026-09-22T19:07:25.660001666Z [2026-09-22 21:07:25.659] [config ] [debug] PDN Network validation for UE Subnet:  12.1.1.64 
+2026-09-22T19:07:25.660004742Z [2026-09-22 21:07:25.659] [config ] [debug] IP Pool :  12.1.1.65 - 12.1.1.126
+2026-09-22T19:07:25.660007775Z [2026-09-22 21:07:25.659] [config ] [debug] PDN Network validation for UE Subnet:  12.1.1.0 
+2026-09-22T19:07:25.660010914Z [2026-09-22 21:07:25.659] [config ] [debug] IP Pool :  12.1.1.1 - 12.1.1.62
+2026-09-22T19:07:25.660013896Z [2026-09-22 21:07:25.659] [config ] [debug] PDN Network validation for UE Subnet:  14.1.1.2 
+2026-09-22T19:07:25.660016800Z [2026-09-22 21:07:25.659] [config ] [debug] IP Pool :  14.1.1.1 - 14.1.1.254
+2026-09-22T19:07:25.660340157Z [2026-09-22 21:07:25.660] [config ] [info] ==== OPENAIRINTERFACE upf vBranch: develop Abrev. Hash: 4b9190a Date: Wed Sep 9 11:42:19 2026 +0200 ====
+2026-09-22T19:07:25.660352715Z [2026-09-22 21:07:25.660] [config ] [info] Basic Configuration:
+2026-09-22T19:07:25.660356876Z [2026-09-22 21:07:25.660] [config ] [info]   - log_level..................................: debug
+2026-09-22T19:07:25.660360163Z [2026-09-22 21:07:25.660] [config ] [info]   - register_nf................................: Yes
+2026-09-22T19:07:25.660362936Z [2026-09-22 21:07:25.660] [config ] [info]   - http_version...............................: 2
+2026-09-22T19:07:25.660370956Z [2026-09-22 21:07:25.660] [config ] [info]   TLS:
+2026-09-22T19:07:25.660374140Z [2026-09-22 21:07:25.660] [config ] [info]     - Enable TLS.................................: No
+2026-09-22T19:07:25.660377530Z [2026-09-22 21:07:25.660] [config ] [info]   - HTTP Request Timeout.......................: 3000 (ms)
+2026-09-22T19:07:25.660380808Z [2026-09-22 21:07:25.660] [config ] [info] UPF Configuration:
+2026-09-22T19:07:25.660383869Z [2026-09-22 21:07:25.660] [config ] [info]   - host.......................................: upf.5gc.mnc10.mcc999.3gppnetwork.org
+2026-09-22T19:07:25.660387056Z [2026-09-22 21:07:25.660] [config ] [info]   - SBI
+2026-09-22T19:07:25.660390022Z [2026-09-22 21:07:25.660] [config ] [info]     + URL......................................: upf.5gc.mnc10.mcc999.3gppnetwork.org:8080
+2026-09-22T19:07:25.660393122Z [2026-09-22 21:07:25.660] [config ] [info]     + API Version..............................: v1
+2026-09-22T19:07:25.660396147Z [2026-09-22 21:07:25.660] [config ] [info]     + IPv4 Address ............................: 192.168.73.139
+2026-09-22T19:07:25.660399275Z [2026-09-22 21:07:25.660] [config ] [info]   - N3:
+2026-09-22T19:07:25.660402259Z [2026-09-22 21:07:25.660] [config ] [info]     + Port.....................................: 2152
+2026-09-22T19:07:25.660414303Z [2026-09-22 21:07:25.660] [config ] [info]     + IPv4 Address ............................: 192.168.73.139
+2026-09-22T19:07:25.660417926Z [2026-09-22 21:07:25.660] [config ] [info]     + MTU......................................: 1500
+2026-09-22T19:07:25.660421006Z [2026-09-22 21:07:25.660] [config ] [info]     + Interface name: .........................: eth0
+2026-09-22T19:07:25.660424079Z [2026-09-22 21:07:25.660] [config ] [info]     + Network Instance.........................: access.oai.org
+2026-09-22T19:07:25.660427212Z [2026-09-22 21:07:25.660] [config ] [info]   - N4:
+2026-09-22T19:07:25.660430119Z [2026-09-22 21:07:25.660] [config ] [info]     + Port.....................................: 8805
+2026-09-22T19:07:25.660434100Z [2026-09-22 21:07:25.660] [config ] [info]     + IPv4 Address ............................: 192.168.73.139
+2026-09-22T19:07:25.660437371Z [2026-09-22 21:07:25.660] [config ] [info]     + MTU......................................: 1500
+2026-09-22T19:07:25.660440510Z [2026-09-22 21:07:25.660] [config ] [info]     + Interface name: .........................: eth0
+2026-09-22T19:07:25.660443544Z [2026-09-22 21:07:25.660] [config ] [info]   - N6:
+2026-09-22T19:07:25.660446459Z [2026-09-22 21:07:25.660] [config ] [info]     + Port.....................................: 2152
+2026-09-22T19:07:25.660449556Z [2026-09-22 21:07:25.660] [config ] [info]     + IPv4 Address ............................: 192.168.73.139
+2026-09-22T19:07:25.660452872Z [2026-09-22 21:07:25.660] [config ] [info]     + MTU......................................: 1500
+2026-09-22T19:07:25.660455933Z [2026-09-22 21:07:25.660] [config ] [info]     + Interface name: .........................: eth0
+2026-09-22T19:07:25.660459013Z [2026-09-22 21:07:25.660] [config ] [info]     + Network Instance.........................: core.oai.org
+2026-09-22T19:07:25.660461997Z [2026-09-22 21:07:25.660] [config ] [info]   - Instance ID................................: 0
+2026-09-22T19:07:25.660464995Z [2026-09-22 21:07:25.660] [config ] [info]   - Remote N6 Gateway..........................: localhost
+2026-09-22T19:07:25.660467797Z [2026-09-22 21:07:25.660] [config ] [info]   - Support Features:
+2026-09-22T19:07:25.660470535Z [2026-09-22 21:07:25.660] [config ] [info]     + Enable BPF Datapath......................: No
+2026-09-22T19:07:25.660473531Z [2026-09-22 21:07:25.660] [config ] [info]     + Enable QoS Enforcement  (QER)............: No
+2026-09-22T19:07:25.660476623Z [2026-09-22 21:07:25.660] [config ] [info]     + Enable Usage Reporting  (URR)............: No
+2026-09-22T19:07:25.660479706Z [2026-09-22 21:07:25.660] [config ] [info]     + Enable Buffering Action (BAR)............: No
+2026-09-22T19:07:25.660482773Z [2026-09-22 21:07:25.660] [config ] [info]     + Enable Multi Access     (MAR)............: No
+2026-09-22T19:07:25.660485704Z [2026-09-22 21:07:25.660] [config ] [info]     + Enable SNAT..............................: Yes
+2026-09-22T19:07:25.660488516Z [2026-09-22 21:07:25.660] [config ] [info]     + Enable Framed Routing....................: No
+2026-09-22T19:07:25.660495114Z [2026-09-22 21:07:25.660] [config ] [info]     + Enable Ethernet PDU Sessions.............: No
+2026-09-22T19:07:25.660498326Z [2026-09-22 21:07:25.660] [config ] [info]   + upf_info:
+2026-09-22T19:07:25.660500890Z [2026-09-22 21:07:25.660] [config ] [info]     - snssai_upf_info_item:
+2026-09-22T19:07:25.660503660Z [2026-09-22 21:07:25.660] [config ] [info]       + snssai:
+2026-09-22T19:07:25.660506734Z [2026-09-22 21:07:25.660] [config ] [info]         - sst..................................: 1
+2026-09-22T19:07:25.660509304Z [2026-09-22 21:07:25.660] [config ] [info]         - sd...................................: FFFFFF
+2026-09-22T19:07:25.660512346Z [2026-09-22 21:07:25.660] [config ] [info]       + dnns:
+2026-09-22T19:07:25.660516810Z [2026-09-22 21:07:25.660] [config ] [info]         - dnn..................................: oai
+2026-09-22T19:07:25.660519840Z [2026-09-22 21:07:25.660] [config ] [info]     - snssai_upf_info_item:
+2026-09-22T19:07:25.660522570Z [2026-09-22 21:07:25.660] [config ] [info]       + snssai:
+2026-09-22T19:07:25.660525064Z [2026-09-22 21:07:25.660] [config ] [info]         - sst..................................: 1
+2026-09-22T19:07:25.660527931Z [2026-09-22 21:07:25.660] [config ] [info]         - sd...................................: 000001
+2026-09-22T19:07:25.660530535Z [2026-09-22 21:07:25.660] [config ] [info]       + dnns:
+2026-09-22T19:07:25.660533084Z [2026-09-22 21:07:25.660] [config ] [info]         - dnn..................................: oai.ipv4
+2026-09-22T19:07:25.660535917Z [2026-09-22 21:07:25.660] [config ] [info]     - snssai_upf_info_item:
+2026-09-22T19:07:25.660538831Z [2026-09-22 21:07:25.660] [config ] [info]       + snssai:
+2026-09-22T19:07:25.660541670Z [2026-09-22 21:07:25.660] [config ] [info]         - sst..................................: 222
+2026-09-22T19:07:25.660544630Z [2026-09-22 21:07:25.660] [config ] [info]         - sd...................................: 00007b
+2026-09-22T19:07:25.660547607Z [2026-09-22 21:07:25.660] [config ] [info]       + dnns:
+2026-09-22T19:07:25.660550444Z [2026-09-22 21:07:25.660] [config ] [info]         - dnn..................................: default
+2026-09-22T19:07:25.660553330Z [2026-09-22 21:07:25.660] [config ] [info]         - dnn..................................: oai
+2026-09-22T19:07:25.660556268Z [2026-09-22 21:07:25.660] [config ] [info] Peer NF Configuration:
+2026-09-22T19:07:25.660558997Z [2026-09-22 21:07:25.660] [config ] [info]   NRF:
+2026-09-22T19:07:25.660561757Z [2026-09-22 21:07:25.660] [config ] [info]     - host.....................................: nrf.5gc.mnc10.mcc999.3gppnetwork.org
+2026-09-22T19:07:25.660565526Z [2026-09-22 21:07:25.660] [config ] [info]     - SBI
+2026-09-22T19:07:25.660567883Z [2026-09-22 21:07:25.660] [config ] [info]       + URL....................................: nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080
+2026-09-22T19:07:25.660570852Z [2026-09-22 21:07:25.660] [config ] [info]       + API Version............................: v1
+2026-09-22T19:07:25.660577573Z [2026-09-22 21:07:25.660] [config ] [info]   SMF:
+2026-09-22T19:07:25.660581145Z [2026-09-22 21:07:25.660] [config ] [info]     - host.....................................: smf.5gc.mnc10.mcc999.3gppnetwork.org
+2026-09-22T19:07:25.660584280Z [2026-09-22 21:07:25.660] [config ] [info]     - SBI
+2026-09-22T19:07:25.660586673Z [2026-09-22 21:07:25.660] [config ] [info]       + URL....................................: smf.5gc.mnc10.mcc999.3gppnetwork.org:8080
+2026-09-22T19:07:25.660589585Z [2026-09-22 21:07:25.660] [config ] [info]       + API Version............................: v1
+2026-09-22T19:07:25.660592119Z [2026-09-22 21:07:25.660] [config ] [info] DNNs:
+2026-09-22T19:07:25.660594549Z [2026-09-22 21:07:25.660] [config ] [info] - DNN:
+2026-09-22T19:07:25.660597092Z [2026-09-22 21:07:25.660] [config ] [info]     + DNN......................................: oai
+2026-09-22T19:07:25.660599713Z [2026-09-22 21:07:25.660] [config ] [info]     + PDU session type.........................: IPV4
+2026-09-22T19:07:25.660602489Z [2026-09-22 21:07:25.660] [config ] [info]     + IPv4 subnet..............................: 12.2.1.128/25
+2026-09-22T19:07:25.660605303Z [2026-09-22 21:07:25.660] [config ] [info]     + DNS Settings:
+2026-09-22T19:07:25.660607782Z [2026-09-22 21:07:25.660] [config ] [info]       - primary_dns_ipv4.......................: 8.8.8.8
+2026-09-22T19:07:25.660610439Z [2026-09-22 21:07:25.660] [config ] [info]       - secondary_dns_ipv4.....................: 1.1.1.1
+2026-09-22T19:07:25.660613304Z [2026-09-22 21:07:25.660] [config ] [info] - DNN:
+2026-09-22T19:07:25.660615744Z [2026-09-22 21:07:25.660] [config ] [info]     + DNN......................................: oai.ipv4
+2026-09-22T19:07:25.660618213Z [2026-09-22 21:07:25.660] [config ] [info]     + PDU session type.........................: IPV4
+2026-09-22T19:07:25.660621212Z [2026-09-22 21:07:25.660] [config ] [info]     + IPv4 subnet..............................: 12.1.1.64/26
+2026-09-22T19:07:25.660624202Z [2026-09-22 21:07:25.660] [config ] [info]     + DNS Settings:
+2026-09-22T19:07:25.660628162Z [2026-09-22 21:07:25.660] [config ] [info]       - primary_dns_ipv4.......................: 8.8.8.8
+2026-09-22T19:07:25.660631834Z [2026-09-22 21:07:25.660] [config ] [info]       - secondary_dns_ipv4.....................: 1.1.1.1
+2026-09-22T19:07:25.660635040Z [2026-09-22 21:07:25.660] [config ] [info] - DNN:
+2026-09-22T19:07:25.660637812Z [2026-09-22 21:07:25.660] [config ] [info]     + DNN......................................: default
+2026-09-22T19:07:25.660640396Z [2026-09-22 21:07:25.660] [config ] [info]     + PDU session type.........................: IPV4
+2026-09-22T19:07:25.660642886Z [2026-09-22 21:07:25.660] [config ] [info]     + IPv4 subnet..............................: 12.1.1.0/26
+2026-09-22T19:07:25.660645775Z [2026-09-22 21:07:25.660] [config ] [info]     + DNS Settings:
+2026-09-22T19:07:25.660649039Z [2026-09-22 21:07:25.660] [config ] [info]       - primary_dns_ipv4.......................: 8.8.8.8
+2026-09-22T19:07:25.660655772Z [2026-09-22 21:07:25.660] [config ] [info]       - secondary_dns_ipv4.....................: 1.1.1.1
+2026-09-22T19:07:25.660658923Z [2026-09-22 21:07:25.660] [upf_app] [info] HTTP Client successfully initiated on interface eth0 with timeout 3000 ms, HTTP version 2
+2026-09-22T19:07:25.660661905Z [2026-09-22 21:07:25.660] [common] [start] Starting...
+2026-09-22T19:07:25.660664534Z [2026-09-22 21:07:25.660] [common] [start] Started
+2026-09-22T19:07:25.660667001Z [2026-09-22 21:07:25.660] [asc_cmd] [start] Starting...
+2026-09-22T19:07:25.660669738Z [2026-09-22 21:07:25.660] [common] [info] Starting timer_manager_task
+2026-09-22T19:07:25.662709933Z [2026-09-22 21:07:25.662] [asc_cmd] [start] Started
+2026-09-22T19:07:25.663289611Z [2026-09-22 21:07:25.662] [upf_app] [start] UPF initialization started
+2026-09-22T19:07:25.666360292Z [2026-09-22 21:07:25.666] [udp    ] [debug] Creating new listen socket on address 192.168.73.139 and port 8805
+2026-09-22T19:07:25.666384801Z 
+2026-09-22T19:07:25.666388749Z [2026-09-22 21:07:25.666] [udp    ] [debug] udp_server::udp_server(192.168.73.139:8805)
+2026-09-22T19:07:25.666391857Z [2026-09-22 21:07:25.666] [udp    ] [debug] Creating new listen socket on address 192.168.73.139 and port 0
+2026-09-22T19:07:25.666394967Z 
+2026-09-22T19:07:25.666397975Z [2026-09-22 21:07:25.666] [udp    ] [debug] udp_server::udp_server(192.168.73.139:0)
+2026-09-22T19:07:25.666401195Z [2026-09-22 21:07:25.666] [pfcp   ] [info] pfcp_l4_stack created listening to 192.168.73.139:8805
+2026-09-22T19:07:25.667155172Z [2026-09-22 21:07:25.667] [upf_n4 ] [start] Starting...
+2026-09-22T19:07:25.668318414Z [2026-09-22 21:07:25.668] [upf_n4 ] [start] Started
+2026-09-22T19:07:25.668341259Z [2026-09-22 21:07:25.668] [udp    ] [debug] Creating new listen socket on address 192.168.73.139 and port 2152
+2026-09-22T19:07:25.668345947Z 
+2026-09-22T19:07:25.668349954Z [2026-09-22 21:07:25.668] [udp    ] [debug] udp_server::udp_server(192.168.73.139:2152)
+2026-09-22T19:07:25.668353686Z [2026-09-22 21:07:25.668] [gtpv1_u] [info] gtpu_l4_stack created listening to 192.168.73.139:2152
+2026-09-22T19:07:25.668494662Z [2026-09-22 21:07:25.668] [upf_n3 ] [start] Starting...
+2026-09-22T19:07:25.669644806Z [2026-09-22 21:07:25.669] [upf_n3 ] [start] Started
+2026-09-22T19:07:25.878542405Z [2026-09-22 21:07:25.878] [pfcp_switch] [info] Source NAT added
+2026-09-22T19:07:25.881041820Z [2026-09-22 21:07:25.880] [pfcp_switch] [info] Route created
+2026-09-22T19:07:25.883153069Z [2026-09-22 21:07:25.883] [pfcp_switch] [info] Source NAT added
+2026-09-22T19:07:25.885373474Z [2026-09-22 21:07:25.885] [pfcp_switch] [info] Route created
+2026-09-22T19:07:25.887428402Z [2026-09-22 21:07:25.887] [pfcp_switch] [info] Source NAT added
+2026-09-22T19:07:25.889156908Z Error: Invalid prefix for given prefix length.
+2026-09-22T19:07:25.889479713Z [2026-09-22 21:07:25.889] [pfcp_switch] [warning] Route information not correct or does exists!
+2026-09-22T19:07:25.892004427Z [2026-09-22 21:07:25.891] [pfcp_switch] [info] Source NAT added
+2026-09-22T19:07:25.892016107Z [2026-09-22 21:07:25.891] [upf_app] [start] Starting...
+2026-09-22T19:07:25.893135621Z [2026-09-22 21:07:25.893] [upf_app] [debug] - NF instance info
+2026-09-22T19:07:25.893145196Z [2026-09-22 21:07:25.893] [upf_app] [debug]     Instance ID: 8a2c8e91-7333-4d41-8c3a-e672ff2abeca
+2026-09-22T19:07:25.893148139Z [2026-09-22 21:07:25.893] [upf_app] [debug]     Instance name: OAI-UPF
+2026-09-22T19:07:25.893150436Z [2026-09-22 21:07:25.893] [upf_app] [debug]     Instance type: UPF
+2026-09-22T19:07:25.893152743Z [2026-09-22 21:07:25.893] [upf_app] [debug]     Instance fqdn: 
+2026-09-22T19:07:25.893155146Z [2026-09-22 21:07:25.893] [upf_app] [debug]     Status: REGISTERED
+2026-09-22T19:07:25.893159609Z [2026-09-22 21:07:25.893] [upf_app] [debug]     HeartBeat timer: 50
+2026-09-22T19:07:25.893161922Z [2026-09-22 21:07:25.893] [upf_app] [debug]     Priority: 1
+2026-09-22T19:07:25.893164188Z [2026-09-22 21:07:25.893] [upf_app] [debug]     Capacity: 100
+2026-09-22T19:07:25.893166417Z [2026-09-22 21:07:25.893] [upf_app] [debug]     SNSSAI:
+2026-09-22T19:07:25.893168668Z [2026-09-22 21:07:25.893] [upf_app] [debug]         SST, SD: 1, FFFFFF
+2026-09-22T19:07:25.893170985Z [2026-09-22 21:07:25.893] [upf_app] [debug]         SST, SD: 1, 000001
+2026-09-22T19:07:25.893173895Z [2026-09-22 21:07:25.893] [upf_app] [debug]         SST, SD: 222, 00007b
+2026-09-22T19:07:25.893177198Z [2026-09-22 21:07:25.893] [upf_app] [debug]     IPv4 Addr:
+2026-09-22T19:07:25.893181953Z [2026-09-22 21:07:25.893] [upf_app] [debug]         192.168.73.139
+2026-09-22T19:07:25.893185347Z [2026-09-22 21:07:25.893] [upf_app] [debug]     UPF Info:
+2026-09-22T19:07:25.893187633Z [2026-09-22 21:07:25.893] [upf_app] [debug]         SNSSAI (SST 1, SD FFFFFF)
+2026-09-22T19:07:25.893189904Z [2026-09-22 21:07:25.893] [upf_app] [debug]             DNN oai
+2026-09-22T19:07:25.893192141Z [2026-09-22 21:07:25.893] [upf_app] [debug]         SNSSAI (SST 1, SD 000001)
+2026-09-22T19:07:25.893194396Z [2026-09-22 21:07:25.893] [upf_app] [debug]             DNN oai.ipv4
+2026-09-22T19:07:25.893196641Z [2026-09-22 21:07:25.893] [upf_app] [debug]         SNSSAI (SST 222, SD 00007b)
+2026-09-22T19:07:25.893198923Z [2026-09-22 21:07:25.893] [upf_app] [debug]             DNN oai
+2026-09-22T19:07:25.893201163Z [2026-09-22 21:07:25.893] [upf_app] [debug]             DNN default
+2026-09-22T19:07:25.893203428Z [2026-09-22 21:07:25.893] [upf_app] [info] Send NF Instance Registration to NRF
+2026-09-22T19:07:25.893228584Z [2026-09-22 21:07:25.893] [upf_app] [debug] UPF profile to JSON:
+2026-09-22T19:07:25.893234562Z  {"capacity":100,"fqdn":"","heartBeatTimer":50,"ipv4Addresses":["192.168.73.139"],"nfInstanceId":"8a2c8e91-7333-4d41-8c3a-e672ff2abeca","nfInstanceName":"OAI-UPF","nfStatus":"REGISTERED","nfType":"UPF","priority":1,"sNssais":[{"sd":"FFFFFF","sst":1},{"sd":"000001","sst":1},{"sd":"00007b","sst":222}],"upfInfo":{"sNssaiUpfInfoList":[{"dnnUpfInfoList":[{"dnn":"oai"}],"sNssai":{"sd":"FFFFFF","sst":1}},{"dnnUpfInfoList":[{"dnn":"oai.ipv4"}],"sNssai":{"sd":"000001","sst":1}},{"dnnUpfInfoList":[{"dnn":"oai"},{"dnn":"default"}],"sNssai":{"sd":"00007b","sst":222}}]}}
+2026-09-22T19:07:25.893293940Z [2026-09-22 21:07:25.893] [upf_app] [debug] Send NF Instance Registration to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:07:25.893303883Z [2026-09-22 21:07:25.893] [upf_app] [debug] Send NF Instance Registration to NRF, msg body: 
+2026-09-22T19:07:25.893307880Z  {"capacity":100,"fqdn":"","heartBeatTimer":50,"ipv4Addresses":["192.168.73.139"],"nfInstanceId":"8a2c8e91-7333-4d41-8c3a-e672ff2abeca","nfInstanceName":"OAI-UPF","nfStatus":"REGISTERED","nfType":"UPF","priority":1,"sNssais":[{"sd":"FFFFFF","sst":1},{"sd":"000001","sst":1},{"sd":"00007b","sst":222}],"upfInfo":{"sNssaiUpfInfoList":[{"dnnUpfInfoList":[{"dnn":"oai"}],"sNssai":{"sd":"FFFFFF","sst":1}},{"dnnUpfInfoList":[{"dnn":"oai.ipv4"}],"sNssai":{"sd":"000001","sst":1}},{"dnnUpfInfoList":[{"dnn":"oai"},{"dnn":"default"}],"sNssai":{"sd":"00007b","sst":222}}]}}
+2026-09-22T19:07:25.893315720Z [2026-09-22 21:07:25.893] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:07:25.977835323Z [2026-09-22 21:07:25.977] [upf_app] [info] Response from NRF, JSON data: 
+2026-09-22T19:07:25.977855743Z  {"capacity":100,"heartBeatTimer":10,"ipv4Addresses":["192.168.73.139"],"json_data":null,"nfInstanceId":"8a2c8e91-7333-4d41-8c3a-e672ff2abeca","nfInstanceName":"OAI-UPF","nfServices":[],"nfStatus":"REGISTERED","nfType":"UPF","priority":1,"sNssais":[{"sd":"FFFFFF","sst":1},{"sd":"000001","sst":1},{"sd":"00007b","sst":222}],"upfInfo":{"sNssaiUpfInfoList":[{"dnnUpfInfoList":[{"dnn":"oai"}],"sNssai":{"sd":"ffffff","sst":1}},{"dnnUpfInfoList":[{"dnn":"oai.ipv4"}],"sNssai":{"sd":"000001","sst":1}},{"dnnUpfInfoList":[{"dnn":"default"},{"dnn":"oai"}],"sNssai":{"sd":"00007b","sst":222}}]}}
+2026-09-22T19:07:25.977866933Z [2026-09-22 21:07:25.977] [upf_app] [debug] - NF instance info
+2026-09-22T19:07:25.977870579Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Instance ID: 8a2c8e91-7333-4d41-8c3a-e672ff2abeca
+2026-09-22T19:07:25.977873813Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Instance name: OAI-UPF
+2026-09-22T19:07:25.977877414Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Instance type: UPF
+2026-09-22T19:07:25.977880603Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Instance fqdn: 
+2026-09-22T19:07:25.977883885Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Status: REGISTERED
+2026-09-22T19:07:25.977886826Z [2026-09-22 21:07:25.977] [upf_app] [debug]     HeartBeat timer: 10
+2026-09-22T19:07:25.977890107Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Priority: 1
+2026-09-22T19:07:25.977893470Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Capacity: 100
+2026-09-22T19:07:25.977896998Z [2026-09-22 21:07:25.977] [upf_app] [debug]     SNSSAI:
+2026-09-22T19:07:25.977909897Z [2026-09-22 21:07:25.977] [upf_app] [debug]         SST, SD: 1, FFFFFF
+2026-09-22T19:07:25.977920709Z [2026-09-22 21:07:25.977] [upf_app] [debug]         SST, SD: 1, 000001
+2026-09-22T19:07:25.977924074Z [2026-09-22 21:07:25.977] [upf_app] [debug]         SST, SD: 222, 00007b
+2026-09-22T19:07:25.977927371Z [2026-09-22 21:07:25.977] [upf_app] [debug]     IPv4 Addr:
+2026-09-22T19:07:25.977931213Z [2026-09-22 21:07:25.977] [upf_app] [debug]         192.168.73.139
+2026-09-22T19:07:25.977934817Z [2026-09-22 21:07:25.977] [upf_app] [debug]         192.168.73.139
+2026-09-22T19:07:25.977938561Z [2026-09-22 21:07:25.977] [upf_app] [debug]     UPF Info:
+2026-09-22T19:07:25.977941965Z [2026-09-22 21:07:25.977] [upf_app] [debug]         SNSSAI (SST 1, SD ffffff)
+2026-09-22T19:07:25.977945643Z [2026-09-22 21:07:25.977] [upf_app] [debug]             DNN oai
+2026-09-22T19:07:25.977948774Z [2026-09-22 21:07:25.977] [upf_app] [debug]         SNSSAI (SST 1, SD 000001)
+2026-09-22T19:07:25.977952775Z [2026-09-22 21:07:25.977] [upf_app] [debug]             DNN oai.ipv4
+2026-09-22T19:07:25.977955539Z [2026-09-22 21:07:25.977] [upf_app] [debug]         SNSSAI (SST 222, SD 00007b)
+2026-09-22T19:07:25.977958857Z [2026-09-22 21:07:25.977] [upf_app] [debug]             DNN oai
+2026-09-22T19:07:25.977962078Z [2026-09-22 21:07:25.977] [upf_app] [debug]             DNN default
+2026-09-22T19:07:25.977965595Z [2026-09-22 21:07:25.977] [upf_app] [debug] Updated UPF profile
+2026-09-22T19:07:25.977969306Z [2026-09-22 21:07:25.977] [upf_app] [debug] - NF instance info
+2026-09-22T19:07:25.977972832Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Instance ID: 8a2c8e91-7333-4d41-8c3a-e672ff2abeca
+2026-09-22T19:07:25.977976250Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Instance name: OAI-UPF
+2026-09-22T19:07:25.977979537Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Instance type: UPF
+2026-09-22T19:07:25.977982866Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Instance fqdn: 
+2026-09-22T19:07:25.977986232Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Status: REGISTERED
+2026-09-22T19:07:25.977989508Z [2026-09-22 21:07:25.977] [upf_app] [debug]     HeartBeat timer: 10
+2026-09-22T19:07:25.977995412Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Priority: 1
+2026-09-22T19:07:25.977998570Z [2026-09-22 21:07:25.977] [upf_app] [debug]     Capacity: 100
+2026-09-22T19:07:25.978001862Z [2026-09-22 21:07:25.977] [upf_app] [debug]     SNSSAI:
+2026-09-22T19:07:25.978005408Z [2026-09-22 21:07:25.977] [upf_app] [debug]         SST, SD: 1, FFFFFF
+2026-09-22T19:07:25.978008824Z [2026-09-22 21:07:25.977] [upf_app] [debug]         SST, SD: 1, 000001
+2026-09-22T19:07:25.978048932Z [2026-09-22 21:07:25.977] [upf_app] [debug]         SST, SD: 222, 00007b
+2026-09-22T19:07:25.978077171Z [2026-09-22 21:07:25.977] [upf_app] [debug]     IPv4 Addr:
+2026-09-22T19:07:25.978105110Z [2026-09-22 21:07:25.977] [upf_app] [debug]         192.168.73.139
+2026-09-22T19:07:25.978167519Z [2026-09-22 21:07:25.977] [upf_app] [debug]         192.168.73.139
+2026-09-22T19:07:25.978196085Z [2026-09-22 21:07:25.977] [upf_app] [debug]     UPF Info:
+2026-09-22T19:07:25.978224476Z [2026-09-22 21:07:25.977] [upf_app] [debug]         SNSSAI (SST 1, SD ffffff)
+2026-09-22T19:07:25.978330380Z [2026-09-22 21:07:25.977] [upf_app] [debug]             DNN oai
+2026-09-22T19:07:25.978390881Z [2026-09-22 21:07:25.977] [upf_app] [debug]         SNSSAI (SST 1, SD 000001)
+2026-09-22T19:07:25.978419631Z [2026-09-22 21:07:25.977] [upf_app] [debug]             DNN oai.ipv4
+2026-09-22T19:07:25.978446316Z [2026-09-22 21:07:25.977] [upf_app] [debug]         SNSSAI (SST 222, SD 00007b)
+2026-09-22T19:07:25.978473349Z [2026-09-22 21:07:25.977] [upf_app] [debug]             DNN oai
+2026-09-22T19:07:25.978501857Z [2026-09-22 21:07:25.977] [upf_app] [debug]             DNN default
+2026-09-22T19:07:25.978533410Z [2026-09-22 21:07:25.978] [upf_app] [start] Started
+2026-09-22T19:07:26.088698964Z [2026-09-22 21:07:26.088] [upf_n4 ] [info] handle_receive(63 bytes)
+2026-09-22T19:07:26.094666355Z [2026-09-22 21:07:26.094] [upf_n4 ] [info] Handle SX ASSOCIATION SETUP REQUEST
+2026-09-22T19:07:28.078299991Z [2026-09-22 21:07:28.078] [upf_n4 ] [info] handle_receive(63 bytes)
+2026-09-22T19:07:28.078318703Z [2026-09-22 21:07:28.078] [upf_n4 ] [info] Handle SX ASSOCIATION SETUP REQUEST
+2026-09-22T19:07:35.978636205Z [2026-09-22 21:07:35.978] [upf_app] [info] TIME-OUT event timer id 1
+2026-09-22T19:07:35.978707304Z [2026-09-22 21:07:35.978] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:07:35.978725429Z [2026-09-22 21:07:35.978] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:07:35.978739663Z [2026-09-22 21:07:35.978] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:07:35.978758661Z [2026-09-22 21:07:35.978] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:07:35.978781256Z [2026-09-22 21:07:35.978] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:07:36.034157148Z [2026-09-22 21:07:36.033] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:07:36.034230914Z [2026-09-22 21:07:36.034] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:07:36.119044354Z [2026-09-22 21:07:36.118] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:07:36.119087243Z [2026-09-22 21:07:36.118] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:07:46.034186581Z [2026-09-22 21:07:46.034] [upf_app] [info] TIME-OUT event timer id 4
+2026-09-22T19:07:46.034211457Z [2026-09-22 21:07:46.034] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:07:46.034215403Z [2026-09-22 21:07:46.034] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:07:46.034218466Z [2026-09-22 21:07:46.034] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:07:46.034231631Z [2026-09-22 21:07:46.034] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:07:46.034273142Z [2026-09-22 21:07:46.034] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:07:46.035390568Z [2026-09-22 21:07:46.035] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:07:46.035402117Z [2026-09-22 21:07:46.035] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:07:46.120112795Z [2026-09-22 21:07:46.119] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:07:46.120124200Z [2026-09-22 21:07:46.119] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:07:56.035784423Z [2026-09-22 21:07:56.035] [upf_app] [info] TIME-OUT event timer id 6
+2026-09-22T19:07:56.035870807Z [2026-09-22 21:07:56.035] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:07:56.035890954Z [2026-09-22 21:07:56.035] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:07:56.035904774Z [2026-09-22 21:07:56.035] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:07:56.035923443Z [2026-09-22 21:07:56.035] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:07:56.035940142Z [2026-09-22 21:07:56.035] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:07:56.040640393Z [2026-09-22 21:07:56.040] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:07:56.040695000Z [2026-09-22 21:07:56.040] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:07:56.121057788Z [2026-09-22 21:07:56.120] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:07:56.121115816Z [2026-09-22 21:07:56.120] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:08:06.040644257Z [2026-09-22 21:08:06.040] [upf_app] [info] TIME-OUT event timer id 8
+2026-09-22T19:08:06.040737765Z [2026-09-22 21:08:06.040] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:08:06.040764724Z [2026-09-22 21:08:06.040] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:08:06.040784114Z [2026-09-22 21:08:06.040] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:08:06.040807064Z [2026-09-22 21:08:06.040] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:08:06.040827596Z [2026-09-22 21:08:06.040] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:08:06.046414660Z [2026-09-22 21:08:06.046] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:08:06.046464114Z [2026-09-22 21:08:06.046] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:08:06.122774069Z [2026-09-22 21:08:06.122] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:08:06.122841570Z [2026-09-22 21:08:06.122] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:08:16.046214755Z [2026-09-22 21:08:16.046] [upf_app] [info] TIME-OUT event timer id 10
+2026-09-22T19:08:16.046229395Z [2026-09-22 21:08:16.046] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:08:16.046233451Z [2026-09-22 21:08:16.046] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:08:16.046235788Z [2026-09-22 21:08:16.046] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:08:16.046239135Z [2026-09-22 21:08:16.046] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:08:16.046241973Z [2026-09-22 21:08:16.046] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:08:16.047223427Z [2026-09-22 21:08:16.047] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:08:16.047236615Z [2026-09-22 21:08:16.047] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:08:16.123190189Z [2026-09-22 21:08:16.123] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:08:16.123205695Z [2026-09-22 21:08:16.123] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:08:21.072359855Z [2026-09-22 21:08:21.072] [upf_n4 ] [info] handle_receive(252 bytes)
+2026-09-22T19:08:21.073462314Z [2026-09-22 21:08:21.073] [upf_app] [info] 
+2026-09-22T19:08:21.073515186Z [2026-09-22 21:08:21.073] [upf_app] [info] ╔═════════════════════════════════════════════════════════════════════════════╗
+2026-09-22T19:08:21.073533919Z [2026-09-22 21:08:21.073] [upf_app] [info] │             Received N4_SESSION_ESTABLISHMENT_REQUEST seid 0x1              │
+2026-09-22T19:08:21.073545013Z [2026-09-22 21:08:21.073] [upf_app] [info] ╚═════════════════════════════════════════════════════════════════════════════╝
+2026-09-22T19:08:21.074385897Z [2026-09-22 21:08:21.074] [upf_n4 ] [info] pfcp_session::add(far) seid 0x1 FAR=1
+2026-09-22T19:08:21.074444261Z [2026-09-22 21:08:21.074] [upf_n4 ] [info]   └─ Adding new FAR 1 to session 0x1
+2026-09-22T19:08:21.074465333Z [2026-09-22 21:08:21.074] [upf_n4 ] [debug]      • Apply Action: FORW 
+2026-09-22T19:08:21.074479546Z [2026-09-22 21:08:21.074] [upf_n4 ] [debug]      • Destination Interface: CORE
+2026-09-22T19:08:21.074487632Z [2026-09-22 21:08:21.074] [upf_n4 ] [debug]      • Total FARs in session: 1
+2026-09-22T19:08:21.074744718Z [2026-09-22 21:08:21.074] [upf_n4 ] [info] pfcp_session::set(fteid) seid 0x1 
+2026-09-22T19:08:21.074773760Z [2026-09-22 21:08:21.074] [upf_n4 ] [info] pfcp_session::get(fteid) seid 0x1 
+2026-09-22T19:08:21.075723285Z [2026-09-22 21:08:21.075] [upf_n4 ] [info] pfcp_session::add(pdr) seid 0x1 PDR=1
+2026-09-22T19:08:21.075816036Z [2026-09-22 21:08:21.075] [upf_n4 ] [info]   └─ Adding new PDR 1 to session 0x1
+2026-09-22T19:08:21.075838043Z [2026-09-22 21:08:21.075] [upf_n4 ] [debug]      • Source Interface: ACCESS (Uplink)
+2026-09-22T19:08:21.075850623Z [2026-09-22 21:08:21.075] [upf_n4 ] [debug]      • Local F-TEID: 0x1
+2026-09-22T19:08:21.075861062Z [2026-09-22 21:08:21.075] [upf_n4 ] [debug]      • UE IP Address: 12.2.1.130
+2026-09-22T19:08:21.075872197Z [2026-09-22 21:08:21.075] [upf_n4 ] [debug]      • Precedence: 0
+2026-09-22T19:08:21.075882423Z [2026-09-22 21:08:21.075] [upf_n4 ] [debug]      • Linked FAR: 1
+2026-09-22T19:08:21.075892974Z [2026-09-22 21:08:21.075] [upf_n4 ] [debug]      • Linked QER: 1
+2026-09-22T19:08:21.075903466Z [2026-09-22 21:08:21.075] [upf_n4 ] [debug]      • Total PDRs in session: 1
+2026-09-22T19:08:21.081062812Z 
+2026-09-22T19:08:21.081115561Z   ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+2026-09-22T19:08:21.081142938Z   │                                                                                PDU SESSION RULES - Session 0x1                                                                                │
+2026-09-22T19:08:21.081163341Z   ├────────┬───────┬───────┬───────┬───────┬───────┬────────────┬───────────┬─────────────────┬────────────┬────────────┬───────┬────────────────────────────────┬────────────────────────────────┤
+2026-09-22T19:08:21.081189383Z   │  PDR   │  FAR  │  QER  │  URR  │  BAR  │  MAR  │ Precedence │ Direction │    UE IPv4      │   Action   │  Dest If   │  QFI  │       Create Outer Hdr         │       Remove Outer Hdr         │
+2026-09-22T19:08:21.081216284Z   ├────────┼───────┼───────┼───────┼───────┼───────┼────────────┼───────────┼─────────────────┼────────────┼────────────┼───────┼────────────────────────────────┼────────────────────────────────┤
+2026-09-22T19:08:21.081240929Z   │ 1      │ 1     │ -     │ -     │ -     │ -     │ 0          │ UL        │ 12.2.1.130      │ FORW       │ CORE       │ -     │ -                              │ GTP TEID:0x1                   │
+2026-09-22T19:08:21.081355239Z   └────────┴───────┴───────┴───────┴───────┴───────┴────────────┴───────────┴─────────────────┴────────────┴────────────┴───────┴────────────────────────────────┴────────────────────────────────┘
+2026-09-22T19:08:21.081387917Z 
+2026-09-22T19:08:21.081401986Z [2026-09-22 21:08:21.080] [upf_n4 ] [info] handle_receive(191 bytes)
+2026-09-22T19:08:21.081416792Z [2026-09-22 21:08:21.080] [upf_app] [info] 
+2026-09-22T19:08:21.081439408Z [2026-09-22 21:08:21.080] [upf_app] [info] ╔═════════════════════════════════════════════════════════════════════════════╗
+2026-09-22T19:08:21.081459996Z [2026-09-22 21:08:21.080] [upf_app] [info] │             Received N4_SESSION_MODIFICATION_REQUEST seid 0x1               │
+2026-09-22T19:08:21.081475437Z [2026-09-22 21:08:21.080] [upf_app] [info] ╚═════════════════════════════════════════════════════════════════════════════╝
+2026-09-22T19:08:21.081495946Z [2026-09-22 21:08:21.081] [upf_n4 ] [info] pfcp_session::add(far) seid 0x1 FAR=2
+2026-09-22T19:08:21.081510526Z [2026-09-22 21:08:21.081] [upf_n4 ] [info]   └─ Adding new FAR 2 to session 0x1
+2026-09-22T19:08:21.081527276Z [2026-09-22 21:08:21.081] [upf_n4 ] [debug]      • Apply Action: FORW 
+2026-09-22T19:08:21.081535586Z [2026-09-22 21:08:21.081] [upf_n4 ] [debug]      • Destination Interface: ACCESS
+2026-09-22T19:08:21.081543147Z [2026-09-22 21:08:21.081] [upf_n4 ] [debug]      • Outer Header TEID: 0x80000001
+2026-09-22T19:08:21.081550681Z [2026-09-22 21:08:21.081] [upf_n4 ] [debug]      • Remote IP: 192.168.71.139
+2026-09-22T19:08:21.081558552Z [2026-09-22 21:08:21.081] [upf_n4 ] [debug]      • Total FARs in session: 2
+2026-09-22T19:08:21.081566235Z [2026-09-22 21:08:21.081] [upf_n4 ] [info] pfcp_session::add(pdr) seid 0x1 PDR=2
+2026-09-22T19:08:21.081573952Z [2026-09-22 21:08:21.081] [upf_n4 ] [info]   └─ Adding new PDR 2 to session 0x1
+2026-09-22T19:08:21.081581557Z [2026-09-22 21:08:21.081] [upf_n4 ] [debug]      • Source Interface: CORE (Downlink)
+2026-09-22T19:08:21.081589265Z [2026-09-22 21:08:21.081] [upf_n4 ] [debug]      • UE IP Address: 12.2.1.130
+2026-09-22T19:08:21.081596795Z [2026-09-22 21:08:21.081] [upf_n4 ] [debug]      • Precedence: 0
+2026-09-22T19:08:21.081604280Z [2026-09-22 21:08:21.081] [upf_n4 ] [debug]      • Linked FAR: 2
+2026-09-22T19:08:21.081611869Z [2026-09-22 21:08:21.081] [upf_n4 ] [debug]      • Linked QER: 2
+2026-09-22T19:08:21.081619360Z [2026-09-22 21:08:21.081] [upf_n4 ] [debug]      • Total PDRs in session: 2
+2026-09-22T19:08:21.171508118Z 
+2026-09-22T19:08:21.171520568Z   ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+2026-09-22T19:08:21.171526420Z   │                                                                                PDU SESSION RULES - Session 0x1                                                                                │
+2026-09-22T19:08:21.171529567Z   ├────────┬───────┬───────┬───────┬───────┬───────┬────────────┬───────────┬─────────────────┬────────────┬────────────┬───────┬────────────────────────────────┬────────────────────────────────┤
+2026-09-22T19:08:21.171534764Z   │  PDR   │  FAR  │  QER  │  URR  │  BAR  │  MAR  │ Precedence │ Direction │    UE IPv4      │   Action   │  Dest If   │  QFI  │       Create Outer Hdr         │       Remove Outer Hdr         │
+2026-09-22T19:08:21.171538385Z   ├────────┼───────┼───────┼───────┼───────┼───────┼────────────┼───────────┼─────────────────┼────────────┼────────────┼───────┼────────────────────────────────┼────────────────────────────────┤
+2026-09-22T19:08:21.171543594Z   │ 1      │ 1     │ -     │ -     │ -     │ -     │ 0          │ UL        │ 12.2.1.130      │ FORW       │ CORE       │ -     │ -                              │ GTP TEID:0x1                   │
+2026-09-22T19:08:21.171546832Z   │ 2      │ 2     │ -     │ -     │ -     │ -     │ 0          │ DL        │ 12.2.1.130      │ FORW       │ ACCESS     │ -     │ GTP → 192.168.71.139:0x80000001 │ -                              │
+2026-09-22T19:08:21.171550222Z   └────────┴───────┴───────┴───────┴───────┴───────┴────────────┴───────────┴─────────────────┴────────────┴────────────┴───────┴────────────────────────────────┴────────────────────────────────┘
+2026-09-22T19:08:21.171555393Z 
+2026-09-22T19:08:21.171557995Z [2026-09-22 21:08:21.171] [pfcp_switch] [info] PDR/PDI IP is 8201020c 
+2026-09-22T19:08:21.171568164Z [2026-09-22 21:08:21.171] [pfcp_switch] [info] Upstream IP is 8201020c 
+2026-09-22T19:08:22.174929399Z [2026-09-22 21:08:22.174] [pfcp_switch] [info] PDR/PDI IP is 8201020c 
+2026-09-22T19:08:22.174969484Z [2026-09-22 21:08:22.174] [pfcp_switch] [info] Upstream IP is 8201020c 
+2026-09-22T19:08:23.178595281Z [2026-09-22 21:08:23.177] [pfcp_switch] [info] PDR/PDI IP is 8201020c 
+2026-09-22T19:08:23.178656199Z [2026-09-22 21:08:23.177] [pfcp_switch] [info] Upstream IP is 8201020c 
+2026-09-22T19:08:26.047721857Z [2026-09-22 21:08:26.047] [upf_app] [info] TIME-OUT event timer id 12
+2026-09-22T19:08:26.047792495Z [2026-09-22 21:08:26.047] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:08:26.047805123Z [2026-09-22 21:08:26.047] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:08:26.047813706Z [2026-09-22 21:08:26.047] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:08:26.047824535Z [2026-09-22 21:08:26.047] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:08:26.047833694Z [2026-09-22 21:08:26.047] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:08:26.052817831Z [2026-09-22 21:08:26.052] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:08:26.052952920Z [2026-09-22 21:08:26.052] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:08:26.124189864Z [2026-09-22 21:08:26.123] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:08:26.124227978Z [2026-09-22 21:08:26.124] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:08:36.052822188Z [2026-09-22 21:08:36.052] [upf_app] [info] TIME-OUT event timer id 16
+2026-09-22T19:08:36.052902107Z [2026-09-22 21:08:36.052] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:08:36.052919965Z [2026-09-22 21:08:36.052] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:08:36.052933705Z [2026-09-22 21:08:36.052] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:08:36.052947797Z [2026-09-22 21:08:36.052] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:08:36.052959998Z [2026-09-22 21:08:36.052] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:08:36.057521428Z [2026-09-22 21:08:36.057] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:08:36.057581451Z [2026-09-22 21:08:36.057] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:08:36.125731347Z [2026-09-22 21:08:36.125] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:08:36.125788754Z [2026-09-22 21:08:36.125] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:08:36.658505021Z [2026-09-22 21:08:36.658] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:08:36.658518791Z [2026-09-22 21:08:36.658] [upf_app] [info] 
+2026-09-22T19:08:36.658525177Z [2026-09-22 21:08:36.658] [upf_app] [info] ╔═════════════════════════════════════════════════════════════════════════════╗
+2026-09-22T19:08:36.658528585Z [2026-09-22 21:08:36.658] [upf_app] [info] │             Received N4_SESSION_DELETION_REQUEST seid 0x1               │
+2026-09-22T19:08:36.658535049Z [2026-09-22 21:08:36.658] [upf_app] [info] ╚═════════════════════════════════════════════════════════════════════════════╝
+2026-09-22T19:08:46.057641605Z [2026-09-22 21:08:46.057] [upf_app] [info] TIME-OUT event timer id 18
+2026-09-22T19:08:46.057728067Z [2026-09-22 21:08:46.057] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:08:46.057755307Z [2026-09-22 21:08:46.057] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:08:46.057775994Z [2026-09-22 21:08:46.057] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:08:46.057798110Z [2026-09-22 21:08:46.057] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:08:46.057812304Z [2026-09-22 21:08:46.057] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:08:46.062478649Z [2026-09-22 21:08:46.062] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:08:46.062538139Z [2026-09-22 21:08:46.062] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:08:46.130704045Z [2026-09-22 21:08:46.127] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:08:46.130732749Z [2026-09-22 21:08:46.128] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:08:48.153086816Z [2026-09-22 21:08:48.152] [upf_n4 ] [info] handle_receive(252 bytes)
+2026-09-22T19:08:48.153172477Z [2026-09-22 21:08:48.153] [upf_app] [info] 
+2026-09-22T19:08:48.153192982Z [2026-09-22 21:08:48.153] [upf_app] [info] ╔═════════════════════════════════════════════════════════════════════════════╗
+2026-09-22T19:08:48.153213006Z [2026-09-22 21:08:48.153] [upf_app] [info] │             Received N4_SESSION_ESTABLISHMENT_REQUEST seid 0x2              │
+2026-09-22T19:08:48.153220589Z [2026-09-22 21:08:48.153] [upf_app] [info] ╚═════════════════════════════════════════════════════════════════════════════╝
+2026-09-22T19:08:48.153228184Z [2026-09-22 21:08:48.153] [upf_n4 ] [info] pfcp_session::add(far) seid 0x2 FAR=1
+2026-09-22T19:08:48.153234906Z [2026-09-22 21:08:48.153] [upf_n4 ] [info]   └─ Adding new FAR 1 to session 0x2
+2026-09-22T19:08:48.153240953Z [2026-09-22 21:08:48.153] [upf_n4 ] [debug]      • Apply Action: FORW 
+2026-09-22T19:08:48.153284077Z [2026-09-22 21:08:48.153] [upf_n4 ] [debug]      • Destination Interface: CORE
+2026-09-22T19:08:48.153294979Z [2026-09-22 21:08:48.153] [upf_n4 ] [debug]      • Total FARs in session: 1
+2026-09-22T19:08:48.153303616Z [2026-09-22 21:08:48.153] [upf_n4 ] [info] pfcp_session::set(fteid) seid 0x2 
+2026-09-22T19:08:48.153308320Z [2026-09-22 21:08:48.153] [upf_n4 ] [info] pfcp_session::get(fteid) seid 0x2 
+2026-09-22T19:08:48.153312891Z [2026-09-22 21:08:48.153] [upf_n4 ] [info] pfcp_session::add(pdr) seid 0x2 PDR=1
+2026-09-22T19:08:48.153317106Z [2026-09-22 21:08:48.153] [upf_n4 ] [info]   └─ Adding new PDR 1 to session 0x2
+2026-09-22T19:08:48.153321649Z [2026-09-22 21:08:48.153] [upf_n4 ] [debug]      • Source Interface: ACCESS (Uplink)
+2026-09-22T19:08:48.153325975Z [2026-09-22 21:08:48.153] [upf_n4 ] [debug]      • Local F-TEID: 0x2
+2026-09-22T19:08:48.153330970Z [2026-09-22 21:08:48.153] [upf_n4 ] [debug]      • UE IP Address: 12.2.1.130
+2026-09-22T19:08:48.153335582Z [2026-09-22 21:08:48.153] [upf_n4 ] [debug]      • Precedence: 0
+2026-09-22T19:08:48.153340022Z [2026-09-22 21:08:48.153] [upf_n4 ] [debug]      • Linked FAR: 1
+2026-09-22T19:08:48.153344249Z [2026-09-22 21:08:48.153] [upf_n4 ] [debug]      • Linked QER: 1
+2026-09-22T19:08:48.153348674Z [2026-09-22 21:08:48.153] [upf_n4 ] [debug]      • Total PDRs in session: 1
+2026-09-22T19:08:48.154968994Z 
+2026-09-22T19:08:48.155293208Z   ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+2026-09-22T19:08:48.155314633Z   │                                                                                PDU SESSION RULES - Session 0x2                                                                                │
+2026-09-22T19:08:48.155320959Z   ├────────┬───────┬───────┬───────┬───────┬───────┬────────────┬───────────┬─────────────────┬────────────┬────────────┬───────┬────────────────────────────────┬────────────────────────────────┤
+2026-09-22T19:08:48.155329125Z   │  PDR   │  FAR  │  QER  │  URR  │  BAR  │  MAR  │ Precedence │ Direction │    UE IPv4      │   Action   │  Dest If   │  QFI  │       Create Outer Hdr         │       Remove Outer Hdr         │
+2026-09-22T19:08:48.155337589Z   ├────────┼───────┼───────┼───────┼───────┼───────┼────────────┼───────────┼─────────────────┼────────────┼────────────┼───────┼────────────────────────────────┼────────────────────────────────┤
+2026-09-22T19:08:48.155357617Z   │ 1      │ 1     │ -     │ -     │ -     │ -     │ 0          │ UL        │ 12.2.1.130      │ FORW       │ CORE       │ -     │ -                              │ GTP TEID:0x2                   │
+2026-09-22T19:08:48.155364367Z   └────────┴───────┴───────┴───────┴───────┴───────┴────────────┴───────────┴─────────────────┴────────────┴────────────┴───────┴────────────────────────────────┴────────────────────────────────┘
+2026-09-22T19:08:48.155377681Z 
+2026-09-22T19:08:48.155382092Z [2026-09-22 21:08:48.154] [upf_n4 ] [info] handle_receive(191 bytes)
+2026-09-22T19:08:48.155386597Z [2026-09-22 21:08:48.154] [upf_app] [info] 
+2026-09-22T19:08:48.155391016Z [2026-09-22 21:08:48.154] [upf_app] [info] ╔═════════════════════════════════════════════════════════════════════════════╗
+2026-09-22T19:08:48.155397176Z [2026-09-22 21:08:48.154] [upf_app] [info] │             Received N4_SESSION_MODIFICATION_REQUEST seid 0x2               │
+2026-09-22T19:08:48.155401928Z [2026-09-22 21:08:48.154] [upf_app] [info] ╚═════════════════════════════════════════════════════════════════════════════╝
+2026-09-22T19:08:48.155407582Z [2026-09-22 21:08:48.154] [upf_n4 ] [info] pfcp_session::add(far) seid 0x2 FAR=2
+2026-09-22T19:08:48.155412038Z [2026-09-22 21:08:48.154] [upf_n4 ] [info]   └─ Adding new FAR 2 to session 0x2
+2026-09-22T19:08:48.155419226Z [2026-09-22 21:08:48.154] [upf_n4 ] [debug]      • Apply Action: FORW 
+2026-09-22T19:08:48.155425113Z [2026-09-22 21:08:48.154] [upf_n4 ] [debug]      • Destination Interface: ACCESS
+2026-09-22T19:08:48.155430294Z [2026-09-22 21:08:48.154] [upf_n4 ] [debug]      • Outer Header TEID: 0x80000002
+2026-09-22T19:08:48.155435634Z [2026-09-22 21:08:48.154] [upf_n4 ] [debug]      • Remote IP: 192.168.71.139
+2026-09-22T19:08:48.155441042Z [2026-09-22 21:08:48.154] [upf_n4 ] [debug]      • Total FARs in session: 2
+2026-09-22T19:08:48.155446588Z [2026-09-22 21:08:48.154] [upf_n4 ] [info] pfcp_session::add(pdr) seid 0x2 PDR=2
+2026-09-22T19:08:48.155451802Z [2026-09-22 21:08:48.154] [upf_n4 ] [info]   └─ Adding new PDR 2 to session 0x2
+2026-09-22T19:08:48.155457352Z [2026-09-22 21:08:48.154] [upf_n4 ] [debug]      • Source Interface: CORE (Downlink)
+2026-09-22T19:08:48.155471263Z [2026-09-22 21:08:48.154] [upf_n4 ] [debug]      • UE IP Address: 12.2.1.130
+2026-09-22T19:08:48.155477524Z [2026-09-22 21:08:48.154] [upf_n4 ] [debug]      • Precedence: 0
+2026-09-22T19:08:48.155482876Z [2026-09-22 21:08:48.154] [upf_n4 ] [debug]      • Linked FAR: 2
+2026-09-22T19:08:48.155489186Z [2026-09-22 21:08:48.154] [upf_n4 ] [debug]      • Linked QER: 2
+2026-09-22T19:08:48.155494196Z [2026-09-22 21:08:48.154] [upf_n4 ] [debug]      • Total PDRs in session: 2
+2026-09-22T19:08:48.191933369Z 
+2026-09-22T19:08:48.191945991Z   ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+2026-09-22T19:08:48.191952934Z   │                                                                                PDU SESSION RULES - Session 0x2                                                                                │
+2026-09-22T19:08:48.191956664Z   ├────────┬───────┬───────┬───────┬───────┬───────┬────────────┬───────────┬─────────────────┬────────────┬────────────┬───────┬────────────────────────────────┬────────────────────────────────┤
+2026-09-22T19:08:48.191961751Z   │  PDR   │  FAR  │  QER  │  URR  │  BAR  │  MAR  │ Precedence │ Direction │    UE IPv4      │   Action   │  Dest If   │  QFI  │       Create Outer Hdr         │       Remove Outer Hdr         │
+2026-09-22T19:08:48.191966416Z   ├────────┼───────┼───────┼───────┼───────┼───────┼────────────┼───────────┼─────────────────┼────────────┼────────────┼───────┼────────────────────────────────┼────────────────────────────────┤
+2026-09-22T19:08:48.191971397Z   │ 1      │ 1     │ -     │ -     │ -     │ -     │ 0          │ UL        │ 12.2.1.130      │ FORW       │ CORE       │ -     │ -                              │ GTP TEID:0x2                   │
+2026-09-22T19:08:48.191975077Z   │ 2      │ 2     │ -     │ -     │ -     │ -     │ 0          │ DL        │ 12.2.1.130      │ FORW       │ ACCESS     │ -     │ GTP → 192.168.71.139:0x80000002 │ -                              │
+2026-09-22T19:08:48.191979013Z   └────────┴───────┴───────┴───────┴───────┴───────┴────────────┴───────────┴─────────────────┴────────────┴────────────┴───────┴────────────────────────────────┴────────────────────────────────┘
+2026-09-22T19:08:48.191990923Z 
+2026-09-22T19:08:48.191994067Z [2026-09-22 21:08:48.191] [pfcp_switch] [info] PDR/PDI IP is 8201020c 
+2026-09-22T19:08:48.191997142Z [2026-09-22 21:08:48.191] [pfcp_switch] [info] Upstream IP is 8201020c 
+2026-09-22T19:08:49.194344401Z [2026-09-22 21:08:49.193] [pfcp_switch] [info] PDR/PDI IP is 8201020c 
+2026-09-22T19:08:49.194389012Z [2026-09-22 21:08:49.193] [pfcp_switch] [info] Upstream IP is 8201020c 
+2026-09-22T19:08:50.194811144Z [2026-09-22 21:08:50.194] [pfcp_switch] [info] PDR/PDI IP is 8201020c 
+2026-09-22T19:08:50.194836293Z [2026-09-22 21:08:50.194] [pfcp_switch] [info] Upstream IP is 8201020c 
+2026-09-22T19:08:56.062377799Z [2026-09-22 21:08:56.062] [upf_app] [info] TIME-OUT event timer id 21
+2026-09-22T19:08:56.062395238Z [2026-09-22 21:08:56.062] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:08:56.062400070Z [2026-09-22 21:08:56.062] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:08:56.062403649Z [2026-09-22 21:08:56.062] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:08:56.062408217Z [2026-09-22 21:08:56.062] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:08:56.062411997Z [2026-09-22 21:08:56.062] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:08:56.063724903Z [2026-09-22 21:08:56.063] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:08:56.063739596Z [2026-09-22 21:08:56.063] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:08:56.129853917Z [2026-09-22 21:08:56.129] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:08:56.129901241Z [2026-09-22 21:08:56.129] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:09:06.064172354Z [2026-09-22 21:09:06.063] [upf_app] [info] TIME-OUT event timer id 25
+2026-09-22T19:09:06.064352504Z [2026-09-22 21:09:06.063] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:09:06.064375110Z [2026-09-22 21:09:06.063] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:09:06.064669916Z [2026-09-22 21:09:06.063] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:09:06.064706336Z [2026-09-22 21:09:06.063] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:09:06.064720602Z [2026-09-22 21:09:06.063] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:09:06.072617315Z [2026-09-22 21:09:06.072] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:09:06.072681544Z [2026-09-22 21:09:06.072] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:09:06.131608156Z [2026-09-22 21:09:06.131] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:09:06.131668105Z [2026-09-22 21:09:06.131] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:09:16.072451358Z [2026-09-22 21:09:16.072] [upf_app] [info] TIME-OUT event timer id 27
+2026-09-22T19:09:16.072528530Z [2026-09-22 21:09:16.072] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:09:16.072537048Z [2026-09-22 21:09:16.072] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:09:16.072543281Z [2026-09-22 21:09:16.072] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:09:16.072551037Z [2026-09-22 21:09:16.072] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:09:16.072557524Z [2026-09-22 21:09:16.072] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:09:16.074587089Z [2026-09-22 21:09:16.074] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:09:16.074613618Z [2026-09-22 21:09:16.074] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:09:16.132154055Z [2026-09-22 21:09:16.131] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:09:16.132205908Z [2026-09-22 21:09:16.132] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:09:26.075464310Z [2026-09-22 21:09:26.075] [upf_app] [info] TIME-OUT event timer id 29
+2026-09-22T19:09:26.075498765Z [2026-09-22 21:09:26.075] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:09:26.075505605Z [2026-09-22 21:09:26.075] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:09:26.075510696Z [2026-09-22 21:09:26.075] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:09:26.075516476Z [2026-09-22 21:09:26.075] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:09:26.075521746Z [2026-09-22 21:09:26.075] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:09:26.078905194Z [2026-09-22 21:09:26.078] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:09:26.078932429Z [2026-09-22 21:09:26.078] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:09:26.133065972Z [2026-09-22 21:09:26.132] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:09:26.133089263Z [2026-09-22 21:09:26.132] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:09:36.079286688Z [2026-09-22 21:09:36.078] [upf_app] [info] TIME-OUT event timer id 31
+2026-09-22T19:09:36.079365174Z [2026-09-22 21:09:36.078] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:09:36.079395543Z [2026-09-22 21:09:36.079] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:09:36.079471882Z [2026-09-22 21:09:36.079] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:09:36.079500639Z [2026-09-22 21:09:36.079] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:09:36.079517056Z [2026-09-22 21:09:36.079] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:09:36.084894642Z [2026-09-22 21:09:36.084] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:09:36.084969093Z [2026-09-22 21:09:36.084] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:09:36.134751822Z [2026-09-22 21:09:36.134] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:09:36.134835242Z [2026-09-22 21:09:36.134] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:09:46.085013600Z [2026-09-22 21:09:46.084] [upf_app] [info] TIME-OUT event timer id 33
+2026-09-22T19:09:46.085062132Z [2026-09-22 21:09:46.084] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:09:46.085075012Z [2026-09-22 21:09:46.084] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:09:46.085085083Z [2026-09-22 21:09:46.084] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:09:46.085097944Z [2026-09-22 21:09:46.084] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:09:46.085109346Z [2026-09-22 21:09:46.084] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:09:46.089760142Z [2026-09-22 21:09:46.089] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:09:46.089807104Z [2026-09-22 21:09:46.089] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:09:46.136549486Z [2026-09-22 21:09:46.136] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:09:46.136601371Z [2026-09-22 21:09:46.136] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST
+2026-09-22T19:09:56.089769041Z [2026-09-22 21:09:56.089] [upf_app] [info] TIME-OUT event timer id 35
+2026-09-22T19:09:56.089807717Z [2026-09-22 21:09:56.089] [upf_app] [debug] Send Heartbeat to NRF
+2026-09-22T19:09:56.089818437Z [2026-09-22 21:09:56.089] [upf_app] [info] Send NF Update to NRF
+2026-09-22T19:09:56.089827176Z [2026-09-22 21:09:56.089] [upf_app] [debug] Send NF Update to NRF (Msg body [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}])
+2026-09-22T19:09:56.089837715Z [2026-09-22 21:09:56.089] [upf_app] [debug] Send NF Update to NRF (NRF URL http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8a2c8e91-7333-4d41-8c3a-e672ff2abeca)
+2026-09-22T19:09:56.089846596Z [2026-09-22 21:09:56.089] [upf_app] [debug] Send a simple HTTP request
+2026-09-22T19:09:56.092981821Z [2026-09-22 21:09:56.092] [upf_app] [info] Got successful response from NRF
+2026-09-22T19:09:56.093008852Z [2026-09-22 21:09:56.092] [upf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:09:56.137155362Z [2026-09-22 21:09:56.137] [upf_n4 ] [info] handle_receive(16 bytes)
+2026-09-22T19:09:56.137168283Z [2026-09-22 21:09:56.137] [upf_n4 ] [info] Received SX HEARTBEAT REQUEST

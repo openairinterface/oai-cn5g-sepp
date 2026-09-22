@@ -1,6 +1,6 @@
 # End-to-end 5G SA LBO Roaming with OAI 5G Core Network
 
-In this tutorial, a UE from the **home PLMN 26210** connects to the **visited PLMN 20814** using **Local Breakout (LBO) roaming**. The tutorial covers the **5G roaming signalling and user-plane procedures** for establishing an LBO connection. This includes **inter-PLMN communication via the SEPP**, UE authentication and subscriber information retrieval from the home network, and **PDU session establishment in the visited network**.
+In this tutorial, a UE from the **home PLMN 99910** connects to the **visited PLMN 99920** using **Local Breakout (LBO) roaming**. The tutorial covers the **5G roaming signalling and user-plane procedures** for establishing an LBO connection. This includes **inter-PLMN communication via the SEPP**, UE authentication and subscriber information retrieval from the home network, and **PDU session establishment in the visited network**.
 
 
 ![LBO Roaming Topology](./images/LBO_ROAMING.png)
@@ -39,8 +39,8 @@ Use `docker-compose` instead if the host has Compose v1.
 
 | Test setting | Value |
 |---|---|
-| UE | `imsi-262100000000031` |
-| Home → visited PLMN | `26210` → `20814` |
+| UE | `imsi-999100000000031` |
+| Home → visited PLMN | `99910` → `99920` |
 | DNN | `oai` |
 | Slice | SST `222`, SD `00007B` |
 
@@ -52,8 +52,8 @@ The UE automatically registers, establishes its PDU session, and performs the LB
 
 ```bash
 docker logs -f ue-plmnB-roaming-A
-docker exec ue-plmnB-roaming-A nr-cli imsi-262100000000031 -e status
-docker exec ue-plmnB-roaming-A nr-cli imsi-262100000000031 -e ps-list
+docker exec ue-plmnB-roaming-A nr-cli imsi-999100000000031 -e status
+docker exec ue-plmnB-roaming-A nr-cli imsi-999100000000031 -e ps-list
 ```
 
 Confirm successful registration, an active IPv4 session on `oai`, and successful data traffic through the visited UPF.
@@ -67,142 +67,140 @@ Selected excerpts from the same run follow:-
 **LBO data traffic — UE ping**
 
 ```text
-PING google.com (142.251.31.113) from 12.1.1.130 uesimtun0: 56(84) bytes of data.
-64 bytes from 142.251.31.113: icmp_seq=1 ttl=105 time=32.2 ms
-64 bytes from 142.251.31.113: icmp_seq=2 ttl=105 time=25.9 ms
-64 bytes from 142.251.31.113: icmp_seq=3 ttl=105 time=24.4 ms
-
+PING google.com (74.125.143.102) from 12.1.1.130 uesimtun0: 56(84) bytes of data.
+64 bytes from 74.125.143.102: icmp_seq=1 ttl=108 time=23.2 ms
+64 bytes from 74.125.143.102: icmp_seq=2 ttl=108 time=21.5 ms
+64 bytes from 74.125.143.102: icmp_seq=3 ttl=108 time=22.8 ms
 --- google.com ping statistics ---
 3 packets transmitted, 3 received, 0% packet loss, time 2002ms
-rtt min/avg/max/mdev = 24.443/27.509/32.204/3.370 ms
+rtt min/avg/max/mdev = 21.459/22.506/23.244/0.761 ms
 ```
 
 **Visited AMF-A Logs**
 
 ```text
-2026-09-19T19:52:34.348425963Z [2026-09-19 21:52:34.348] [amf_app] [debug] Handle NF Update response
-2026-09-19T19:52:34.348443557Z [2026-09-19 21:52:34.348] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-19T19:52:42.829208561Z [2026-09-19 21:52:42.828] [amf_app] [info] 
-2026-09-19T19:52:42.829286469Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-19T19:52:42.829300953Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
-2026-09-19T19:52:42.829310499Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
-2026-09-19T19:52:42.829319242Z    |    1   |              Connected             |                0x01                |        UERANSIM-gnb-208-14-1       |               208,14               |
-2026-09-19T19:52:42.829327904Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-19T19:52:42.829336693Z 
-2026-09-19T19:52:42.829344333Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-19T19:52:42.829353852Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
-2026-09-19T19:52:42.829362488Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
-2026-09-19T19:52:42.829371230Z    |    1   |   5GMM-REGISTERED  |             262100000000031            |20814010041304846098|        0x01        |        0x03        |       208,14       |      000000010     |
-2026-09-19T19:52:42.829380617Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-19T19:52:42.829427179Z 
-2026-09-19T19:52:44.349078435Z [2026-09-19 21:52:44.348] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:04:33.842303392Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:04:33.842339059Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
+2026-09-22T19:04:33.842357434Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
+2026-09-22T19:04:33.842373479Z    |    1   |              Connected             |                0x01                |        UERANSIM-gnb-999-20-1       |               999,20               |
+2026-09-22T19:04:33.842389361Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:04:33.842401792Z 
+2026-09-22T19:04:33.842415043Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:04:33.842431389Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
+2026-09-22T19:04:33.842492661Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
+2026-09-22T19:04:33.842509613Z    |    1   |   5GMM-REGISTERED  |             999100000000031            |99920010041135736812|        0x01        |        0x01        |       999,20       |      000000010     |
+2026-09-22T19:04:33.842525947Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:04:33.842541864Z 
+2026-09-22T19:04:34.012216720Z [2026-09-22 21:04:34.011] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:04:34.012827296Z [2026-09-22 21:04:34.011] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:04:34.012858922Z [2026-09-22 21:04:34.011] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc20.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/ddbe5a7d-ff38-4bb0-86c5-3e175ece11b1
 ```
 **Home AUSF-B Logs**
 
 ```text
-2026-09-19T18:59:19.283074148Z [2026-09-19 20:59:19.282] [ausf_app] [info] supiOrSuci imsi-262100000000031
-2026-09-19T18:59:19.283525973Z [2026-09-19 20:59:19.283] [ausf_app] [debug] UDM's URI http://udm.5gc.mnc10.mcc262.3gppnetwork.org:8080/nudm-ueau/v1/imsi-262100000000031/security-information/generate-auth-data
-2026-09-19T18:59:19.283562983Z [2026-09-19 20:59:19.283] [ausf_app] [info] Received authInfo from AMF without ResynchronizationInfo IE
-2026-09-19T18:59:19.283637647Z [2026-09-19 20:59:19.283] [ausf_client] [debug] Send a simple HTTP request
-2026-09-19T18:59:19.342055589Z [2026-09-19 20:59:19.341] [ausf_app] [info] Response from UDM: {"authType":"5G_AKA","authenticationVector":{"autn":"78b327dff2f280009344cc03410e8828","avType":"5G_HE_AKA","kausf":"5dbf748cd17281758366186646e7768d0e2de0549078ca0d7d59a9393c8243f8","rand":"2c81d24f132d5b03119524f4dfb67711","xresStar":"e2c5d85368aef7267c822030865d36bc"},"supi":"imsi-262100000000031"}
-2026-09-19T18:59:19.342102910Z [2026-09-19 20:59:19.341] [ausf_app] [debug] authType 5G_AKA
-2026-09-19T18:59:19.342113900Z [2026-09-19 20:59:19.341] [ausf_app] [debug] autn_udm 78b327dff2f280009344cc03410e8828
-2026-09-19T18:59:19.342122441Z [2026-09-19 20:59:19.341] [ausf_app] [debug] av_type_udm 5G_HE_AKA
-2026-09-19T18:59:19.342130640Z [2026-09-19 20:59:19.341] [ausf_app] [debug] kausf_udm 5dbf748cd17281758366186646e7768d0e2de0549078ca0d7d59a9393c8243f8
-2026-09-19T18:59:19.342138896Z [2026-09-19 20:59:19.341] [ausf_app] [debug] rand_udm 2c81d24f132d5b03119524f4dfb67711
-2026-09-19T18:59:19.342147557Z [2026-09-19 20:59:19.341] [ausf_app] [debug] xres*_udm e2c5d85368aef7267c822030865d36bc
-2026-09-19T18:59:19.342155794Z [2026-09-19 20:59:19.341] [ausf_app] [debug] Generating 5G AV
-2026-09-19T18:59:19.342211694Z [2026-09-19 20:59:19.342] [ausf_app] [debug] HXresStar calculated:
-2026-09-19T18:59:19.342253100Z  f4c09d9d3ac2ef0262f164b4a8471d8b
-2026-09-19T18:59:19.342271334Z [2026-09-19 20:59:19.342] [ausf_app] [debug] Derive_kseaf ...
-2026-09-19T18:59:19.342286169Z [2026-09-19 20:59:19.342] [ausf_app] [debug] SNN: 5G:mnc014.mcc208.3gppnetwork.org
-2026-09-19T18:59:19.342302641Z [2026-09-19 20:59:19.342] [common] [debug] [ausf_app]derive_kseaf Kausf
-2026-09-19T18:59:19.342390864Z 5d bf 74 8c d1 72 81 75 83 66 18 66 46 e7 76 8d 0e 2d e0 54 90 78 ca 0d 7d 59 a9 39 3c 82 43 f8 
-2026-09-19T18:59:19.342410423Z [2026-09-19 20:59:19.342] [common] [debug] [ausf_app]derive_kseaf Kseaf
-2026-09-19T18:59:19.342418942Z 2f d3 2e e1 3e f9 e4 6e 1d b9 37 66 1c 00 91 cc 5b 62 c1 e2 c1 01 11 5e b3 94 50 9f e5 bc 27 ab 
-2026-09-19T18:59:19.342427239Z [2026-09-19 20:59:19.342] [ausf_app] [debug] Kseaf calculated:
-2026-09-19T18:59:19.342435310Z  2fd32ee13ef9e46e1db937661c0091cc5b62c1e2c101115eb394509fe5bc27ab
-2026-09-19T18:59:19.342443271Z [2026-09-19 20:59:19.342] [ausf_app] [debug] Create a new security context with SUPI imsi-262100000000031
-2026-09-19T18:59:19.342570432Z [2026-09-19 20:59:19.342] [ausf_app] [debug] Auth Response:
-2026-09-19T18:59:19.342692216Z  {"5gAuthData":{"autn":"78b327dff2f280009344cc03410e8828","hxresStar":"f4c09d9d3ac2ef0262f164b4a8471d8b","rand":"2c81d24f132d5b03119524f4dfb67711"},"_links":{"5g-aka":{"href":"http://192.168.73.133:8080/nausf-auth/v1/ue-authentications/78b327dff2f280009344cc03410e8828/5g-aka-confirmation"}},"authType":"5G_AKA"}
-2026-09-19T18:59:19.342724363Z [2026-09-19 20:59:19.342] [ausf_server] [debug] Auth response:
-2026-09-19T18:59:19.342740147Z  {"5gAuthData":{"autn":"78b327dff2f280009344cc03410e8828","hxresStar":"f4c09d9d3ac2ef0262f164b4a8471d8b","rand":"2c81d24f132d5b03119524f4dfb67711"},"_links":{"5g-aka":{"href":"http://192.168.73.133:8080/nausf-auth/v1/ue-authentications/78b327dff2f280009344cc03410e8828/5g-aka-confirmation"}},"authType":"5G_AKA"}
-2026-09-19T18:59:19.342761071Z [2026-09-19 20:59:19.342] [ausf_server] [info] Send Auth response to SEAF (Code 201)
-2026-09-19T18:59:19.359066147Z [2026-09-19 20:59:19.358] [ausf_server] [info] Received 5g_aka_confirmation Request
-2026-09-19T18:59:19.359122957Z [2026-09-19 20:59:19.358] [ausf_server] [info] 5gaka confirmation received with authctxID 78b327dff2f280009344cc03410e8828
-2026-09-19T18:59:19.359138494Z [2026-09-19 20:59:19.358] [ausf_app] [debug] Handling 5g-aka-confirmation
-2026-09-19T18:59:19.359147441Z [2026-09-19 20:59:19.358] [ausf_app] [debug] Retrieve security context with authCtxId: 78b327dff2f280009344cc03410e8828
-2026-09-19T18:59:19.359155902Z [2026-09-19 20:59:19.358] [ausf_app] [info] Received authCtxId 78b327dff2f280009344cc03410e8828
-2026-09-19T18:59:19.359164004Z [2026-09-19 20:59:19.358] [ausf_app] [info] Received res* E2C5D85368AEF7267C822030865D36BC
-2026-09-19T18:59:19.359172072Z [2026-09-19 20:59:19.358] [ausf_app] [debug] authCtxId in AUSF: 78b327dff2f280009344cc03410e8828
-2026-09-19T18:59:19.359180046Z [2026-09-19 20:59:19.358] [ausf_app] [info] AV is up to date, handling received res*...
-2026-09-19T18:59:19.359188018Z [2026-09-19 20:59:19.358] [ausf_app] [debug] xres* in AUSF: e2c5d85368aef7267c822030865d36bc
-2026-09-19T18:59:19.359196083Z [2026-09-19 20:59:19.358] [ausf_app] [debug] xres in AMF: e2c5d85368aef7267c822030865d36bc
-2026-09-19T18:59:19.359204275Z [2026-09-19 20:59:19.358] [ausf_app] [info] Authentication successful by home network!
-2026-09-19T18:59:19.359995762Z [2026-09-19 20:59:19.359] [ausf_app] [debug] UDM's URI: http://udm.5gc.mnc10.mcc262.3gppnetwork.org:8080/nudm-ueau/v1/imsi-262100000000031/auth-events
-2026-09-19T18:59:19.360054949Z [2026-09-19 20:59:19.359] [ausf_app] [debug] confirmResultInfo: {"authRemovalInd":false,"authType":"5G_AKA","nfInstanceId":"04369ad6-a863-4b50-929c-c7ae514b5281","servingNetworkName":"5G:mnc014.mcc208.3gppnetwork.org","success":true,"timeStamp":"2026-09-19T18:59:19Z"}
-2026-09-19T18:59:19.360084202Z [2026-09-19 20:59:19.359] [ausf_client] [debug] Send a simple HTTP request
-2026-09-19T18:59:19.385167101Z [2026-09-19 20:59:19.384] [ausf_server] [debug] 5g-aka-confirmation response:
-2026-09-19T18:59:19.385242781Z  {"authResult":"AUTHENTICATION_SUCCESS","kseaf":"2fd32ee13ef9e46e1db937661c0091cc5b62c1e2c101115eb394509fe5bc27ab","supi":"imsi-262100000000031"}
-2026-09-19T18:59:19.385292849Z [2026-09-19 20:59:19.384] [ausf_server] [info] Send 5g-aka-confirmation response to SEAF (Code 200)
+2026-09-22T19:04:29.961611423Z [2026-09-22 21:04:29.961] [ausf_app] [info] supiOrSuci imsi-999100000000031
+2026-09-22T19:04:29.962165836Z [2026-09-22 21:04:29.962] [ausf_app] [debug] UDM's URI http://udm.5gc.mnc10.mcc999.3gppnetwork.org:8080/nudm-ueau/v1/imsi-999100000000031/security-information/generate-auth-data
+2026-09-22T19:04:29.962199872Z [2026-09-22 21:04:29.962] [ausf_app] [info] Received authInfo from AMF without ResynchronizationInfo IE
+2026-09-22T19:04:29.962223067Z [2026-09-22 21:04:29.962] [ausf_client] [debug] Send a simple HTTP request
+2026-09-22T19:04:30.030484993Z [2026-09-22 21:04:30.030] [ausf_app] [info] Response from UDM: {"authType":"5G_AKA","authenticationVector":{"autn":"47fcb6860ffc80000f5ef499dea02321","avType":"5G_HE_AKA","kausf":"ff57436fbecde9e4dc84feec9cfedcfd3e91f96fa8e401a338bf9f20aecfdc4d","rand":"afd717e98be059474e4ea96e7de26a34","xresStar":"b8a5c6820f8ed1ed490cfd2c67414373"},"supi":"imsi-999100000000031"}
+2026-09-22T19:04:30.030748091Z [2026-09-22 21:04:30.030] [ausf_app] [debug] authType 5G_AKA
+2026-09-22T19:04:30.030778248Z [2026-09-22 21:04:30.030] [ausf_app] [debug] autn_udm 47fcb6860ffc80000f5ef499dea02321
+2026-09-22T19:04:30.030789116Z [2026-09-22 21:04:30.030] [ausf_app] [debug] av_type_udm 5G_HE_AKA
+2026-09-22T19:04:30.030797465Z [2026-09-22 21:04:30.030] [ausf_app] [debug] kausf_udm ff57436fbecde9e4dc84feec9cfedcfd3e91f96fa8e401a338bf9f20aecfdc4d
+2026-09-22T19:04:30.030806073Z [2026-09-22 21:04:30.030] [ausf_app] [debug] rand_udm afd717e98be059474e4ea96e7de26a34
+2026-09-22T19:04:30.030813949Z [2026-09-22 21:04:30.030] [ausf_app] [debug] xres*_udm b8a5c6820f8ed1ed490cfd2c67414373
+2026-09-22T19:04:30.030821896Z [2026-09-22 21:04:30.030] [ausf_app] [debug] Generating 5G AV
+2026-09-22T19:04:30.030829639Z [2026-09-22 21:04:30.030] [ausf_app] [debug] HXresStar calculated:
+2026-09-22T19:04:30.030837533Z  a41e72e8a89f2014b98376a8c08cd7c4
+2026-09-22T19:04:30.030845189Z [2026-09-22 21:04:30.030] [ausf_app] [debug] Derive_kseaf ...
+2026-09-22T19:04:30.030852733Z [2026-09-22 21:04:30.030] [ausf_app] [debug] SNN: 5G:mnc020.mcc999.3gppnetwork.org
+2026-09-22T19:04:30.030860559Z [2026-09-22 21:04:30.030] [common] [debug] [ausf_app]derive_kseaf Kausf
+2026-09-22T19:04:30.030883673Z ff 57 43 6f be cd e9 e4 dc 84 fe ec 9c fe dc fd 3e 91 f9 6f a8 e4 01 a3 38 bf 9f 20 ae cf dc 4d 
+2026-09-22T19:04:30.030892969Z [2026-09-22 21:04:30.030] [common] [debug] [ausf_app]derive_kseaf Kseaf
+2026-09-22T19:04:30.030900757Z a9 73 de a0 2b 5a 4b 70 1f 88 0b ee aa bf 6d c9 5f 6e 61 96 5d 98 d8 87 99 60 35 d5 d8 ef 9b 14 
+2026-09-22T19:04:30.030908576Z [2026-09-22 21:04:30.030] [ausf_app] [debug] Kseaf calculated:
+2026-09-22T19:04:30.030916107Z  a973dea02b5a4b701f880beeaabf6dc95f6e61965d98d887996035d5d8ef9b14
+2026-09-22T19:04:30.030923761Z [2026-09-22 21:04:30.030] [ausf_app] [debug] Create a new security context with SUPI imsi-999100000000031
+2026-09-22T19:04:30.031068768Z [2026-09-22 21:04:30.030] [ausf_app] [debug] Auth Response:
+2026-09-22T19:04:30.031100889Z  {"5gAuthData":{"autn":"47fcb6860ffc80000f5ef499dea02321","hxresStar":"a41e72e8a89f2014b98376a8c08cd7c4","rand":"afd717e98be059474e4ea96e7de26a34"},"_links":{"5g-aka":{"href":"http://192.168.73.133:8080/nausf-auth/v1/ue-authentications/47fcb6860ffc80000f5ef499dea02321/5g-aka-confirmation"}},"authType":"5G_AKA"}
+2026-09-22T19:04:30.031656252Z [2026-09-22 21:04:30.031] [ausf_server] [debug] Auth response:
+2026-09-22T19:04:30.031708741Z  {"5gAuthData":{"autn":"47fcb6860ffc80000f5ef499dea02321","hxresStar":"a41e72e8a89f2014b98376a8c08cd7c4","rand":"afd717e98be059474e4ea96e7de26a34"},"_links":{"5g-aka":{"href":"http://192.168.73.133:8080/nausf-auth/v1/ue-authentications/47fcb6860ffc80000f5ef499dea02321/5g-aka-confirmation"}},"authType":"5G_AKA"}
+2026-09-22T19:04:30.031734058Z [2026-09-22 21:04:30.031] [ausf_server] [info] Send Auth response to SEAF (Code 201)
+2026-09-22T19:04:30.050535840Z [2026-09-22 21:04:30.049] [ausf_server] [info] Received 5g_aka_confirmation Request
+2026-09-22T19:04:30.050600265Z [2026-09-22 21:04:30.049] [ausf_server] [info] 5gaka confirmation received with authctxID 47fcb6860ffc80000f5ef499dea02321
+2026-09-22T19:04:30.050621675Z [2026-09-22 21:04:30.049] [ausf_app] [debug] Handling 5g-aka-confirmation
+2026-09-22T19:04:30.050638133Z [2026-09-22 21:04:30.049] [ausf_app] [debug] Retrieve security context with authCtxId: 47fcb6860ffc80000f5ef499dea02321
+2026-09-22T19:04:30.050653244Z [2026-09-22 21:04:30.049] [ausf_app] [info] Received authCtxId 47fcb6860ffc80000f5ef499dea02321
+2026-09-22T19:04:30.050667761Z [2026-09-22 21:04:30.049] [ausf_app] [info] Received res* B8A5C6820F8ED1ED490CFD2C67414373
+2026-09-22T19:04:30.050681928Z [2026-09-22 21:04:30.049] [ausf_app] [debug] authCtxId in AUSF: 47fcb6860ffc80000f5ef499dea02321
+2026-09-22T19:04:30.050695929Z [2026-09-22 21:04:30.049] [ausf_app] [info] AV is up to date, handling received res*...
+2026-09-22T19:04:30.050708267Z [2026-09-22 21:04:30.049] [ausf_app] [debug] xres* in AUSF: b8a5c6820f8ed1ed490cfd2c67414373
+2026-09-22T19:04:30.050721309Z [2026-09-22 21:04:30.049] [ausf_app] [debug] xres in AMF: b8a5c6820f8ed1ed490cfd2c67414373
+2026-09-22T19:04:30.050734755Z [2026-09-22 21:04:30.049] [ausf_app] [info] Authentication successful by home network!
+2026-09-22T19:04:30.050748962Z [2026-09-22 21:04:30.049] [ausf_app] [debug] UDM's URI: http://udm.5gc.mnc10.mcc999.3gppnetwork.org:8080/nudm-ueau/v1/imsi-999100000000031/auth-events
+2026-09-22T19:04:30.050764386Z [2026-09-22 21:04:30.049] [ausf_app] [debug] confirmResultInfo: {"authRemovalInd":false,"authType":"5G_AKA","nfInstanceId":"477e27ed-668e-4233-a520-592ea8e15a26","servingNetworkName":"5G:mnc020.mcc999.3gppnetwork.org","success":true,"timeStamp":"2026-09-22T19:04:30Z"}
+2026-09-22T19:04:30.050788678Z [2026-09-22 21:04:30.049] [ausf_client] [debug] Send a simple HTTP request
+2026-09-22T19:04:30.065960790Z [2026-09-22 21:04:30.065] [ausf_server] [debug] 5g-aka-confirmation response:
+2026-09-22T19:04:30.065985702Z  {"authResult":"AUTHENTICATION_SUCCESS","kseaf":"a973dea02b5a4b701f880beeaabf6dc95f6e61965d98d887996035d5d8ef9b14","supi":"imsi-999100000000031"}
+2026-09-22T19:04:30.066016184Z [2026-09-22 21:04:30.065] [ausf_server] [info] Send 5g-aka-confirmation response to SEAF (Code 200)
 ```
 
 **Visited SMF-A Logs**
 ```text
-2026-09-19T19:31:15.922411674Z [2026-09-19 21:31:15.922] [smf_app] [info] Set upCnxState to UPCNX_STATE_ACTIVATED
-2026-09-19T19:31:15.922701774Z [2026-09-19 21:31:15.922] [smf_app] [info] SMF context: 
-2026-09-19T19:31:15.922747441Z  
-2026-09-19T19:31:15.922759967Z SMF CONTEXT:
-2026-09-19T19:31:15.922769874Z SUPI:				imsi-262100000000031
-2026-09-19T19:31:15.922783269Z PDU SESSION:				
-2026-09-19T19:31:15.922797801Z 	PDU Session ID:			1
-2026-09-19T19:31:15.922813833Z 	DNN:			oai
-2026-09-19T19:31:15.922861195Z 	S-NSSAI:			sst, sd: 222, 00007b
-2026-09-19T19:31:15.922873996Z 	PDN type:		IPV4
-2026-09-19T19:31:15.922888123Z 	PAA IPv4:		12.1.1.130
-2026-09-19T19:31:15.922904070Z 	Default QFI:		No QFI available
-2026-09-19T19:31:15.922919173Z 	SEID:			2
-2026-09-19T19:31:15.922934381Z 	N3:
-2026-09-19T19:31:15.922948132Z - UPF Graph Edge
-2026-09-19T19:31:15.922961897Z   + Interface Type.............................: N3
-2026-09-19T19:31:15.922975836Z   + NWI........................................: 
-2026-09-19T19:31:15.922990994Z   + Uplink.....................................: No
-2026-09-19T19:31:15.923005025Z   + PDR ID.....................................: 1
-2026-09-19T19:31:15.923019876Z   + FAR ID.....................................: 2
-2026-09-19T19:31:15.923034758Z 
-2026-09-19T19:31:15.923049773Z 
-2026-09-19T19:31:15.923062085Z [2026-09-19 21:31:15.922] [smf_app] [debug] Send request to N11 to triger FlexCN, SMF Context ID 0x2 
+2026-09-22T19:04:30.460756756Z [2026-09-22 21:04:30.460] [smf_app] [info] Set upCnxState to UPCNX_STATE_ACTIVATED
+2026-09-22T19:04:30.460890339Z [2026-09-22 21:04:30.460] [smf_app] [info] SMF context: 
+2026-09-22T19:04:30.460895719Z  
+2026-09-22T19:04:30.460898518Z SMF CONTEXT:
+2026-09-22T19:04:30.460901220Z SUPI:				imsi-999100000000031
+2026-09-22T19:04:30.460904202Z PDU SESSION:				
+2026-09-22T19:04:30.460906710Z 	PDU Session ID:			1
+2026-09-22T19:04:30.460909630Z 	DNN:			oai
+2026-09-22T19:04:30.460912285Z 	S-NSSAI:			sst, sd: 222, 00007b
+2026-09-22T19:04:30.460931268Z 	PDN type:		IPV4
+2026-09-22T19:04:30.460934379Z 	PAA IPv4:		12.1.1.130
+2026-09-22T19:04:30.460936751Z 	Default QFI:		No QFI available
+2026-09-22T19:04:30.460939128Z 	SEID:			1
+2026-09-22T19:04:30.460941703Z 	N3:
+2026-09-22T19:04:30.460944030Z - UPF Graph Edge
+2026-09-22T19:04:30.460946533Z   + Interface Type.............................: N3
+2026-09-22T19:04:30.460949208Z   + NWI........................................: 
+2026-09-22T19:04:30.460951722Z   + Uplink.....................................: No
+2026-09-22T19:04:30.460954447Z   + PDR ID.....................................: 1
+2026-09-22T19:04:30.460956970Z   + FAR ID.....................................: 2
+2026-09-22T19:04:30.460959600Z 
+2026-09-22T19:04:30.460961975Z 
+2026-09-22T19:04:30.460964452Z [2026-09-22 21:04:30.460] [smf_app] [debug] Send request to N11 to triger FlexCN, SMF Context ID 0x1 
 ```
 
 **Visited UPF-A Logs**
 
 ```text
-2026-09-19T18:59:19.771164931Z [2026-09-19 20:59:19.771] [upf_n4 ] [info] pfcp_session::get(fteid) seid 0x1 
-2026-09-19T18:59:19.771263892Z [2026-09-19 20:59:19.771] [upf_n4 ] [info] pfcp_session::add(pdr) seid 0x1 
-2026-09-19T18:59:19.771305767Z 
-2026-09-19T18:59:19.771325713Z +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-2026-09-19T18:59:19.771343150Z | PFCP switch Packet Detection Rule list ordered by established sessions:                                                                                                                          |
-2026-09-19T18:59:19.771359808Z +----------------+----+--------+--------+------------+---------------------------------------+----------------------+----------------+-------------------------------------------------------------+
-2026-09-19T18:59:19.771375499Z |  SEID          |pdr |  far   |predence|   action   |        create outer hdr         tun id| rmv outer hdr  tun id|    UE IPv4     |                                                             |
-2026-09-19T18:59:19.771431166Z +----------------+----+--------+--------+------------+---------------------------------------+----------------------+----------------+-------------------------------------------------------------+
-2026-09-19T18:59:19.771458353Z |0000000000000001|0001|00000001|00000000|ACC>---->COR|none                                   |GTPU_UDP_IPV4:00000001|12.1.1.130      |
-2026-09-19T18:59:19.771478253Z +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-2026-09-19T18:59:19.771495321Z 
-2026-09-19T18:59:19.840154722Z [2026-09-19 20:59:19.839] [upf_n4 ] [info] handle_receive(191 bytes)
-2026-09-19T18:59:19.840325960Z [2026-09-19 20:59:19.840] [upf_app] [info] Received N4_SESSION_MODIFICATION_REQUEST seid 0x1 
-2026-09-19T18:59:19.840352689Z [2026-09-19 20:59:19.840] [upf_n4 ] [info] pfcp_session::add(far) seid 0x1 
-2026-09-19T18:59:19.840401900Z [2026-09-19 20:59:19.840] [upf_n4 ] [info] pfcp_session::add(pdr) seid 0x1 
-2026-09-19T18:59:19.840427521Z 
-2026-09-19T18:59:19.840439118Z +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-2026-09-19T18:59:19.840454807Z | PFCP switch Packet Detection Rule list ordered by established sessions:                                                                                                                          |
-2026-09-19T18:59:19.840471523Z +----------------+----+--------+--------+------------+---------------------------------------+----------------------+----------------+-------------------------------------------------------------+
-2026-09-19T18:59:19.840486060Z |  SEID          |pdr |  far   |predence|   action   |        create outer hdr         tun id| rmv outer hdr  tun id|    UE IPv4     |                                                             |
-2026-09-19T18:59:19.840504624Z +----------------+----+--------+--------+------------+---------------------------------------+----------------------+----------------+-------------------------------------------------------------+
-2026-09-19T18:59:19.840526053Z |0000000000000001|0001|00000001|00000000|ACC>---->COR|none                                   |GTPU_UDP_IPV4:00000001|12.1.1.130      |
-2026-09-19T18:59:19.840541948Z |0000000000000001|0002|00000002|00000000|COR>---->ACC|GTPU_UDP_IPV4:192.168.71.140  :00000001|none                  |12.1.1.130      |
-2026-09-19T18:59:19.840553115Z +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-2026-09-19T18:59:19.840563865Z 
-2026-09-19T18:59:19.930376664Z [2026-09-19 20:59:19.930] [pfcp_switch] [info] PDR/PDI IP is 8201010c 
+2026-09-22T19:04:30.407986587Z [2026-09-22 21:04:30.407] [upf_n4 ] [info] pfcp_session::get(fteid) seid 0x1 
+2026-09-22T19:04:30.408522539Z [2026-09-22 21:04:30.408] [upf_n4 ] [info] pfcp_session::add(pdr) seid 0x1 
+2026-09-22T19:04:30.408536548Z 
+2026-09-22T19:04:30.408540983Z +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+2026-09-22T19:04:30.408545188Z | PFCP switch Packet Detection Rule list ordered by established sessions:                                                                                                                          |
+2026-09-22T19:04:30.408550008Z +----------------+----+--------+--------+------------+---------------------------------------+----------------------+----------------+-------------------------------------------------------------+
+2026-09-22T19:04:30.408553846Z |  SEID          |pdr |  far   |predence|   action   |        create outer hdr         tun id| rmv outer hdr  tun id|    UE IPv4     |                                                             |
+2026-09-22T19:04:30.408582022Z +----------------+----+--------+--------+------------+---------------------------------------+----------------------+----------------+-------------------------------------------------------------+
+2026-09-22T19:04:30.408587520Z |0000000000000001|0001|00000001|00000000|ACC>---->COR|none                                   |GTPU_UDP_IPV4:00000001|12.1.1.130      |
+2026-09-22T19:04:30.408592030Z +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+2026-09-22T19:04:30.408595895Z 
+2026-09-22T19:04:30.441821716Z [2026-09-22 21:04:30.441] [upf_n4 ] [info] handle_receive(191 bytes)
+2026-09-22T19:04:30.441883210Z [2026-09-22 21:04:30.441] [upf_app] [info] Received N4_SESSION_MODIFICATION_REQUEST seid 0x1 
+2026-09-22T19:04:30.441890050Z [2026-09-22 21:04:30.441] [upf_n4 ] [info] pfcp_session::add(far) seid 0x1 
+2026-09-22T19:04:30.441912937Z [2026-09-22 21:04:30.441] [upf_n4 ] [info] pfcp_session::add(pdr) seid 0x1 
+2026-09-22T19:04:30.441920388Z 
+2026-09-22T19:04:30.441924767Z +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+2026-09-22T19:04:30.441927527Z | PFCP switch Packet Detection Rule list ordered by established sessions:                                                                                                                          |
+2026-09-22T19:04:30.441929977Z +----------------+----+--------+--------+------------+---------------------------------------+----------------------+----------------+-------------------------------------------------------------+
+2026-09-22T19:04:30.441932399Z |  SEID          |pdr |  far   |predence|   action   |        create outer hdr         tun id| rmv outer hdr  tun id|    UE IPv4     |                                                             |
+2026-09-22T19:04:30.441934834Z +----------------+----+--------+--------+------------+---------------------------------------+----------------------+----------------+-------------------------------------------------------------+
+2026-09-22T19:04:30.441938364Z |0000000000000001|0001|00000001|00000000|ACC>---->COR|none                                   |GTPU_UDP_IPV4:00000001|12.1.1.130      |
+2026-09-22T19:04:30.441941100Z |0000000000000001|0002|00000002|00000000|COR>---->ACC|GTPU_UDP_IPV4:192.168.71.140  :00000001|none                  |12.1.1.130      |
+2026-09-22T19:04:30.441943688Z +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+2026-09-22T19:04:30.441946176Z 
+2026-09-22T19:04:30.495788322Z [2026-09-22 21:04:30.495] [pfcp_switch] [info] PDR/PDI IP is 8201010c 
 ```
 
 

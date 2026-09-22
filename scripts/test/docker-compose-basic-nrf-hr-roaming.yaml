@@ -1,13 +1,13 @@
 # SPDX-License-Identifier: MIT
 #
-# Home-routed (HR) roaming: the UE of PLMN B (262/10) registers in PLMN A
-# (208/14). The V-SMF/V-UPF of PLMN A relay the PDU session over N16 (via the
+# Home-routed (HR) roaming: the UE of PLMN B (999/10) registers in PLMN A
+# (999/20). The V-SMF/V-UPF of PLMN A relay the PDU session over N16 (via the
 # SEPPs) and N9 (inter-PLMN network) to the H-SMF/H-UPF of PLMN B, which
 # allocates the UE address and provides the N6 breakout.
 
 services:
 ######################################################################################
-#                             Roaming Partner A (MCC: 208, MNC: 14)                 #
+#                             Roaming Partner A (MCC: 999, MNC: 20)                 #
 ######################################################################################
     mysql-A:
         container_name: "mysql-A"
@@ -27,7 +27,7 @@ services:
                 ipv4_address: 192.168.71.131
 
     oai-nrf-A:
-        container_name: "nrf.5gc.mnc14.mcc208.3gppnetwork.org"
+        container_name: "nrf.5gc.mnc20.mcc999.3gppnetwork.org"
         image: oai-nrf:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -41,7 +41,7 @@ services:
                 ipv4_address: 192.168.71.136
 
     oai-udr-A:
-        container_name: "udr.5gc.mnc14.mcc208.3gppnetwork.org"
+        container_name: "udr.5gc.mnc20.mcc999.3gppnetwork.org"
         image: oai-udr:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -58,7 +58,7 @@ services:
                 ipv4_address: 192.168.71.134
 
     oai-udm-A:
-        container_name: "udm.5gc.mnc14.mcc208.3gppnetwork.org"
+        container_name: "udm.5gc.mnc20.mcc999.3gppnetwork.org"
         image: oai-udm:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -75,7 +75,7 @@ services:
                 ipv4_address: 192.168.71.135
 
     oai-ausf-A:
-        container_name: "ausf.5gc.mnc14.mcc208.3gppnetwork.org"
+        container_name: "ausf.5gc.mnc20.mcc999.3gppnetwork.org"
         image: oai-ausf:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -92,7 +92,7 @@ services:
                 ipv4_address: 192.168.71.133
 
     oai-amf-A:
-        container_name: "amf.5gc.mnc14.mcc208.3gppnetwork.org"
+        container_name: "amf.5gc.mnc20.mcc999.3gppnetwork.org"
         image: oai-amf:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -112,7 +112,7 @@ services:
                 ipv4_address: 192.168.71.137
 
     oai-smf-A:
-        container_name: "smf.5gc.mnc14.mcc208.3gppnetwork.org"
+        container_name: "smf.5gc.mnc20.mcc999.3gppnetwork.org"
         image: oai-smf:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -130,7 +130,7 @@ services:
                 ipv4_address: 192.168.71.138
 
     oai-upf-A:
-        container_name: "upf.5gc.mnc14.mcc208.3gppnetwork.org"
+        container_name: "upf.5gc.mnc20.mcc999.3gppnetwork.org"
         image: oai-upf:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -158,7 +158,7 @@ services:
                 ipv4_address: 192.168.71.139
 
     oai-sepp-A:
-        container_name: "sepp.5gc.mnc14.mcc208.3gppnetwork.org"
+        container_name: "sepp.5gc.mnc20.mcc999.3gppnetwork.org"
         image: oai-sepp:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 443/tcp
@@ -195,10 +195,10 @@ services:
             - |
                 echo "Waiting 50s for OAI AMF-A..."
                 sleep 50
-                echo "Starting gNB (PLMN A 208/14)..."
+                echo "Starting gNB (PLMN A 999/20)..."
                 nr-gnb -c /ueransim/config/gnb-plmnA.yaml &
                 sleep 5
-                echo "Starting UE (PLMN B 262/10 Roaming into PLMN A, home-routed)..."
+                echo "Starting UE (PLMN B 999/10 Roaming into PLMN A, home-routed)..."
                 exec nr-ue-ping -c /ueransim/config/ue-plmnB.yaml
         depends_on:
             - oai-amf-A
@@ -208,7 +208,7 @@ services:
                 ipv4_address: 192.168.71.140
 
 ######################################################################################
-#                             Roaming Partner B (MCC: 262, MNC: 10)                 #
+#                             Roaming Partner B (MCC: 999, MNC: 10)                 #
 ######################################################################################
     mysql-B:
         container_name: "mysql-B"
@@ -229,7 +229,7 @@ services:
                 ipv4_address: 192.168.73.131
 
     oai-nrf-B:
-        container_name: "nrf.5gc.mnc10.mcc262.3gppnetwork.org"
+        container_name: "nrf.5gc.mnc10.mcc999.3gppnetwork.org"
         image: oai-nrf:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -244,7 +244,7 @@ services:
                 ipv4_address: 192.168.73.132
 
     oai-udr-B:
-        container_name: "udr.5gc.mnc10.mcc262.3gppnetwork.org"
+        container_name: "udr.5gc.mnc10.mcc999.3gppnetwork.org"
         image: oai-udr:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -261,7 +261,7 @@ services:
                 ipv4_address: 192.168.73.134
 
     oai-udm-B:
-        container_name: "udm.5gc.mnc10.mcc262.3gppnetwork.org"
+        container_name: "udm.5gc.mnc10.mcc999.3gppnetwork.org"
         image: oai-udm:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -278,7 +278,7 @@ services:
                 ipv4_address: 192.168.73.135
 
     oai-ausf-B:
-        container_name: "ausf.5gc.mnc10.mcc262.3gppnetwork.org"
+        container_name: "ausf.5gc.mnc10.mcc999.3gppnetwork.org"
         image: oai-ausf:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -295,7 +295,7 @@ services:
                 ipv4_address: 192.168.73.133
 
     oai-amf-B:
-        container_name: "amf.5gc.mnc10.mcc262.3gppnetwork.org"
+        container_name: "amf.5gc.mnc10.mcc999.3gppnetwork.org"
         image: oai-amf:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -313,7 +313,7 @@ services:
                 ipv4_address: 192.168.73.137
 
     oai-smf-B:
-        container_name: "smf.5gc.mnc10.mcc262.3gppnetwork.org"
+        container_name: "smf.5gc.mnc10.mcc999.3gppnetwork.org"
         image: oai-smf:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -331,7 +331,7 @@ services:
                 ipv4_address: 192.168.73.138
 
     oai-upf-B:
-        container_name: "upf.5gc.mnc10.mcc262.3gppnetwork.org"
+        container_name: "upf.5gc.mnc10.mcc999.3gppnetwork.org"
         image: oai-upf:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 80/tcp
@@ -359,7 +359,7 @@ services:
                 ipv4_address: 192.168.73.139
 
     oai-sepp-B:
-        container_name: "sepp.5gc.mnc10.mcc262.3gppnetwork.org"
+        container_name: "sepp.5gc.mnc10.mcc999.3gppnetwork.org"
         image: oai-sepp:${HR_IMAGE_TAG:-roaming-hr}
         expose:
             - 443/tcp

@@ -1,6 +1,6 @@
 # End-to-end 5G SA Home-Routed Roaming with OAI 5G Core Network
 
-In this tutorial, a UE from the **home PLMN 26210** connects to the **visited PLMN 20814** using **Home-Routed (HR) roaming**. It is the companion of the [LBO roaming tutorial](./LBO_ROAMING_TEST.md) and uses the same two networks, SEPPs and subscriber. The difference is the PDU session: the home subscription does not allow local breakout, so the session is anchored in the home network.
+In this tutorial, a UE from the **home PLMN 99910** connects to the **visited PLMN 99920** using **Home-Routed (HR) roaming**. It is the companion of the [LBO roaming tutorial](./LBO_ROAMING_TEST.md) and uses the same two networks, SEPPs and subscriber. The difference is the PDU session: the home subscription does not allow local breakout, so the session is anchored in the home network.
 
 - The visited AMF selects a **V-SMF** in its own PLMN and discovers the **H-SMF** of the home PLMN through the NRFs and SEPPs.
 - The V-SMF creates the PDU session on the H-SMF over **N16** (`Nsmf_PDUSession`, TS 29.502), relayed by the SEPPs over N32.
@@ -11,7 +11,7 @@ In this tutorial, a UE from the **home PLMN 26210** connects to the **visited PL
 
 | | LBO | Home-routed |
 |---|---|---|
-| Home subscription (`lboRoamingAllowed` for DNN `oai` in 208/14) | `true` | `false` |
+| Home subscription (`lboRoamingAllowed` for DNN `oai` in 999/20) | `true` | `false` |
 | SMF(s) | V-SMF only | V-SMF + H-SMF (N16 via SEPPs) |
 | UE address | visited pool `12.1.1.128/25` | home pool `12.2.1.128/25` |
 | N6 breakout | visited UPF | home UPF, via N9 |
@@ -65,9 +65,9 @@ oai-upf-B: N9 to oai-upf-A GTP-U 192.168.71.139 via 192.168.72.139
 
 | Test setting | Value |
 |---|---|
-| UE | `imsi-262100000000031` |
-| Home → visited PLMN | `26210` → `20814` |
-| DNN | `oai`, LBO not allowed in 20814 (`hr_roaming_subscription_B.sql`) |
+| UE | `imsi-999100000000031` |
+| Home → visited PLMN | `99910` → `99920` |
+| DNN | `oai`, LBO not allowed in 99920 (`hr_roaming_subscription_B.sql`) |
 | Slice | SST `222`, SD `00007B` |
 | UE address pool | `12.2.1.128/25` (H-SMF, PLMN B) |
 
@@ -79,8 +79,8 @@ The UE registers, establishes its PDU session and runs the data traffic test aut
 
 ```bash
 docker logs -f ue-plmnB-roaming-A
-docker exec ue-plmnB-roaming-A nr-cli imsi-262100000000031 -e status
-docker exec ue-plmnB-roaming-A nr-cli imsi-262100000000031 -e ps-list
+docker exec ue-plmnB-roaming-A nr-cli imsi-999100000000031 -e status
+docker exec ue-plmnB-roaming-A nr-cli imsi-999100000000031 -e ps-list
 ```
 
 Confirm successful registration, an active IPv4 session on `oai` with an address from `12.2.1.128/25`, and successful data traffic:
@@ -89,11 +89,11 @@ Confirm successful registration, an active IPv4 session on `oai` with an address
 [nas] [info] Initial Registration is successful
 [nas] [info] PDU Session establishment is successful PSI[1]
 [app] [info] Connection setup for PDU session[1] is successful, TUN interface[uesimtun0, 12.2.1.130] is up.
-PING google.com (142.251.39.238) from 12.2.1.130 uesimtun0: 56(84) bytes of data.
-64 bytes from 142.251.39.238: icmp_seq=1 ttl=116 time=20.9 ms
-64 bytes from 142.251.39.238: icmp_seq=2 ttl=116 time=21.9 ms
-64 bytes from 142.251.39.238: icmp_seq=3 ttl=116 time=20.8 ms
-3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+PING google.com (74.125.143.138) from 12.2.1.130 uesimtun0: 56(84) bytes of data.
+64 bytes from 74.125.143.138: icmp_seq=1 ttl=105 time=21.5 ms
+64 bytes from 74.125.143.138: icmp_seq=2 ttl=105 time=21.8 ms
+64 bytes from 74.125.143.138: icmp_seq=3 ttl=105 time=22.5 ms
+3 packets transmitted, 3 received, 0% packet loss, time 2005ms
 ```
 
 ```text
@@ -108,7 +108,7 @@ PDU Session1:
 The release path over N16 can be exercised with a deregistration. The UE then registers again and gets a new home-routed session:
 
 ```bash
-docker exec ue-plmnB-roaming-A nr-cli imsi-262100000000031 -e "deregister normal"
+docker exec ue-plmnB-roaming-A nr-cli imsi-999100000000031 -e "deregister normal"
 ```
 
 ## 4. Logs and HR test capture
@@ -126,64 +126,64 @@ Selected excerpts from the same run follow:-
 The N9 tunnel between the V-UPF and the H-UPF, and the UE's traffic leaving from the H-UPF (SNAT to `192.168.73.139`), not from the visited network:
 
 ```text
-00:20:12.380285 IP 192.168.71.139.2152 > 192.168.73.139.2152: UDP, length 104      <- N9 uplink
-00:20:12.380789 IP 192.168.73.139 > 142.251.39.238: ICMP echo request, id 45571, seq 1   <- N6 at H-UPF
-00:20:12.398102 IP 142.251.39.238 > 192.168.73.139: ICMP echo reply, id 45571, seq 1
-00:20:12.398435 IP 192.168.73.139.2152 > 192.168.71.139.2152: UDP, length 100      <- N9 downlink
+21:08:21.171376 IP 192.168.71.139.2152 > 192.168.73.139.2152: UDP, length 104      <- N9 uplink
+21:08:21.171514 IP 192.168.73.139 > 74.125.143.138: ICMP echo request, id 33104, seq 1   <- N6 at H-UPF
+21:08:21.191792 IP 74.125.143.138 > 192.168.73.139: ICMP echo reply, id 33104, seq 1
+21:08:21.191916 IP 192.168.73.139.2152 > 192.168.71.139.2152: UDP, length 100      <- N9 downlink
 ```
 
 **Visited AMF-A Logs — HR selection**
 
 ```text
-[amf_sbi] [info] Selected home SMF http://smf.5gc.mnc10.mcc262.3gppnetwork.org:8080 via local NRF and SEPP
-[amf_sbi] [info] LBO not authorized by home subscription for DNN oai: home-routed PDU session, H-SMF http://smf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nsmf-pdusession/v1
-[amf_sbi] [debug] Message body {"anType":"3GPP_ACCESS","dnn":"oai", ... "hSmfUri":"http://smf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nsmf-pdusession/v1", ... "pduSessionId":1, ... "servingNetwork":{"mcc":"208","mnc":"14"}, ... "supi":"imsi-262100000000031", ...}
+[amf_sbi] [info] Selected home SMF http://smf.5gc.mnc10.mcc999.3gppnetwork.org:8080 via local NRF and SEPP
+[amf_sbi] [info] LBO not authorized by home subscription for DNN oai: home-routed PDU session, H-SMF http://smf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nsmf-pdusession/v1
+[amf_sbi] [debug] Message body {"anType":"3GPP_ACCESS","dnn":"oai", ... "hSmfUri":"http://smf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nsmf-pdusession/v1", ... "pduSessionId":1, ... "servingNetwork":{"mcc":"999","mnc":"20"}, ... "supi":"imsi-999100000000031", ...}
 ```
 
 ```text
    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
-   |    1   |   5GMM-REGISTERED  |             262100000000031            |20814010041325470853|        0x02        |        0x02        |       208,14       |      000000010     |
+   |    1   |   5GMM-REGISTERED  |             999100000000031            |99920010041163573124|        0x02        |        0x02        |       999,20       |      000000010     |
 ```
 
 **Visited V-SMF-A Logs**
 
 ```text
-[smf_app] [info] Home-routed PDU session (H-SMF http://smf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nsmf-pdusession/v1), SUPI imsi-262100000000031, DNN oai
-[smf_app] [info] Home-routed PDU session: Nsmf_PDUSession_Create to H-SMF http://smf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nsmf-pdusession/v1, V-UPF N9 F-TEID ID 0x80000001 - IP: 192.168.71.139
-[smf_sbi] [info] Send inter-PLMN request to http://smf.5gc.mnc10.mcc262.3gppnetwork.org:8080 via local SEPP http://sepp.5gc.mnc14.mcc208.3gppnetwork.org:8080
-[smf_app] [info] Home-routed PDU session created on the H-SMF: http://smf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nsmf-pdusession/v1/pdu-sessions/1, UE IPv4 12.2.1.130, H-UPF N9 F-TEID ID 0x1 - IP: 192.168.73.139, Session AMBR UL 100Mbps DL 100Mbps, 5QI 6
+[smf_app] [info] Home-routed PDU session (H-SMF http://smf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nsmf-pdusession/v1), SUPI imsi-999100000000031, DNN oai
+[smf_app] [info] Home-routed PDU session: Nsmf_PDUSession_Create to H-SMF http://smf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nsmf-pdusession/v1, V-UPF N9 F-TEID ID 0x80000001 - IP: 192.168.71.139
+[smf_sbi] [info] Send inter-PLMN request to http://smf.5gc.mnc10.mcc999.3gppnetwork.org:8080 via local SEPP http://sepp.5gc.mnc20.mcc999.3gppnetwork.org:8080
+[smf_app] [info] Home-routed PDU session created on the H-SMF: http://smf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nsmf-pdusession/v1/pdu-sessions/1, UE IPv4 12.2.1.130, H-UPF N9 F-TEID ID 0x1 - IP: 192.168.73.139, Session AMBR UL 100Mbps DL 100Mbps, 5QI 6
 [smf_app] [info] Home-routed PDU session: UE IPv4 Address 12.2.1.130 allocated by the H-SMF
 ...
-[smf_app] [info] Home-routed PDU session: Nsmf_PDUSession_Release to H-SMF http://smf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nsmf-pdusession/v1/pdu-sessions/1/release
+[smf_app] [info] Home-routed PDU session: Nsmf_PDUSession_Release to H-SMF http://smf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nsmf-pdusession/v1/pdu-sessions/1/release
 ```
 
 **SEPP-A / SEPP-B Logs — N16 over N32 (PRINS)**
 
 ```text
-SEPP-A [sepp_app] [info] Forwarding NF service request: authority=smf.5gc.mnc10.mcc262.3gppnetwork.org:8080, path=/nsmf-pdusession/v1/pdu-sessions, method=POST
-SEPP-B [sepp_app] [info] Decrypted JOSE incoming payload: {"anType":"3GPP_ACCESS","dnn":"oai","pduSessionId":1,"ratType":"NR","requestType":"INITIAL_REQUEST","sNssai":{"sd":"00007b","sst":222},"servingNetwork":{"mcc":"208","mnc":"14"},"supi":"imsi-262100000000031","vcnTunnelInfo":{"gtpTeid":"80000001","ipv4Addr":"192.168.71.139"},"vsmfId":"5f8988cc-c306-45b7-ba5c-3c5dfee6b177","vsmfPduSessionUri":"http://smf.5gc.mnc14.mcc208.3gppnetwork.org:8080/nsmf-pdusession/v1/vsmf-pdu-sessions/1"}
-SEPP-B [sepp_app] [info] Sending local HTTP request to target NF: http://smf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nsmf-pdusession/v1/pdu-sessions
-SEPP-A [sepp_app] [info] Forwarding NF service request: authority=smf.5gc.mnc10.mcc262.3gppnetwork.org:8080, path=/nsmf-pdusession/v1/pdu-sessions/1/release, method=POST
+SEPP-A [sepp_app] [info] Forwarding NF service request: authority=smf.5gc.mnc10.mcc999.3gppnetwork.org:8080, path=/nsmf-pdusession/v1/pdu-sessions, method=POST
+SEPP-B [sepp_app] [info] Decrypted JOSE incoming payload: {"anType":"3GPP_ACCESS","dnn":"oai","pduSessionId":1,"ratType":"NR","requestType":"INITIAL_REQUEST","sNssai":{"sd":"00007b","sst":222},"servingNetwork":{"mcc":"999","mnc":"20"},"supi":"imsi-999100000000031","vcnTunnelInfo":{"gtpTeid":"80000001","ipv4Addr":"192.168.71.139"},"vsmfId":"f802a626-efb7-42ae-91e0-299a9ac767ba","vsmfPduSessionUri":"http://smf.5gc.mnc20.mcc999.3gppnetwork.org:8080/nsmf-pdusession/v1/vsmf-pdu-sessions/1"}
+SEPP-B [sepp_app] [info] Sending local HTTP request to target NF: http://smf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nsmf-pdusession/v1/pdu-sessions
+SEPP-A [sepp_app] [info] Forwarding NF service request: authority=smf.5gc.mnc10.mcc999.3gppnetwork.org:8080, path=/nsmf-pdusession/v1/pdu-sessions/1/release, method=POST
 ```
 
 **Home H-SMF-B Logs** — the UE address is allocated in the home PLMN, from the pool of DNN `oai` (`12.2.1.128/25`)
 
 ```text
 [smf_api] [info] Received a PDU session create request from a V-SMF.
-[smf_app] [info] Handle Nsmf_PDUSession_Create from V-SMF (home-routed PDU session), SUPI imsi-262100000000031, PDU Session ID 1, DNN oai, serving PLMN 20814, V-UPF N9 TEID 0x80000001 IP 192.168.71.139
+[smf_app] [info] Handle Nsmf_PDUSession_Create from V-SMF (home-routed PDU session), SUPI imsi-999100000000031, PDU Session ID 1, DNN oai, serving PLMN 99920, V-UPF N9 TEID 0x80000001 IP 192.168.71.139
 [smf_sbi] [debug] Response from UDM [{"dnnConfigurations":{"oai":{"5gQosProfile":{"5qi":6, ...},"pduSessionTypes":{"defaultSessionType":"IPV4"},"sessionAmbr":{"downlink":"100Mbps","uplink":"100Mbps"},"sscModes":{"defaultSscMode":"SSC_MODE_1"}}},"singleNssai":{"sd":"00007b","sst":222}}]
 [smf_app] [debug] UE Address Allocation
 [smf_app] [info] Find DNN configuration with DNN oai
 [smf_app] [debug] PDU Session Type IPv4
 [smf_app] [info] PAA, Ipv4 Address: 12.2.1.130
-[smf_app] [info] Home-routed PDU session: reply to the V-SMF, UE IPv4 12.2.1.130, H-UPF N9 F-TEID ID 0x1 - IP: 192.168.73.139, resource http://smf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nsmf-pdusession/v1/pdu-sessions/1
-[smf_sbi] [debug] UDM's URI: http://udm.5gc.mnc10.mcc262.3gppnetwork.org:8080/nudm-uecm/v1/imsi-262100000000031/registrations/smf-registrations/1
+[smf_app] [info] Home-routed PDU session: reply to the V-SMF, UE IPv4 12.2.1.130, H-UPF N9 F-TEID ID 0x1 - IP: 192.168.73.139, resource http://smf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nsmf-pdusession/v1/pdu-sessions/1
+[smf_sbi] [debug] UDM's URI: http://udm.5gc.mnc10.mcc999.3gppnetwork.org:8080/nudm-uecm/v1/imsi-999100000000031/registrations/smf-registrations/1
 [smf_app] [info] Set PDU Session Status to PDU Session Status Active
 [smf_app] [info] Set upCnxState to UPCNX_STATE_ACTIVATED
 [smf_app] [info] SMF context:
 
 SMF CONTEXT:
-SUPI:				imsi-262100000000031
+SUPI:				imsi-999100000000031
 PDU SESSION:
 	PDU Session ID:			1
 	DNN:			oai

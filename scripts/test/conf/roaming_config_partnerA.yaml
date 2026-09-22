@@ -11,15 +11,15 @@ http_version: 2
 enable_roaming:
   general: yes
   roaming_partners:
-    - mcc: 262
+    - mcc: 999
       mnc: 10
-      nrf_api_root: "http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080"
+      nrf_api_root: "http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080"
     - mcc: 228
       mnc: 06
 
 nfs:
   amf:
-    host: amf.5gc.mnc14.mcc208.3gppnetwork.org
+    host: amf.5gc.mnc20.mcc999.3gppnetwork.org
     sbi:
       port: 8080
       api_version: v1
@@ -28,7 +28,7 @@ nfs:
       interface_name: eth0
       port: 38412
   smf:
-    host: smf.5gc.mnc14.mcc208.3gppnetwork.org
+    host: smf.5gc.mnc20.mcc999.3gppnetwork.org
     sbi:
       port: 8080
       api_version: v1
@@ -37,7 +37,7 @@ nfs:
       interface_name: eth0
       port: 8805
   upf:
-    host: upf.5gc.mnc14.mcc208.3gppnetwork.org
+    host: upf.5gc.mnc20.mcc999.3gppnetwork.org
     sbi:
       port: 8080
       api_version: v1
@@ -54,39 +54,39 @@ nfs:
       interface_name: eth0
       port: 2152
   udm:
-    host: udm.5gc.mnc14.mcc208.3gppnetwork.org
+    host: udm.5gc.mnc20.mcc999.3gppnetwork.org
     sbi:
       port: 8080
       api_version: v1
       interface_name: eth0
   udr:
-    host: udr.5gc.mnc14.mcc208.3gppnetwork.org
+    host: udr.5gc.mnc20.mcc999.3gppnetwork.org
     sbi:
       port: 8080
       api_version: v1
       interface_name: eth0
   ausf:
-    host: ausf.5gc.mnc14.mcc208.3gppnetwork.org
+    host: ausf.5gc.mnc20.mcc999.3gppnetwork.org
     sbi:
       port: 8080
       api_version: v1
       interface_name: eth0
   nrf:
-    host: nrf.5gc.mnc14.mcc208.3gppnetwork.org
+    host: nrf.5gc.mnc20.mcc999.3gppnetwork.org
     sbi:
       port: 8080
       api_version: v1
       interface_name: eth0
   sepp:
-    host: sepp.5gc.mnc14.mcc208.3gppnetwork.org
+    host: sepp.5gc.mnc20.mcc999.3gppnetwork.org
     sbi:
       port: 8080
       api_version: v1
-      interface_name: eth1
+      interface_name: eth0
     nbi:
       port: 8080
       api_version: v1
-      interface_name: eth0
+      interface_name: eth1
 
 database:
   host: mysql-A
@@ -128,14 +128,14 @@ amf:
   statistics_timer_interval: 20
   emergency_support: false
   served_guami_list:
-    - mcc: 208
-      mnc: 14
+    - mcc: 999
+      mnc: 20
       amf_region_id: 01
       amf_set_id: 001
       amf_pointer: 01
   plmn_support_list:
-    - mcc: 208
-      mnc: 14
+    - mcc: 999
+      mnc: 20
       tac: 0xa000
       nssai:
         - *embb_slice1
@@ -156,7 +156,7 @@ smf:
     use_local_subscription_info: no
     use_local_pcc_rules: yes
   upfs:
-    - host: upf.5gc.mnc14.mcc208.3gppnetwork.org
+    - host: upf.5gc.mnc20.mcc999.3gppnetwork.org
       config:
         enable_usage_reporting: no
   ue_dns:
@@ -186,7 +186,7 @@ upf:
     enable_snat: yes
   remote_n6_gw: localhost
   smfs:
-    - host: smf.5gc.mnc14.mcc208.3gppnetwork.org
+    - host: smf.5gc.mnc20.mcc999.3gppnetwork.org
   upf_info:
     sNssaiUpfInfoList:
       - sNssai: *embb_slice1
@@ -216,5 +216,5 @@ dnns:
 
 nrf:
   plmn_list:
-    - mcc: "208"
-      mnc: "14"
+    - mcc: "999"
+      mnc: "20"

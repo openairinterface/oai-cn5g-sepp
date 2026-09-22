@@ -1,412 +1,389 @@
-2026-09-21T22:19:15.802425336Z Trying to read .yaml configuration file
-2026-09-21T22:19:15.802459899Z LTTNG Tracing disabled at build-time!
-2026-09-21T22:19:15.802466480Z [2026-09-22 00:19:15.802] [amf_app] [start] Options parsed!
-2026-09-21T22:19:15.802471121Z [2026-09-22 00:19:15.802] [system ] [debug] Parsing the configuration file, file type YAML.
-2026-09-21T22:19:15.825076096Z [2026-09-22 00:19:15.824] [config ] [info] Reading NF configuration from /openair-amf/etc/config.yaml
-2026-09-21T22:19:15.850120024Z [2026-09-22 00:19:15.850] [config ] [debug] Unknown NF upf in configuration. Ignored
-2026-09-21T22:19:15.850140281Z [2026-09-22 00:19:15.850] [config ] [debug] Unknown NF udr in configuration. Ignored
-2026-09-21T22:19:15.850143846Z [2026-09-22 00:19:15.850] [config ] [debug] Unknown NF sepp in configuration. Ignored
-2026-09-21T22:19:15.851039948Z [2026-09-22 00:19:15.850] [config ] [debug] Validating configuration of log_level
-2026-09-21T22:19:15.851056962Z [2026-09-22 00:19:15.851] [config ] [debug] Validating configuration of register_nf
-2026-09-21T22:19:15.851061113Z [2026-09-22 00:19:15.851] [config ] [debug] Validating configuration of http_version
-2026-09-21T22:19:15.851064199Z [2026-09-22 00:19:15.851] [config ] [debug] Validating configuration of http_request_timeout
-2026-09-21T22:19:15.851067020Z [2026-09-22 00:19:15.851] [config ] [debug] Validating configuration of PCF
-2026-09-21T22:19:15.851069780Z [2026-09-22 00:19:15.851] [config ] [debug] Validating configuration of NSSF
-2026-09-21T22:19:15.851092351Z [2026-09-22 00:19:15.851] [config ] [debug] Validating configuration of NRF
-2026-09-21T22:19:15.852144136Z [2026-09-22 00:19:15.852] [config ] [debug] Validating configuration of UDM
-2026-09-21T22:19:15.852156855Z [2026-09-22 00:19:15.852] [config ] [debug] Validating configuration of AUSF
-2026-09-21T22:19:15.852160650Z [2026-09-22 00:19:15.852] [config ] [debug] Validating configuration of SMF
-2026-09-21T22:19:15.852163586Z [2026-09-22 00:19:15.852] [config ] [debug] Validating configuration of AMF
-2026-09-21T22:19:15.854462450Z [2026-09-22 00:19:15.854] [config ] [debug] Validating configuration of database
-2026-09-21T22:19:15.854833595Z [2026-09-22 00:19:15.854] [config] [info] ==== OAI-CN5G AMF vBranch: lbo-roaming-support Abrev. Hash: 887e15dc Date: Sun Sep 20 14:36:59 2026 +0200 ====
-2026-09-21T22:19:15.854846554Z [2026-09-22 00:19:15.854] [config] [info] ======================    AMF   =====================
-2026-09-21T22:19:15.854850227Z [2026-09-22 00:19:15.854] [config] [info] Configuration AMF:
-2026-09-21T22:19:15.854853235Z [2026-09-22 00:19:15.854] [config] [info] - Instance ................: 1
-2026-09-21T22:19:15.854856020Z [2026-09-22 00:19:15.854] [config] [info] - PID dir .................: /var/run
-2026-09-21T22:19:15.854858806Z [2026-09-22 00:19:15.854] [config] [info] - AMF NAME.................: OAI-AMF
-2026-09-21T22:19:15.854861512Z [2026-09-22 00:19:15.854] [config] [info] - Roaming admission........: Yes
-2026-09-21T22:19:15.854864209Z [2026-09-22 00:19:15.854] [config] [info]     Home PLMN partner......: 208/14
-2026-09-21T22:19:15.854879592Z [2026-09-22 00:19:15.854] [config] [info]     Home PLMN partner......: 228/06
-2026-09-21T22:19:15.854882773Z [2026-09-22 00:19:15.854] [config] [info] - GUAMI (MCC, MNC, Region ID, AMF Set ID, AMF pointer): 
-2026-09-21T22:19:15.854885582Z [2026-09-22 00:19:15.854] [config] [info]     (262, 10, 1, 1, 1)
-2026-09-21T22:19:15.854888337Z [2026-09-22 00:19:15.854] [config] [info] - Served Guami List:
-2026-09-21T22:19:15.854891067Z [2026-09-22 00:19:15.854] [config] [info]     (262, 10, 1 , 1, 1)
-2026-09-21T22:19:15.854893760Z [2026-09-22 00:19:15.854] [config] [info] - Relative Capacity .......: 30
-2026-09-21T22:19:15.854896465Z [2026-09-22 00:19:15.854] [config] [info] - PLMN Support: 
-2026-09-21T22:19:15.854899104Z [2026-09-22 00:19:15.854] [config] [info]     MCC, MNC ..............: 262, 10
-2026-09-21T22:19:15.854901792Z [2026-09-22 00:19:15.854] [config] [info]     TAC ...................: 40960
-2026-09-21T22:19:15.854904453Z [2026-09-22 00:19:15.854] [config] [info]     Slice Support .........:
-2026-09-21T22:19:15.854907093Z [2026-09-22 00:19:15.854] [config] [info]         SST ...............: 1
-2026-09-21T22:19:15.854909777Z [2026-09-22 00:19:15.854] [config] [info]         SST, SD ...........: 1, 000001
-2026-09-21T22:19:15.854912476Z [2026-09-22 00:19:15.854] [config] [info]         SST, SD ...........: 222, 00007B
-2026-09-21T22:19:15.854915182Z [2026-09-22 00:19:15.854] [config] [info] - Default DNN..............: default
-2026-09-21T22:19:15.854917836Z [2026-09-22 00:19:15.854] [config] [info] - Emergency Support .......: No
-2026-09-21T22:19:15.854920499Z [2026-09-22 00:19:15.854] [config] [info] - N2 Networking:
-2026-09-21T22:19:15.854923110Z [2026-09-22 00:19:15.854] [config] [info]     Iface .................: eth0
-2026-09-21T22:19:15.854925774Z [2026-09-22 00:19:15.854] [config] [info]     IP Addr ...............: 192.168.73.137
-2026-09-21T22:19:15.854929340Z [2026-09-22 00:19:15.854] [config] [info]     Port ..................: 38412
-2026-09-21T22:19:15.854932122Z [2026-09-22 00:19:15.854] [config] [info] - SBI Networking:
-2026-09-21T22:19:15.854934765Z [2026-09-22 00:19:15.854] [config] [info]     Iface .................: eth0
-2026-09-21T22:19:15.854937427Z [2026-09-22 00:19:15.854] [config] [info]     IP Addr ...............: 192.168.73.137
-2026-09-21T22:19:15.854940084Z [2026-09-22 00:19:15.854] [config] [info]     Port ..................: 8080
-2026-09-21T22:19:15.854942722Z [2026-09-22 00:19:15.854] [config] [info]     API version............: v1
-2026-09-21T22:19:15.854945393Z [2026-09-22 00:19:15.854] [config] [info] - Default NRF:
-2026-09-21T22:19:15.854948053Z [2026-09-22 00:19:15.854] [config] [info]     URI root ..............: http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080
-2026-09-21T22:19:15.854950838Z [2026-09-22 00:19:15.854] [config] [info]     API version ...........: v1
-2026-09-21T22:19:15.854953589Z [2026-09-22 00:19:15.854] [config] [info] - Default AUSF:
-2026-09-21T22:19:15.854959405Z [2026-09-22 00:19:15.854] [config] [info]     URI root ..............: http://ausf.5gc.mnc10.mcc262.3gppnetwork.org:8080
-2026-09-21T22:19:15.854962344Z [2026-09-22 00:19:15.854] [config] [info]     API version ...........: v1
-2026-09-21T22:19:15.854965036Z [2026-09-22 00:19:15.854] [config] [info] - Default UDM:
-2026-09-21T22:19:15.854967660Z [2026-09-22 00:19:15.854] [config] [info]     URI root ..............: http://udm.5gc.mnc10.mcc262.3gppnetwork.org:8080
-2026-09-21T22:19:15.854970514Z [2026-09-22 00:19:15.854] [config] [info]     API version ...........: v1
-2026-09-21T22:19:15.854973473Z [2026-09-22 00:19:15.854] [config] [info] - Supported Features:
-2026-09-21T22:19:15.854976170Z [2026-09-22 00:19:15.854] [config] [info]     Enable Simple Scenario.: No
-2026-09-21T22:19:15.854978949Z [2026-09-22 00:19:15.854] [config] [info]     Enable Advanced Features: No
-2026-09-21T22:19:15.854981625Z [2026-09-22 00:19:15.854] [config] [info]     NF Registration .......: Yes
-2026-09-21T22:19:15.854984332Z [2026-09-22 00:19:15.854] [config] [info]     External NSSF .........: No
-2026-09-21T22:19:15.854986997Z [2026-09-22 00:19:15.854] [config] [info]     External LMF ..........: No
-2026-09-21T22:19:15.854989659Z [2026-09-22 00:19:15.854] [config] [info]     HTTP version...........: 2
-2026-09-21T22:19:15.854992375Z [2026-09-22 00:19:15.854] [config] [info] - Log Level ...............: debug
-2026-09-21T22:19:15.854995034Z [2026-09-22 00:19:15.854] [config] [info] - Supported NAS Algorithm: 
-2026-09-21T22:19:15.854997721Z [2026-09-22 00:19:15.854] [config] [info]     Ordered Integrity Algorithm: 5G_IA1 5G_IA2 
-2026-09-21T22:19:15.855000496Z [2026-09-22 00:19:15.854] [config] [info]     Ordered Ciphering Algorithm: 5G_EA0 5G_EA1 5G_EA2 
-2026-09-21T22:19:15.855003553Z [2026-09-22 00:19:15.854] [itti] [start] Starting...
-2026-09-21T22:19:15.855006254Z [2026-09-22 00:19:15.854] [itti] [start] Started
-2026-09-21T22:19:15.855008978Z [2026-09-22 00:19:15.854] [amf_sbi] [info] HTTP Client successfully initiated on interface eth0 with timeout 3000 ms, HTTP version 2
-2026-09-21T22:19:15.855011841Z [2026-09-22 00:19:15.854] [amf_app] [start] Creating AMF application functionality layer
-2026-09-21T22:19:15.855054028Z [2026-09-22 00:19:15.855] [itti] [info] Starting timer_manager_task
-2026-09-21T22:19:15.855139615Z [2026-09-22 00:19:15.855] [itti] [warning] Could not set schedparam to ITTI task 0, err=1
-2026-09-21T22:19:15.857512816Z [2026-09-22 00:19:15.857] [amf_n1] [start] AMF N1 started
-2026-09-21T22:19:15.857530396Z [2026-09-22 00:19:15.857] [sctp] [debug] Creating socket!
-2026-09-21T22:19:15.857586133Z [2026-09-22 00:19:15.857] [sctp] [debug] Getaddrinfo on 192.168.73.137 was OK
-2026-09-21T22:19:15.857630943Z [2026-09-22 00:19:15.857] [sctp] [info] Created socket (3)
-2026-09-21T22:19:15.857732073Z [2026-09-22 00:19:15.857] [ngap] [info] Set N2 AMF IPv4 Addr 192.168.73.137, port 38412
-2026-09-21T22:19:15.857835718Z [2026-09-22 00:19:15.857] [sctp] [info] Create pthread to receive SCTP message
-2026-09-21T22:19:15.858901793Z [2026-09-22 00:19:15.858] [amf_n2] [start] amf_n2 started
-2026-09-21T22:19:15.860214007Z [2026-09-22 00:19:15.860] [amf_sbi] [start] amf_sbi started
-2026-09-21T22:19:15.860231982Z [2026-09-22 00:19:15.860] [amf_app] [debug] NF instance info
-2026-09-21T22:19:15.860238239Z [2026-09-22 00:19:15.860] [amf_app] [debug] 	Instance ID: c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:19:15.860242242Z [2026-09-22 00:19:15.860] [amf_app] [debug] 	Instance name: OAI-AMF
-2026-09-21T22:19:15.860245746Z [2026-09-22 00:19:15.860] [amf_app] [debug] 	Instance type: AMF
-2026-09-21T22:19:15.860249155Z [2026-09-22 00:19:15.860] [amf_app] [debug] 	Status: REGISTERED
-2026-09-21T22:19:15.860252555Z [2026-09-22 00:19:15.860] [amf_app] [debug] 	HeartBeat timer: 50
-2026-09-21T22:19:15.860255979Z [2026-09-22 00:19:15.860] [amf_app] [debug] 	Priority: 1
-2026-09-21T22:19:15.860259381Z [2026-09-22 00:19:15.860] [amf_app] [debug] 	Capacity: 100
-2026-09-21T22:19:15.860262865Z [2026-09-22 00:19:15.860] [amf_app] [debug] 	SNSSAI:
-2026-09-21T22:19:15.860266318Z [2026-09-22 00:19:15.860] [amf_app] [debug] 		 SST, SD: 1, FFFFFF
-2026-09-21T22:19:15.860269813Z [2026-09-22 00:19:15.860] [amf_app] [debug] 		 SST, SD: 1, 000001
-2026-09-21T22:19:15.860273246Z [2026-09-22 00:19:15.860] [amf_app] [debug] 		 SST, SD: 222, 00007B
-2026-09-21T22:19:15.860276685Z [2026-09-22 00:19:15.860] [amf_app] [debug] 	IPv4 Addr:
-2026-09-21T22:19:15.860280064Z [2026-09-22 00:19:15.860] [amf_app] [debug] 		 192.168.73.137
-2026-09-21T22:19:15.860283476Z [2026-09-22 00:19:15.860] [amf_app] [debug] 	NF Service
-2026-09-21T22:19:15.860286965Z [2026-09-22 00:19:15.860] [amf_app] [debug] 		Service Instance ID: c503cee1-f68e-4f79-aebe-52c8f089271d, Service name: namf-comm, Version (apiVersionInUri: v1, apiFullVersion: 1.0.0 ), Scheme: http, Service status: REGISTERED,  IpEndPoints: Ipv4 Address: 192.168.73.137, TransportProtocol: TCP, Port: 8080
-2026-09-21T22:19:15.860291133Z [2026-09-22 00:19:15.860] [amf_app] [debug] 		Service Instance ID: namf-evts, Service name: namf-evts, Version (apiVersionInUri: v1, apiFullVersion: 1.0.0 ), Scheme: http, Service status: REGISTERED,  IpEndPoints: Ipv4 Address: 192.168.73.137, TransportProtocol: TCP, Port: 8080
-2026-09-21T22:19:15.860295136Z [2026-09-22 00:19:15.860] [amf_app] [debug] 	NF Service List
-2026-09-21T22:19:15.860298570Z [2026-09-22 00:19:15.860] [amf_app] [debug] 		c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:19:15.860303067Z [2026-09-22 00:19:15.860] [amf_app] [debug] 			Service Instance ID: c503cee1-f68e-4f79-aebe-52c8f089271d, Service name: namf-comm, Version (apiVersionInUri: v1, apiFullVersion: 1.0.0 ), Scheme: http, Service status: REGISTERED,  IpEndPoints: Ipv4 Address: 192.168.73.137, TransportProtocol: TCP, Port: 8080
-2026-09-21T22:19:15.860307166Z [2026-09-22 00:19:15.860] [amf_app] [debug] 	AMF Info
-2026-09-21T22:19:15.860310558Z [2026-09-22 00:19:15.860] [amf_app] [debug] 		AMF Set ID: 001, AMF Region ID: 01
-2026-09-21T22:19:15.860321876Z [2026-09-22 00:19:15.860] [amf_app] [debug] 		AMF GUAMI List, AMF_ID: 010041
-2026-09-21T22:19:15.860325700Z [2026-09-22 00:19:15.860] [amf_app] [debug] 		AMF GUAMI List, PLMN (MCC: 262, MNC: 10)
-2026-09-21T22:19:15.860329367Z [2026-09-22 00:19:15.860] [amf_app] [start] Started timer (1)
-2026-09-21T22:19:15.860332770Z [2026-09-22 00:19:15.860] [amf_app] [debug] Send ITTI msg to SBI task to trigger the registration request towards all appropriate NRFs
-2026-09-21T22:19:15.860526226Z [2026-09-22 00:19:15.860] [amf_app] [debug] Initiating AMF server endpoints
-2026-09-21T22:19:15.860559014Z [2026-09-22 00:19:15.860] [amf_sbi] [info] Receive Register NF Instance Request, handling ...
-2026-09-21T22:19:15.860566063Z [2026-09-22 00:19:15.860] [amf_sbi] [debug] Send NF Instance Registration to NRF
-2026-09-21T22:19:15.860783886Z [2026-09-22 00:19:15.860] [amf_app] [debug] AMF profile to json:
-2026-09-21T22:19:15.860798361Z  {"amfInfo":{"amfRegionId":"01","amfSetId":"001","guamiList":[{"amfId":"010041","plmnId":{"mcc":"262","mnc":"10"}}]},"capacity":100,"custom_info":null,"heartBeatTimer":50,"ipv4Addresses":["192.168.73.137"],"nfInstanceId":"c503cee1-f68e-4f79-aebe-52c8f089271d","nfInstanceName":"OAI-AMF","nfServiceList":{"c503cee1-f68e-4f79-aebe-52c8f089271d":{"ipEndPoints":[{"ipv4Address":"192.168.73.137","port":8080,"transport":"TCP"}],"nfServiceStatus":"REGISTERED","scheme":"http","serviceInstanceId":"c503cee1-f68e-4f79-aebe-52c8f089271d","serviceName":"namf-comm","versions":[{"apiFullVersion":"1.0.0","apiVersionInUri":"v1"}]}},"nfServices":[{"ipEndPoints":[{"ipv4Address":"192.168.73.137","port":8080,"transport":"TCP"}],"nfServiceStatus":"REGISTERED","scheme":"http","serviceInstanceId":"c503cee1-f68e-4f79-aebe-52c8f089271d","serviceName":"namf-comm","versions":[{"apiFullVersion":"1.0.0","apiVersionInUri":"v1"}]},{"ipEndPoints":[{"ipv4Address":"192.168.73.137","port":8080,"transport":"TCP"}],"nfServiceStatus":"REGISTERED","scheme":"http","serviceInstanceId":"namf-evts","serviceName":"namf-evts","versions":[{"apiFullVersion":"1.0.0","apiVersionInUri":"v1"}]}],"nfStatus":"REGISTERED","nfType":"AMF","priority":1,"sNssais":[{"sd":"FFFFFF","sst":1},{"sd":"000001","sst":1},{"sd":"00007B","sst":222}]}
-2026-09-21T22:19:15.860812168Z [2026-09-22 00:19:15.860] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:19:15.860816269Z [2026-09-22 00:19:15.860] [amf_sbi] [info] HTTP message Body: {"amfInfo":{"amfRegionId":"01","amfSetId":"001","guamiList":[{"amfId":"010041","plmnId":{"mcc":"262","mnc":"10"}}]},"capacity":100,"custom_info":null,"heartBeatTimer":50,"ipv4Addresses":["192.168.73.137"],"nfInstanceId":"c503cee1-f68e-4f79-aebe-52c8f089271d","nfInstanceName":"OAI-AMF","nfServiceList":{"c503cee1-f68e-4f79-aebe-52c8f089271d":{"ipEndPoints":[{"ipv4Address":"192.168.73.137","port":8080,"transport":"TCP"}],"nfServiceStatus":"REGISTERED","scheme":"http","serviceInstanceId":"c503cee1-f68e-4f79-aebe-52c8f089271d","serviceName":"namf-comm","versions":[{"apiFullVersion":"1.0.0","apiVersionInUri":"v1"}]}},"nfServices":[{"ipEndPoints":[{"ipv4Address":"192.168.73.137","port":8080,"transport":"TCP"}],"nfServiceStatus":"REGISTERED","scheme":"http","serviceInstanceId":"c503cee1-f68e-4f79-aebe-52c8f089271d","serviceName":"namf-comm","versions":[{"apiFullVersion":"1.0.0","apiVersionInUri":"v1"}]},{"ipEndPoints":[{"ipv4Address":"192.168.73.137","port":8080,"transport":"TCP"}],"nfServiceStatus":"REGISTERED","scheme":"http","serviceInstanceId":"namf-evts","serviceName":"namf-evts","versions":[{"apiFullVersion":"1.0.0","apiVersionInUri":"v1"}]}],"nfStatus":"REGISTERED","nfType":"AMF","priority":1,"sNssais":[{"sd":"FFFFFF","sst":1},{"sd":"000001","sst":1},{"sd":"00007B","sst":222}]}
-2026-09-21T22:19:15.860835309Z [2026-09-22 00:19:15.860] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:19:15.864130562Z [2026-09-22 00:19:15.864] [amf_sbi] [info] Get response with HTTP code (201)
-2026-09-21T22:19:15.864205895Z [2026-09-22 00:19:15.864] [amf_sbi] [debug] NFRegistration, got successful response from NRF
-2026-09-21T22:19:15.864215693Z [2026-09-22 00:19:15.864] [amf_sbi] [debug] Registered AMF profile (from NRF)
-2026-09-21T22:19:15.864260183Z [2026-09-22 00:19:15.864] [amf_app] [debug] NF instance info
-2026-09-21T22:19:15.864270274Z [2026-09-22 00:19:15.864] [amf_app] [debug] 	Instance ID: c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:19:15.864276833Z [2026-09-22 00:19:15.864] [amf_app] [debug] 	Instance name: OAI-AMF
-2026-09-21T22:19:15.864281704Z [2026-09-22 00:19:15.864] [amf_app] [debug] 	Instance type: AMF
-2026-09-21T22:19:15.864286889Z [2026-09-22 00:19:15.864] [amf_app] [debug] 	Status: REGISTERED
-2026-09-21T22:19:15.864291184Z [2026-09-22 00:19:15.864] [amf_app] [debug] 	HeartBeat timer: 10
-2026-09-21T22:19:15.864294631Z [2026-09-22 00:19:15.864] [amf_app] [debug] 	Priority: 1
-2026-09-21T22:19:15.864298011Z [2026-09-22 00:19:15.864] [amf_app] [debug] 	Capacity: 100
-2026-09-21T22:19:15.864301402Z [2026-09-22 00:19:15.864] [amf_app] [debug] 	SNSSAI:
-2026-09-21T22:19:15.864304794Z [2026-09-22 00:19:15.864] [amf_app] [debug] 		 SST, SD: 1, FFFFFF
-2026-09-21T22:19:15.864308305Z [2026-09-22 00:19:15.864] [amf_app] [debug] 		 SST, SD: 1, 000001
-2026-09-21T22:19:15.864311724Z [2026-09-22 00:19:15.864] [amf_app] [debug] 		 SST, SD: 222, 00007B
-2026-09-21T22:19:15.864315220Z [2026-09-22 00:19:15.864] [amf_app] [debug] 	IPv4 Addr:
-2026-09-21T22:19:15.864319793Z [2026-09-22 00:19:15.864] [amf_app] [debug] 		 192.168.73.137
-2026-09-21T22:19:15.864323314Z [2026-09-22 00:19:15.864] [amf_app] [debug] 	AMF Info
-2026-09-21T22:19:15.864326708Z [2026-09-22 00:19:15.864] [amf_app] [debug] 		AMF Set ID: 001, AMF Region ID: 01
-2026-09-21T22:19:15.864330364Z [2026-09-22 00:19:15.864] [amf_app] [debug] 		AMF GUAMI List, AMF_ID: 010041
-2026-09-21T22:19:15.864335581Z [2026-09-22 00:19:15.864] [amf_app] [debug] 		AMF GUAMI List, PLMN (MCC: 262, MNC: 10)
-2026-09-21T22:19:15.864343979Z [2026-09-22 00:19:15.864] [amf_app] [debug] Received SBI_REGISTER_NF_INSTANCE_RESPONSE
-2026-09-21T22:19:15.864347916Z [2026-09-22 00:19:15.864] [amf_app] [debug] Handle NF Instance Registration response
-2026-09-21T22:19:15.864363340Z [2026-09-22 00:19:15.864] [amf_app] [debug] AMF has successfully registered to NRF.
-2026-09-21T22:19:15.864369973Z [2026-09-22 00:19:15.864] [amf_app] [debug] Delete AMF Profile instance...
-2026-09-21T22:19:15.864373672Z [2026-09-22 00:19:15.864] [amf_app] [debug] Set value of NRF Heartbeat timer to 10
-2026-09-21T22:19:15.864399722Z [2026-09-22 00:19:15.864] [amf_app] [debug] Delete AMF Profile instance...
-2026-09-21T22:19:15.864544661Z [2026-09-22 00:19:15.864] [amf_server] [info] HTTP2 server being started
-2026-09-21T22:19:25.864627940Z [2026-09-22 00:19:25.864] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:19:25.864655789Z [2026-09-22 00:19:25.864] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:19:25.864660198Z [2026-09-22 00:19:25.864] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:19:25.864663577Z [2026-09-22 00:19:25.864] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:19:25.864667250Z [2026-09-22 00:19:25.864] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:19:25.916038548Z [2026-09-22 00:19:25.915] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:19:25.916120985Z [2026-09-22 00:19:25.916] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:19:25.916141276Z [2026-09-22 00:19:25.916] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:19:25.916150413Z [2026-09-22 00:19:25.916] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:19:25.916153538Z [2026-09-22 00:19:25.916] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:19:35.861260484Z [2026-09-22 00:19:35.860] [amf_app] [info] 
-2026-09-21T22:19:35.861349375Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:19:35.861363667Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
-2026-09-21T22:19:35.861375445Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
-2026-09-21T22:19:35.861393403Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
-2026-09-21T22:19:35.861404453Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:19:35.861415524Z 
-2026-09-21T22:19:35.861425843Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:19:35.861437036Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
-2026-09-21T22:19:35.861482454Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
-2026-09-21T22:19:35.861492329Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
-2026-09-21T22:19:35.861501364Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:19:35.861509848Z 
-2026-09-21T22:19:35.918082641Z [2026-09-22 00:19:35.917] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:19:35.918156812Z [2026-09-22 00:19:35.917] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:19:35.918189583Z [2026-09-22 00:19:35.917] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:19:35.918207515Z [2026-09-22 00:19:35.917] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:19:35.918223299Z [2026-09-22 00:19:35.917] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:19:35.922903313Z [2026-09-22 00:19:35.922] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:19:35.923019767Z [2026-09-22 00:19:35.922] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:19:35.923053683Z [2026-09-22 00:19:35.922] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:19:35.923072952Z [2026-09-22 00:19:35.922] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:19:35.923087760Z [2026-09-22 00:19:35.922] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:19:45.927488944Z [2026-09-22 00:19:45.923] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:19:45.927594007Z [2026-09-22 00:19:45.923] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:19:45.927623101Z [2026-09-22 00:19:45.923] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:19:45.927638942Z [2026-09-22 00:19:45.923] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:19:45.927655336Z [2026-09-22 00:19:45.923] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:19:45.931808664Z [2026-09-22 00:19:45.931] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:19:45.931849643Z [2026-09-22 00:19:45.931] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:19:45.932767143Z [2026-09-22 00:19:45.932] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:19:45.932806591Z [2026-09-22 00:19:45.932] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:19:45.932861992Z [2026-09-22 00:19:45.932] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:19:55.861277599Z [2026-09-22 00:19:55.861] [amf_app] [info] 
-2026-09-21T22:19:55.861350669Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:19:55.861365531Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
-2026-09-21T22:19:55.861376675Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
-2026-09-21T22:19:55.861387453Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
-2026-09-21T22:19:55.861397775Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:19:55.861408587Z 
-2026-09-21T22:19:55.861417830Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:19:55.861428401Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
-2026-09-21T22:19:55.861438792Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
-2026-09-21T22:19:55.861449227Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
-2026-09-21T22:19:55.861459855Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:19:55.861470324Z 
-2026-09-21T22:19:55.932864279Z [2026-09-22 00:19:55.932] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:19:55.932925725Z [2026-09-22 00:19:55.932] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:19:55.932946559Z [2026-09-22 00:19:55.932] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:19:55.932958377Z [2026-09-22 00:19:55.932] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:19:55.932971286Z [2026-09-22 00:19:55.932] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:19:55.937119485Z [2026-09-22 00:19:55.936] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:19:55.937164069Z [2026-09-22 00:19:55.936] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:19:55.937315685Z [2026-09-22 00:19:55.937] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:19:55.937360980Z [2026-09-22 00:19:55.937] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:19:55.937370824Z [2026-09-22 00:19:55.937] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:20:05.937414252Z [2026-09-22 00:20:05.937] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:20:05.937443815Z [2026-09-22 00:20:05.937] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:20:05.937449440Z [2026-09-22 00:20:05.937] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:20:05.937454090Z [2026-09-22 00:20:05.937] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:20:05.937459264Z [2026-09-22 00:20:05.937] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:20:05.939034150Z [2026-09-22 00:20:05.938] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:20:05.939056096Z [2026-09-22 00:20:05.938] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:20:05.939073364Z [2026-09-22 00:20:05.939] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:20:05.939079713Z [2026-09-22 00:20:05.939] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:20:05.939085585Z [2026-09-22 00:20:05.939] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:20:15.861551533Z [2026-09-22 00:20:15.861] [amf_app] [info] 
-2026-09-21T22:20:15.861698642Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:20:15.861722576Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
-2026-09-21T22:20:15.861739373Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
-2026-09-21T22:20:15.861756415Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
-2026-09-21T22:20:15.861772457Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:20:15.861788345Z 
-2026-09-21T22:20:15.861802117Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:20:15.861817651Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
-2026-09-21T22:20:15.861833776Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
-2026-09-21T22:20:15.861851669Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
-2026-09-21T22:20:15.861903201Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:20:15.861919464Z 
-2026-09-21T22:20:15.939160230Z [2026-09-22 00:20:15.939] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:20:15.939179985Z [2026-09-22 00:20:15.939] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:20:15.939185200Z [2026-09-22 00:20:15.939] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:20:15.939189217Z [2026-09-22 00:20:15.939] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:20:15.939193693Z [2026-09-22 00:20:15.939] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:20:15.940299281Z [2026-09-22 00:20:15.940] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:20:15.940333225Z [2026-09-22 00:20:15.940] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:20:15.940355347Z [2026-09-22 00:20:15.940] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:20:15.940360878Z [2026-09-22 00:20:15.940] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:20:15.940363390Z [2026-09-22 00:20:15.940] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:20:25.940907498Z [2026-09-22 00:20:25.940] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:20:25.940983331Z [2026-09-22 00:20:25.940] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:20:25.941005243Z [2026-09-22 00:20:25.940] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:20:25.941023910Z [2026-09-22 00:20:25.940] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:20:25.941037847Z [2026-09-22 00:20:25.940] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:20:25.946183947Z [2026-09-22 00:20:25.945] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:20:25.946382743Z [2026-09-22 00:20:25.946] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:20:25.946413047Z [2026-09-22 00:20:25.946] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:20:25.946429583Z [2026-09-22 00:20:25.946] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:20:25.946443715Z [2026-09-22 00:20:25.946] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:20:35.861806339Z [2026-09-22 00:20:35.861] [amf_app] [info] 
-2026-09-21T22:20:35.861907882Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:20:35.861931495Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
-2026-09-21T22:20:35.861987908Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
-2026-09-21T22:20:35.862007601Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
-2026-09-21T22:20:35.862025504Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:20:35.862041394Z 
-2026-09-21T22:20:35.862055978Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:20:35.862072348Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
-2026-09-21T22:20:35.862089562Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
-2026-09-21T22:20:35.862107577Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
-2026-09-21T22:20:35.862124236Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:20:35.862141547Z 
-2026-09-21T22:20:35.946716910Z [2026-09-22 00:20:35.946] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:20:35.946740739Z [2026-09-22 00:20:35.946] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:20:35.946744346Z [2026-09-22 00:20:35.946] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:20:35.946747515Z [2026-09-22 00:20:35.946] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:20:35.946751154Z [2026-09-22 00:20:35.946] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:20:35.947994483Z [2026-09-22 00:20:35.947] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:20:35.948030061Z [2026-09-22 00:20:35.948] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:20:35.948057346Z [2026-09-22 00:20:35.948] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:20:35.948062622Z [2026-09-22 00:20:35.948] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:20:35.948066896Z [2026-09-22 00:20:35.948] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:20:45.948484103Z [2026-09-22 00:20:45.948] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:20:45.948541418Z [2026-09-22 00:20:45.948] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:20:45.948626340Z [2026-09-22 00:20:45.948] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:20:45.948645851Z [2026-09-22 00:20:45.948] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:20:45.948653475Z [2026-09-22 00:20:45.948] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:20:45.951224192Z [2026-09-22 00:20:45.951] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:20:45.951302937Z [2026-09-22 00:20:45.951] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:20:45.951399256Z [2026-09-22 00:20:45.951] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:20:45.951418971Z [2026-09-22 00:20:45.951] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:20:45.951427036Z [2026-09-22 00:20:45.951] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:20:55.862130992Z [2026-09-22 00:20:55.861] [amf_app] [info] 
-2026-09-21T22:20:55.862193492Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:20:55.862205361Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
-2026-09-21T22:20:55.862214284Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
-2026-09-21T22:20:55.862222785Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
-2026-09-21T22:20:55.862231197Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:20:55.862239548Z 
-2026-09-21T22:20:55.862247172Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:20:55.862255641Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
-2026-09-21T22:20:55.862264019Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
-2026-09-21T22:20:55.862273218Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
-2026-09-21T22:20:55.862281733Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:20:55.862290002Z 
-2026-09-21T22:20:55.951971765Z [2026-09-22 00:20:55.951] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:20:55.952080503Z [2026-09-22 00:20:55.951] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:20:55.952099780Z [2026-09-22 00:20:55.951] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:20:55.952110083Z [2026-09-22 00:20:55.951] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:20:55.952120642Z [2026-09-22 00:20:55.951] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:20:55.956746177Z [2026-09-22 00:20:55.956] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:20:55.956801845Z [2026-09-22 00:20:55.956] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:20:55.956835179Z [2026-09-22 00:20:55.956] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:20:55.956851871Z [2026-09-22 00:20:55.956] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:20:55.956866074Z [2026-09-22 00:20:55.956] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:21:05.957268617Z [2026-09-22 00:21:05.957] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:21:05.957339591Z [2026-09-22 00:21:05.957] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:21:05.957359663Z [2026-09-22 00:21:05.957] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:21:05.957371470Z [2026-09-22 00:21:05.957] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:21:05.957384521Z [2026-09-22 00:21:05.957] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:21:05.961996408Z [2026-09-22 00:21:05.961] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:21:05.962220969Z [2026-09-22 00:21:05.961] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:21:05.962251133Z [2026-09-22 00:21:05.962] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:21:05.962262233Z [2026-09-22 00:21:05.962] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:21:05.962273350Z [2026-09-22 00:21:05.962] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:21:15.861973183Z [2026-09-22 00:21:15.861] [amf_app] [info] 
-2026-09-21T22:21:15.862026702Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:21:15.862029539Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
-2026-09-21T22:21:15.862031755Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
-2026-09-21T22:21:15.862033834Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
-2026-09-21T22:21:15.862046970Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:21:15.862049272Z 
-2026-09-21T22:21:15.862051044Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:21:15.862053068Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
-2026-09-21T22:21:15.862055058Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
-2026-09-21T22:21:15.862057105Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
-2026-09-21T22:21:15.862059134Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:21:15.862061144Z 
-2026-09-21T22:21:15.962367694Z [2026-09-22 00:21:15.962] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:21:15.962391311Z [2026-09-22 00:21:15.962] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:21:15.962394228Z [2026-09-22 00:21:15.962] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:21:15.962396803Z [2026-09-22 00:21:15.962] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:21:15.962400158Z [2026-09-22 00:21:15.962] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:21:15.963939588Z [2026-09-22 00:21:15.963] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:21:15.963954696Z [2026-09-22 00:21:15.963] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:21:15.963958946Z [2026-09-22 00:21:15.963] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:21:15.963960982Z [2026-09-22 00:21:15.963] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:21:15.963962828Z [2026-09-22 00:21:15.963] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:21:25.964627564Z [2026-09-22 00:21:25.964] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:21:25.964711377Z [2026-09-22 00:21:25.964] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:21:25.964734822Z [2026-09-22 00:21:25.964] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:21:25.964754155Z [2026-09-22 00:21:25.964] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:21:25.964823080Z [2026-09-22 00:21:25.964] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:21:25.969113840Z [2026-09-22 00:21:25.968] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:21:25.969171174Z [2026-09-22 00:21:25.968] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:21:25.969246544Z [2026-09-22 00:21:25.969] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:21:25.969286189Z [2026-09-22 00:21:25.969] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:21:25.969302356Z [2026-09-22 00:21:25.969] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:21:35.862363016Z [2026-09-22 00:21:35.862] [amf_app] [info] 
-2026-09-21T22:21:35.862424964Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:21:35.862436762Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
-2026-09-21T22:21:35.862446089Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
-2026-09-21T22:21:35.862454810Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
-2026-09-21T22:21:35.862463347Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:21:35.862471981Z 
-2026-09-21T22:21:35.862479386Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:21:35.862488620Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
-2026-09-21T22:21:35.862496931Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
-2026-09-21T22:21:35.862505370Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
-2026-09-21T22:21:35.862514154Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:21:35.862522520Z 
-2026-09-21T22:21:35.969826406Z [2026-09-22 00:21:35.969] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:21:35.969888204Z [2026-09-22 00:21:35.969] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:21:35.969904575Z [2026-09-22 00:21:35.969] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:21:35.969918050Z [2026-09-22 00:21:35.969] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:21:35.969993974Z [2026-09-22 00:21:35.969] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:21:35.973460712Z [2026-09-22 00:21:35.973] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:21:35.973684110Z [2026-09-22 00:21:35.973] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:21:35.973722964Z [2026-09-22 00:21:35.973] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:21:35.973737342Z [2026-09-22 00:21:35.973] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:21:35.973748364Z [2026-09-22 00:21:35.973] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:21:45.974275172Z [2026-09-22 00:21:45.973] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:21:45.974364556Z [2026-09-22 00:21:45.973] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:21:45.974388905Z [2026-09-22 00:21:45.974] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:21:45.974408452Z [2026-09-22 00:21:45.974] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:21:45.974430119Z [2026-09-22 00:21:45.974] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:21:45.978160441Z [2026-09-22 00:21:45.977] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:21:45.978227853Z [2026-09-22 00:21:45.978] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:21:45.978262111Z [2026-09-22 00:21:45.978] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:21:45.978286349Z [2026-09-22 00:21:45.978] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:21:45.978301357Z [2026-09-22 00:21:45.978] [amf_app] [debug] Set a timer to the next Heart-beat (10)
-2026-09-21T22:21:55.862519646Z [2026-09-22 00:21:55.862] [amf_app] [info] 
-2026-09-21T22:21:55.862636571Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:21:55.862670211Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
-2026-09-21T22:21:55.862693168Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
-2026-09-21T22:21:55.862714557Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
-2026-09-21T22:21:55.862753498Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:21:55.862773053Z 
-2026-09-21T22:21:55.862792475Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:21:55.862857280Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
-2026-09-21T22:21:55.862876743Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
-2026-09-21T22:21:55.862889876Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
-2026-09-21T22:21:55.862905049Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-2026-09-21T22:21:55.862918316Z 
-2026-09-21T22:21:55.978773241Z [2026-09-22 00:21:55.978] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
-2026-09-21T22:21:55.978836439Z [2026-09-22 00:21:55.978] [amf_sbi] [debug] Send NF Update to NRF
-2026-09-21T22:21:55.978856307Z [2026-09-22 00:21:55.978] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc262.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/c503cee1-f68e-4f79-aebe-52c8f089271d
-2026-09-21T22:21:55.978872452Z [2026-09-22 00:21:55.978] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
-2026-09-21T22:21:55.978893214Z [2026-09-22 00:21:55.978] [amf_sbi] [debug] Send a simple HTTP request
-2026-09-21T22:21:55.983224989Z [2026-09-22 00:21:55.982] [amf_sbi] [info] Get response with HTTP code (204)
-2026-09-21T22:21:55.983473526Z [2026-09-22 00:21:55.983] [amf_sbi] [info] Could not get JSON content from the response
-2026-09-21T22:21:55.983515138Z [2026-09-22 00:21:55.983] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
-2026-09-21T22:21:55.983532653Z [2026-09-22 00:21:55.983] [amf_app] [debug] Handle NF Update response
-2026-09-21T22:21:55.983543155Z [2026-09-22 00:21:55.983] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:07:24.040148209Z Trying to read .yaml configuration file
+2026-09-22T19:07:24.040185549Z LTTNG Tracing disabled at build-time!
+2026-09-22T19:07:24.040191226Z [2026-09-22 21:07:24.039] [amf_app] [start] Options parsed!
+2026-09-22T19:07:24.040194795Z [2026-09-22 21:07:24.040] [system ] [debug] Parsing the configuration file, file type YAML.
+2026-09-22T19:07:24.068310685Z [2026-09-22 21:07:24.067] [config ] [info] Reading NF configuration from /openair-amf/etc/config.yaml
+2026-09-22T19:07:24.104241388Z [2026-09-22 21:07:24.104] [config ] [debug] Unknown NF upf in configuration. Ignored
+2026-09-22T19:07:24.104441242Z [2026-09-22 21:07:24.104] [config ] [debug] Unknown NF udr in configuration. Ignored
+2026-09-22T19:07:24.104452141Z [2026-09-22 21:07:24.104] [config ] [debug] Unknown NF sepp in configuration. Ignored
+2026-09-22T19:07:24.116865817Z [2026-09-22 21:07:24.116] [config ] [debug] Validating configuration of log_level
+2026-09-22T19:07:24.119320539Z [2026-09-22 21:07:24.119] [config ] [debug] Validating configuration of register_nf
+2026-09-22T19:07:24.119600528Z [2026-09-22 21:07:24.119] [config ] [debug] Validating configuration of http_version
+2026-09-22T19:07:24.119607521Z [2026-09-22 21:07:24.119] [config ] [debug] Validating configuration of http_request_timeout
+2026-09-22T19:07:24.119610927Z [2026-09-22 21:07:24.119] [config ] [debug] Validating configuration of PCF
+2026-09-22T19:07:24.119614113Z [2026-09-22 21:07:24.119] [config ] [debug] Validating configuration of NSSF
+2026-09-22T19:07:24.119617083Z [2026-09-22 21:07:24.119] [config ] [debug] Validating configuration of NRF
+2026-09-22T19:07:24.120212908Z [2026-09-22 21:07:24.120] [config ] [debug] Validating configuration of UDM
+2026-09-22T19:07:24.120222738Z [2026-09-22 21:07:24.120] [config ] [debug] Validating configuration of AUSF
+2026-09-22T19:07:24.120226153Z [2026-09-22 21:07:24.120] [config ] [debug] Validating configuration of SMF
+2026-09-22T19:07:24.120229135Z [2026-09-22 21:07:24.120] [config ] [debug] Validating configuration of AMF
+2026-09-22T19:07:24.123911578Z [2026-09-22 21:07:24.123] [config ] [debug] Validating configuration of database
+2026-09-22T19:07:24.123927698Z [2026-09-22 21:07:24.123] [config] [info] ==== OAI-CN5G AMF vBranch: lbo-roaming-support Abrev. Hash: 887e15dc Date: Sun Sep 20 14:36:59 2026 +0200 ====
+2026-09-22T19:07:24.123931629Z [2026-09-22 21:07:24.123] [config] [info] ======================    AMF   =====================
+2026-09-22T19:07:24.123934695Z [2026-09-22 21:07:24.123] [config] [info] Configuration AMF:
+2026-09-22T19:07:24.124803258Z [2026-09-22 21:07:24.124] [config] [info] - Instance ................: 1
+2026-09-22T19:07:24.124817251Z [2026-09-22 21:07:24.124] [config] [info] - PID dir .................: /var/run
+2026-09-22T19:07:24.124821830Z [2026-09-22 21:07:24.124] [config] [info] - AMF NAME.................: OAI-AMF
+2026-09-22T19:07:24.124825975Z [2026-09-22 21:07:24.124] [config] [info] - Roaming admission........: Yes
+2026-09-22T19:07:24.124829643Z [2026-09-22 21:07:24.124] [config] [info]     Home PLMN partner......: 999/20
+2026-09-22T19:07:24.124846387Z [2026-09-22 21:07:24.124] [config] [info]     Home PLMN partner......: 228/06
+2026-09-22T19:07:24.124850410Z [2026-09-22 21:07:24.124] [config] [info] - GUAMI (MCC, MNC, Region ID, AMF Set ID, AMF pointer): 
+2026-09-22T19:07:24.124854109Z [2026-09-22 21:07:24.124] [config] [info]     (999, 10, 1, 1, 1)
+2026-09-22T19:07:24.124857681Z [2026-09-22 21:07:24.124] [config] [info] - Served Guami List:
+2026-09-22T19:07:24.124861051Z [2026-09-22 21:07:24.124] [config] [info]     (999, 10, 1 , 1, 1)
+2026-09-22T19:07:24.124865568Z [2026-09-22 21:07:24.124] [config] [info] - Relative Capacity .......: 30
+2026-09-22T19:07:24.124871619Z [2026-09-22 21:07:24.124] [config] [info] - PLMN Support: 
+2026-09-22T19:07:24.124875859Z [2026-09-22 21:07:24.124] [config] [info]     MCC, MNC ..............: 999, 10
+2026-09-22T19:07:24.124879291Z [2026-09-22 21:07:24.124] [config] [info]     TAC ...................: 40960
+2026-09-22T19:07:24.124883543Z [2026-09-22 21:07:24.124] [config] [info]     Slice Support .........:
+2026-09-22T19:07:24.124887428Z [2026-09-22 21:07:24.124] [config] [info]         SST ...............: 1
+2026-09-22T19:07:24.124931586Z [2026-09-22 21:07:24.124] [config] [info]         SST, SD ...........: 1, 000001
+2026-09-22T19:07:24.124938229Z [2026-09-22 21:07:24.124] [config] [info]         SST, SD ...........: 222, 00007B
+2026-09-22T19:07:24.124941737Z [2026-09-22 21:07:24.124] [config] [info] - Default DNN..............: default
+2026-09-22T19:07:24.124945394Z [2026-09-22 21:07:24.124] [config] [info] - Emergency Support .......: No
+2026-09-22T19:07:24.124948391Z [2026-09-22 21:07:24.124] [config] [info] - N2 Networking:
+2026-09-22T19:07:24.124951907Z [2026-09-22 21:07:24.124] [config] [info]     Iface .................: eth0
+2026-09-22T19:07:24.124955137Z [2026-09-22 21:07:24.124] [config] [info]     IP Addr ...............: 192.168.73.137
+2026-09-22T19:07:24.124959002Z [2026-09-22 21:07:24.124] [config] [info]     Port ..................: 38412
+2026-09-22T19:07:24.124962531Z [2026-09-22 21:07:24.124] [config] [info] - SBI Networking:
+2026-09-22T19:07:24.124965836Z [2026-09-22 21:07:24.124] [config] [info]     Iface .................: eth0
+2026-09-22T19:07:24.124969180Z [2026-09-22 21:07:24.124] [config] [info]     IP Addr ...............: 192.168.73.137
+2026-09-22T19:07:24.124972736Z [2026-09-22 21:07:24.124] [config] [info]     Port ..................: 8080
+2026-09-22T19:07:24.124976033Z [2026-09-22 21:07:24.124] [config] [info]     API version............: v1
+2026-09-22T19:07:24.124979319Z [2026-09-22 21:07:24.124] [config] [info] - Default NRF:
+2026-09-22T19:07:24.124982705Z [2026-09-22 21:07:24.124] [config] [info]     URI root ..............: http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080
+2026-09-22T19:07:24.124986112Z [2026-09-22 21:07:24.124] [config] [info]     API version ...........: v1
+2026-09-22T19:07:24.124989489Z [2026-09-22 21:07:24.124] [config] [info] - Default AUSF:
+2026-09-22T19:07:24.124998450Z [2026-09-22 21:07:24.124] [config] [info]     URI root ..............: http://ausf.5gc.mnc10.mcc999.3gppnetwork.org:8080
+2026-09-22T19:07:24.125002497Z [2026-09-22 21:07:24.124] [config] [info]     API version ...........: v1
+2026-09-22T19:07:24.125005945Z [2026-09-22 21:07:24.124] [config] [info] - Default UDM:
+2026-09-22T19:07:24.125009261Z [2026-09-22 21:07:24.124] [config] [info]     URI root ..............: http://udm.5gc.mnc10.mcc999.3gppnetwork.org:8080
+2026-09-22T19:07:24.125012722Z [2026-09-22 21:07:24.124] [config] [info]     API version ...........: v1
+2026-09-22T19:07:24.125016082Z [2026-09-22 21:07:24.124] [config] [info] - Supported Features:
+2026-09-22T19:07:24.125019441Z [2026-09-22 21:07:24.124] [config] [info]     Enable Simple Scenario.: No
+2026-09-22T19:07:24.125022798Z [2026-09-22 21:07:24.124] [config] [info]     Enable Advanced Features: No
+2026-09-22T19:07:24.125026136Z [2026-09-22 21:07:24.124] [config] [info]     NF Registration .......: Yes
+2026-09-22T19:07:24.125030081Z [2026-09-22 21:07:24.124] [config] [info]     External NSSF .........: No
+2026-09-22T19:07:24.125033625Z [2026-09-22 21:07:24.124] [config] [info]     External LMF ..........: No
+2026-09-22T19:07:24.125037003Z [2026-09-22 21:07:24.124] [config] [info]     HTTP version...........: 2
+2026-09-22T19:07:24.125040359Z [2026-09-22 21:07:24.124] [config] [info] - Log Level ...............: debug
+2026-09-22T19:07:24.125043688Z [2026-09-22 21:07:24.124] [config] [info] - Supported NAS Algorithm: 
+2026-09-22T19:07:24.125835275Z [2026-09-22 21:07:24.125] [config] [info]     Ordered Integrity Algorithm: 5G_IA1 5G_IA2 
+2026-09-22T19:07:24.125843832Z [2026-09-22 21:07:24.125] [config] [info]     Ordered Ciphering Algorithm: 5G_EA0 5G_EA1 5G_EA2 
+2026-09-22T19:07:24.126691758Z [2026-09-22 21:07:24.126] [itti] [start] Starting...
+2026-09-22T19:07:24.126801251Z [2026-09-22 21:07:24.126] [itti] [start] Started
+2026-09-22T19:07:24.126806991Z [2026-09-22 21:07:24.126] [amf_sbi] [info] HTTP Client successfully initiated on interface eth0 with timeout 3000 ms, HTTP version 2
+2026-09-22T19:07:24.126810321Z [2026-09-22 21:07:24.126] [itti] [info] Starting timer_manager_task
+2026-09-22T19:07:24.126823086Z [2026-09-22 21:07:24.126] [itti] [warning] Could not set schedparam to ITTI task 0, err=1
+2026-09-22T19:07:24.132091038Z [2026-09-22 21:07:24.131] [amf_app] [start] Creating AMF application functionality layer
+2026-09-22T19:07:24.142574098Z [2026-09-22 21:07:24.141] [amf_n1] [start] AMF N1 started
+2026-09-22T19:07:24.142597344Z [2026-09-22 21:07:24.141] [sctp] [debug] Creating socket!
+2026-09-22T19:07:24.142602982Z [2026-09-22 21:07:24.141] [sctp] [debug] Getaddrinfo on 192.168.73.137 was OK
+2026-09-22T19:07:24.142607489Z [2026-09-22 21:07:24.141] [sctp] [info] Created socket (3)
+2026-09-22T19:07:24.142611784Z [2026-09-22 21:07:24.141] [ngap] [info] Set N2 AMF IPv4 Addr 192.168.73.137, port 38412
+2026-09-22T19:07:24.142617205Z [2026-09-22 21:07:24.142] [sctp] [info] Create pthread to receive SCTP message
+2026-09-22T19:07:24.143454617Z [2026-09-22 21:07:24.142] [amf_n2] [start] amf_n2 started
+2026-09-22T19:07:24.148556810Z [2026-09-22 21:07:24.146] [amf_sbi] [start] amf_sbi started
+2026-09-22T19:07:24.148577271Z [2026-09-22 21:07:24.147] [amf_app] [debug] NF instance info
+2026-09-22T19:07:24.148581225Z [2026-09-22 21:07:24.147] [amf_app] [debug] 	Instance ID: 8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:07:24.148584204Z [2026-09-22 21:07:24.147] [amf_app] [debug] 	Instance name: OAI-AMF
+2026-09-22T19:07:24.148590435Z [2026-09-22 21:07:24.147] [amf_app] [debug] 	Instance type: AMF
+2026-09-22T19:07:24.148593062Z [2026-09-22 21:07:24.147] [amf_app] [debug] 	Status: REGISTERED
+2026-09-22T19:07:24.148596097Z [2026-09-22 21:07:24.147] [amf_app] [debug] 	HeartBeat timer: 50
+2026-09-22T19:07:24.148598483Z [2026-09-22 21:07:24.147] [amf_app] [debug] 	Priority: 1
+2026-09-22T19:07:24.148601006Z [2026-09-22 21:07:24.147] [amf_app] [debug] 	Capacity: 100
+2026-09-22T19:07:24.148603349Z [2026-09-22 21:07:24.147] [amf_app] [debug] 	SNSSAI:
+2026-09-22T19:07:24.148605807Z [2026-09-22 21:07:24.147] [amf_app] [debug] 		 SST, SD: 1, FFFFFF
+2026-09-22T19:07:24.148608362Z [2026-09-22 21:07:24.147] [amf_app] [debug] 		 SST, SD: 1, 000001
+2026-09-22T19:07:24.148611341Z [2026-09-22 21:07:24.147] [amf_app] [debug] 		 SST, SD: 222, 00007B
+2026-09-22T19:07:24.148613797Z [2026-09-22 21:07:24.147] [amf_app] [debug] 	IPv4 Addr:
+2026-09-22T19:07:24.148616418Z [2026-09-22 21:07:24.147] [amf_app] [debug] 		 192.168.73.137
+2026-09-22T19:07:24.148619376Z [2026-09-22 21:07:24.147] [amf_app] [debug] 	NF Service
+2026-09-22T19:07:24.148623016Z [2026-09-22 21:07:24.147] [amf_app] [debug] 		Service Instance ID: 8fc803f5-920e-438f-8c8a-6567eab6708f, Service name: namf-comm, Version (apiVersionInUri: v1, apiFullVersion: 1.0.0 ), Scheme: http, Service status: REGISTERED,  IpEndPoints: Ipv4 Address: 192.168.73.137, TransportProtocol: TCP, Port: 8080
+2026-09-22T19:07:24.148627238Z [2026-09-22 21:07:24.147] [amf_app] [debug] 		Service Instance ID: namf-evts, Service name: namf-evts, Version (apiVersionInUri: v1, apiFullVersion: 1.0.0 ), Scheme: http, Service status: REGISTERED,  IpEndPoints: Ipv4 Address: 192.168.73.137, TransportProtocol: TCP, Port: 8080
+2026-09-22T19:07:24.148630464Z [2026-09-22 21:07:24.147] [amf_app] [debug] 	NF Service List
+2026-09-22T19:07:24.148633193Z [2026-09-22 21:07:24.147] [amf_app] [debug] 		8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:07:24.148637925Z [2026-09-22 21:07:24.147] [amf_app] [debug] 			Service Instance ID: 8fc803f5-920e-438f-8c8a-6567eab6708f, Service name: namf-comm, Version (apiVersionInUri: v1, apiFullVersion: 1.0.0 ), Scheme: http, Service status: REGISTERED,  IpEndPoints: Ipv4 Address: 192.168.73.137, TransportProtocol: TCP, Port: 8080
+2026-09-22T19:07:24.148641909Z [2026-09-22 21:07:24.147] [amf_app] [debug] 	AMF Info
+2026-09-22T19:07:24.148644919Z [2026-09-22 21:07:24.147] [amf_app] [debug] 		AMF Set ID: 001, AMF Region ID: 01
+2026-09-22T19:07:24.148657016Z [2026-09-22 21:07:24.147] [amf_app] [debug] 		AMF GUAMI List, AMF_ID: 010041
+2026-09-22T19:07:24.148660296Z [2026-09-22 21:07:24.147] [amf_app] [debug] 		AMF GUAMI List, PLMN (MCC: 999, MNC: 10)
+2026-09-22T19:07:24.148663453Z [2026-09-22 21:07:24.147] [amf_app] [start] Started timer (1)
+2026-09-22T19:07:24.148666462Z [2026-09-22 21:07:24.147] [amf_app] [debug] Send ITTI msg to SBI task to trigger the registration request towards all appropriate NRFs
+2026-09-22T19:07:24.148669644Z [2026-09-22 21:07:24.147] [amf_app] [debug] Initiating AMF server endpoints
+2026-09-22T19:07:24.148672713Z [2026-09-22 21:07:24.148] [amf_sbi] [info] Receive Register NF Instance Request, handling ...
+2026-09-22T19:07:24.148675767Z [2026-09-22 21:07:24.148] [amf_sbi] [debug] Send NF Instance Registration to NRF
+2026-09-22T19:07:24.153034672Z [2026-09-22 21:07:24.152] [amf_app] [debug] AMF profile to json:
+2026-09-22T19:07:24.153045144Z  {"amfInfo":{"amfRegionId":"01","amfSetId":"001","guamiList":[{"amfId":"010041","plmnId":{"mcc":"999","mnc":"10"}}]},"capacity":100,"custom_info":null,"heartBeatTimer":50,"ipv4Addresses":["192.168.73.137"],"nfInstanceId":"8fc803f5-920e-438f-8c8a-6567eab6708f","nfInstanceName":"OAI-AMF","nfServiceList":{"8fc803f5-920e-438f-8c8a-6567eab6708f":{"ipEndPoints":[{"ipv4Address":"192.168.73.137","port":8080,"transport":"TCP"}],"nfServiceStatus":"REGISTERED","scheme":"http","serviceInstanceId":"8fc803f5-920e-438f-8c8a-6567eab6708f","serviceName":"namf-comm","versions":[{"apiFullVersion":"1.0.0","apiVersionInUri":"v1"}]}},"nfServices":[{"ipEndPoints":[{"ipv4Address":"192.168.73.137","port":8080,"transport":"TCP"}],"nfServiceStatus":"REGISTERED","scheme":"http","serviceInstanceId":"8fc803f5-920e-438f-8c8a-6567eab6708f","serviceName":"namf-comm","versions":[{"apiFullVersion":"1.0.0","apiVersionInUri":"v1"}]},{"ipEndPoints":[{"ipv4Address":"192.168.73.137","port":8080,"transport":"TCP"}],"nfServiceStatus":"REGISTERED","scheme":"http","serviceInstanceId":"namf-evts","serviceName":"namf-evts","versions":[{"apiFullVersion":"1.0.0","apiVersionInUri":"v1"}]}],"nfStatus":"REGISTERED","nfType":"AMF","priority":1,"sNssais":[{"sd":"FFFFFF","sst":1},{"sd":"000001","sst":1},{"sd":"00007B","sst":222}]}
+2026-09-22T19:07:24.153059246Z [2026-09-22 21:07:24.152] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:07:24.153063702Z [2026-09-22 21:07:24.152] [amf_sbi] [info] HTTP message Body: {"amfInfo":{"amfRegionId":"01","amfSetId":"001","guamiList":[{"amfId":"010041","plmnId":{"mcc":"999","mnc":"10"}}]},"capacity":100,"custom_info":null,"heartBeatTimer":50,"ipv4Addresses":["192.168.73.137"],"nfInstanceId":"8fc803f5-920e-438f-8c8a-6567eab6708f","nfInstanceName":"OAI-AMF","nfServiceList":{"8fc803f5-920e-438f-8c8a-6567eab6708f":{"ipEndPoints":[{"ipv4Address":"192.168.73.137","port":8080,"transport":"TCP"}],"nfServiceStatus":"REGISTERED","scheme":"http","serviceInstanceId":"8fc803f5-920e-438f-8c8a-6567eab6708f","serviceName":"namf-comm","versions":[{"apiFullVersion":"1.0.0","apiVersionInUri":"v1"}]}},"nfServices":[{"ipEndPoints":[{"ipv4Address":"192.168.73.137","port":8080,"transport":"TCP"}],"nfServiceStatus":"REGISTERED","scheme":"http","serviceInstanceId":"8fc803f5-920e-438f-8c8a-6567eab6708f","serviceName":"namf-comm","versions":[{"apiFullVersion":"1.0.0","apiVersionInUri":"v1"}]},{"ipEndPoints":[{"ipv4Address":"192.168.73.137","port":8080,"transport":"TCP"}],"nfServiceStatus":"REGISTERED","scheme":"http","serviceInstanceId":"namf-evts","serviceName":"namf-evts","versions":[{"apiFullVersion":"1.0.0","apiVersionInUri":"v1"}]}],"nfStatus":"REGISTERED","nfType":"AMF","priority":1,"sNssais":[{"sd":"FFFFFF","sst":1},{"sd":"000001","sst":1},{"sd":"00007B","sst":222}]}
+2026-09-22T19:07:24.153081422Z [2026-09-22 21:07:24.152] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:07:24.161104237Z [2026-09-22 21:07:24.157] [amf_server] [info] HTTP2 server being started
+2026-09-22T19:07:24.161114048Z [2026-09-22 21:07:24.159] [amf_sbi] [info] Get response with HTTP code (201)
+2026-09-22T19:07:24.161117347Z [2026-09-22 21:07:24.159] [amf_sbi] [debug] NFRegistration, got successful response from NRF
+2026-09-22T19:07:24.161120367Z [2026-09-22 21:07:24.159] [amf_sbi] [debug] Registered AMF profile (from NRF)
+2026-09-22T19:07:24.161123434Z [2026-09-22 21:07:24.160] [amf_app] [debug] NF instance info
+2026-09-22T19:07:24.161126227Z [2026-09-22 21:07:24.160] [amf_app] [debug] 	Instance ID: 8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:07:24.161129377Z [2026-09-22 21:07:24.160] [amf_app] [debug] 	Instance name: OAI-AMF
+2026-09-22T19:07:24.161132340Z [2026-09-22 21:07:24.160] [amf_app] [debug] 	Instance type: AMF
+2026-09-22T19:07:24.161135319Z [2026-09-22 21:07:24.160] [amf_app] [debug] 	Status: REGISTERED
+2026-09-22T19:07:24.161138151Z [2026-09-22 21:07:24.160] [amf_app] [debug] 	HeartBeat timer: 10
+2026-09-22T19:07:24.161141163Z [2026-09-22 21:07:24.160] [amf_app] [debug] 	Priority: 1
+2026-09-22T19:07:24.161143859Z [2026-09-22 21:07:24.160] [amf_app] [debug] 	Capacity: 100
+2026-09-22T19:07:24.161146514Z [2026-09-22 21:07:24.160] [amf_app] [debug] 	SNSSAI:
+2026-09-22T19:07:24.161149642Z [2026-09-22 21:07:24.160] [amf_app] [debug] 		 SST, SD: 1, FFFFFF
+2026-09-22T19:07:24.161796255Z [2026-09-22 21:07:24.161] [amf_app] [debug] 		 SST, SD: 1, 000001
+2026-09-22T19:07:24.161805506Z [2026-09-22 21:07:24.161] [amf_app] [debug] 		 SST, SD: 222, 00007B
+2026-09-22T19:07:24.161808818Z [2026-09-22 21:07:24.161] [amf_app] [debug] 	IPv4 Addr:
+2026-09-22T19:07:24.161812269Z [2026-09-22 21:07:24.161] [amf_app] [debug] 		 192.168.73.137
+2026-09-22T19:07:24.161821165Z [2026-09-22 21:07:24.161] [amf_app] [debug] 	AMF Info
+2026-09-22T19:07:24.162147027Z [2026-09-22 21:07:24.161] [amf_app] [debug] 		AMF Set ID: 001, AMF Region ID: 01
+2026-09-22T19:07:24.162156742Z [2026-09-22 21:07:24.161] [amf_app] [debug] 		AMF GUAMI List, AMF_ID: 010041
+2026-09-22T19:07:24.162159988Z [2026-09-22 21:07:24.161] [amf_app] [debug] 		AMF GUAMI List, PLMN (MCC: 999, MNC: 10)
+2026-09-22T19:07:24.162162811Z [2026-09-22 21:07:24.161] [amf_app] [debug] Received SBI_REGISTER_NF_INSTANCE_RESPONSE
+2026-09-22T19:07:24.162210764Z [2026-09-22 21:07:24.162] [amf_app] [debug] Handle NF Instance Registration response
+2026-09-22T19:07:24.162224932Z [2026-09-22 21:07:24.162] [amf_app] [debug] AMF has successfully registered to NRF.
+2026-09-22T19:07:24.162294286Z [2026-09-22 21:07:24.162] [amf_app] [debug] Set value of NRF Heartbeat timer to 10
+2026-09-22T19:07:24.162311597Z [2026-09-22 21:07:24.162] [amf_app] [debug] Delete AMF Profile instance...
+2026-09-22T19:07:24.162365763Z [2026-09-22 21:07:24.162] [amf_app] [debug] Delete AMF Profile instance...
+2026-09-22T19:07:34.162846750Z [2026-09-22 21:07:34.162] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:07:34.162932235Z [2026-09-22 21:07:34.162] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:07:34.162956192Z [2026-09-22 21:07:34.162] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:07:34.162974799Z [2026-09-22 21:07:34.162] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:07:34.162992216Z [2026-09-22 21:07:34.162] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:07:34.217368933Z [2026-09-22 21:07:34.217] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:07:34.222524988Z [2026-09-22 21:07:34.222] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:07:34.222546131Z [2026-09-22 21:07:34.222] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:07:34.222554131Z [2026-09-22 21:07:34.222] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:07:34.222561448Z [2026-09-22 21:07:34.222] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:07:44.147994654Z [2026-09-22 21:07:44.147] [amf_app] [info] 
+2026-09-22T19:07:44.148049616Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:07:44.148066129Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
+2026-09-22T19:07:44.148079603Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
+2026-09-22T19:07:44.148092514Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
+2026-09-22T19:07:44.148105747Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:07:44.148118591Z 
+2026-09-22T19:07:44.148130296Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:07:44.148143263Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
+2026-09-22T19:07:44.148189073Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
+2026-09-22T19:07:44.148200991Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
+2026-09-22T19:07:44.148211332Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:07:44.148221487Z 
+2026-09-22T19:07:44.223149488Z [2026-09-22 21:07:44.222] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:07:44.223218383Z [2026-09-22 21:07:44.222] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:07:44.223235080Z [2026-09-22 21:07:44.222] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:07:44.223304235Z [2026-09-22 21:07:44.222] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:07:44.223334848Z [2026-09-22 21:07:44.222] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:07:44.227786906Z [2026-09-22 21:07:44.227] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:07:44.227812058Z [2026-09-22 21:07:44.227] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:07:44.227827633Z [2026-09-22 21:07:44.227] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:07:44.227842050Z [2026-09-22 21:07:44.227] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:07:44.227857658Z [2026-09-22 21:07:44.227] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:07:54.228226539Z [2026-09-22 21:07:54.227] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:07:54.228301979Z [2026-09-22 21:07:54.227] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:07:54.228322894Z [2026-09-22 21:07:54.228] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:07:54.228341276Z [2026-09-22 21:07:54.228] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:07:54.228357431Z [2026-09-22 21:07:54.228] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:07:54.233508669Z [2026-09-22 21:07:54.233] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:07:54.233726218Z [2026-09-22 21:07:54.233] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:07:54.233762890Z [2026-09-22 21:07:54.233] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:07:54.233780150Z [2026-09-22 21:07:54.233] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:07:54.233832377Z [2026-09-22 21:07:54.233] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:08:04.148883728Z [2026-09-22 21:08:04.148] [amf_app] [info] 
+2026-09-22T19:08:04.148941433Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:08:04.148960437Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
+2026-09-22T19:08:04.148974453Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
+2026-09-22T19:08:04.148989934Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
+2026-09-22T19:08:04.149001397Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:08:04.149013400Z 
+2026-09-22T19:08:04.149024775Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:08:04.149041148Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
+2026-09-22T19:08:04.149056018Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
+2026-09-22T19:08:04.149072389Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
+2026-09-22T19:08:04.149088940Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:08:04.149104201Z 
+2026-09-22T19:08:04.233656988Z [2026-09-22 21:08:04.233] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:08:04.233681105Z [2026-09-22 21:08:04.233] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:08:04.233684998Z [2026-09-22 21:08:04.233] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:08:04.233687909Z [2026-09-22 21:08:04.233] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:08:04.233690978Z [2026-09-22 21:08:04.233] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:08:04.237324541Z [2026-09-22 21:08:04.236] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:08:04.237345952Z [2026-09-22 21:08:04.236] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:08:04.237350164Z [2026-09-22 21:08:04.236] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:08:04.237362417Z [2026-09-22 21:08:04.236] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:08:04.237365989Z [2026-09-22 21:08:04.236] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:08:14.238613999Z [2026-09-22 21:08:14.237] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:08:14.238745977Z [2026-09-22 21:08:14.237] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:08:14.239892104Z [2026-09-22 21:08:14.237] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:08:14.239946869Z [2026-09-22 21:08:14.237] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:08:14.239973169Z [2026-09-22 21:08:14.237] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:08:14.243325139Z [2026-09-22 21:08:14.242] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:08:14.243394125Z [2026-09-22 21:08:14.242] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:08:14.243418140Z [2026-09-22 21:08:14.243] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:08:14.243432092Z [2026-09-22 21:08:14.243] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:08:14.243446959Z [2026-09-22 21:08:14.243] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:08:24.148619534Z [2026-09-22 21:08:24.148] [amf_app] [info] 
+2026-09-22T19:08:24.148685248Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:08:24.148710029Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
+2026-09-22T19:08:24.148728686Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
+2026-09-22T19:08:24.148746387Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
+2026-09-22T19:08:24.148764008Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:08:24.148781292Z 
+2026-09-22T19:08:24.148796806Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:08:24.148815077Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
+2026-09-22T19:08:24.148832382Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
+2026-09-22T19:08:24.148849203Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
+2026-09-22T19:08:24.148906456Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:08:24.148925764Z 
+2026-09-22T19:08:24.243784244Z [2026-09-22 21:08:24.243] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:08:24.243854429Z [2026-09-22 21:08:24.243] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:08:24.243871958Z [2026-09-22 21:08:24.243] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:08:24.243885630Z [2026-09-22 21:08:24.243] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:08:24.243899912Z [2026-09-22 21:08:24.243] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:08:24.248126950Z [2026-09-22 21:08:24.247] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:08:24.248184902Z [2026-09-22 21:08:24.248] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:08:24.248394350Z [2026-09-22 21:08:24.248] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:08:24.248440740Z [2026-09-22 21:08:24.248] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:08:24.248457866Z [2026-09-22 21:08:24.248] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:08:34.248766249Z [2026-09-22 21:08:34.248] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:08:34.248838559Z [2026-09-22 21:08:34.248] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:08:34.248859358Z [2026-09-22 21:08:34.248] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:08:34.248872889Z [2026-09-22 21:08:34.248] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:08:34.248887162Z [2026-09-22 21:08:34.248] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:08:34.253832198Z [2026-09-22 21:08:34.253] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:08:34.253890829Z [2026-09-22 21:08:34.253] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:08:34.253982612Z [2026-09-22 21:08:34.253] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:08:34.254015222Z [2026-09-22 21:08:34.253] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:08:34.254031355Z [2026-09-22 21:08:34.253] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:08:44.148780646Z [2026-09-22 21:08:44.148] [amf_app] [info] 
+2026-09-22T19:08:44.148792708Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:08:44.148807139Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
+2026-09-22T19:08:44.148809603Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
+2026-09-22T19:08:44.148811957Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
+2026-09-22T19:08:44.148814087Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:08:44.148816196Z 
+2026-09-22T19:08:44.148818069Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:08:44.148820290Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
+2026-09-22T19:08:44.148822460Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
+2026-09-22T19:08:44.148824561Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
+2026-09-22T19:08:44.148826691Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:08:44.148828767Z 
+2026-09-22T19:08:44.254624210Z [2026-09-22 21:08:44.254] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:08:44.254675550Z [2026-09-22 21:08:44.254] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:08:44.254687190Z [2026-09-22 21:08:44.254] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:08:44.254696610Z [2026-09-22 21:08:44.254] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:08:44.254707316Z [2026-09-22 21:08:44.254] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:08:44.258860141Z [2026-09-22 21:08:44.258] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:08:44.258946323Z [2026-09-22 21:08:44.258] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:08:44.259154832Z [2026-09-22 21:08:44.258] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:08:44.259176528Z [2026-09-22 21:08:44.258] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:08:44.259187249Z [2026-09-22 21:08:44.259] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:08:54.259728491Z [2026-09-22 21:08:54.259] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:08:54.259753144Z [2026-09-22 21:08:54.259] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:08:54.259767100Z [2026-09-22 21:08:54.259] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:08:54.259771801Z [2026-09-22 21:08:54.259] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:08:54.259780378Z [2026-09-22 21:08:54.259] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:08:54.261351072Z [2026-09-22 21:08:54.261] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:08:54.261381886Z [2026-09-22 21:08:54.261] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:08:54.261391351Z [2026-09-22 21:08:54.261] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:08:54.261393707Z [2026-09-22 21:08:54.261] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:08:54.261395913Z [2026-09-22 21:08:54.261] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:09:04.149105918Z [2026-09-22 21:09:04.148] [amf_app] [info] 
+2026-09-22T19:09:04.149127311Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:09:04.149132630Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
+2026-09-22T19:09:04.149137091Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
+2026-09-22T19:09:04.149141297Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
+2026-09-22T19:09:04.149145432Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:09:04.149149610Z 
+2026-09-22T19:09:04.149153367Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:09:04.149157849Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
+2026-09-22T19:09:04.149161942Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
+2026-09-22T19:09:04.149166035Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
+2026-09-22T19:09:04.149170197Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:09:04.149174284Z 
+2026-09-22T19:09:04.261904470Z [2026-09-22 21:09:04.261] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:09:04.262021464Z [2026-09-22 21:09:04.261] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:09:04.262044695Z [2026-09-22 21:09:04.261] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:09:04.262061918Z [2026-09-22 21:09:04.261] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:09:04.262078415Z [2026-09-22 21:09:04.261] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:09:04.267100168Z [2026-09-22 21:09:04.266] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:09:04.267141014Z [2026-09-22 21:09:04.266] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:09:04.267519632Z [2026-09-22 21:09:04.266] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:09:04.267567120Z [2026-09-22 21:09:04.267] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:09:04.267582503Z [2026-09-22 21:09:04.267] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:09:14.267744741Z [2026-09-22 21:09:14.267] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:09:14.267818634Z [2026-09-22 21:09:14.267] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:09:14.267840199Z [2026-09-22 21:09:14.267] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:09:14.267858095Z [2026-09-22 21:09:14.267] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:09:14.267877570Z [2026-09-22 21:09:14.267] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:09:14.272681139Z [2026-09-22 21:09:14.272] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:09:14.272735148Z [2026-09-22 21:09:14.272] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:09:14.272760269Z [2026-09-22 21:09:14.272] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:09:14.272774676Z [2026-09-22 21:09:14.272] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:09:14.272785463Z [2026-09-22 21:09:14.272] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:09:24.149522581Z [2026-09-22 21:09:24.149] [amf_app] [info] 
+2026-09-22T19:09:24.149570594Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:09:24.149582746Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
+2026-09-22T19:09:24.149591580Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
+2026-09-22T19:09:24.149600044Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
+2026-09-22T19:09:24.149637675Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:09:24.149649810Z 
+2026-09-22T19:09:24.149657208Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:09:24.149665517Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
+2026-09-22T19:09:24.149674053Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
+2026-09-22T19:09:24.149682300Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
+2026-09-22T19:09:24.149690730Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:09:24.149698909Z 
+2026-09-22T19:09:24.273068427Z [2026-09-22 21:09:24.272] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:09:24.273129671Z [2026-09-22 21:09:24.272] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:09:24.273146938Z [2026-09-22 21:09:24.272] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:09:24.273161385Z [2026-09-22 21:09:24.272] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:09:24.273176066Z [2026-09-22 21:09:24.272] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:09:24.277648498Z [2026-09-22 21:09:24.277] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:09:24.277699492Z [2026-09-22 21:09:24.277] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:09:24.277710878Z [2026-09-22 21:09:24.277] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:09:24.277719057Z [2026-09-22 21:09:24.277] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:09:24.277726952Z [2026-09-22 21:09:24.277] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:09:34.278134502Z [2026-09-22 21:09:34.277] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:09:34.278208803Z [2026-09-22 21:09:34.277] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:09:34.278223916Z [2026-09-22 21:09:34.277] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:09:34.278240161Z [2026-09-22 21:09:34.277] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:09:34.278339008Z [2026-09-22 21:09:34.277] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:09:34.282932025Z [2026-09-22 21:09:34.282] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:09:34.283079552Z [2026-09-22 21:09:34.282] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:09:34.283115428Z [2026-09-22 21:09:34.282] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:09:34.283133045Z [2026-09-22 21:09:34.283] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:09:34.283148732Z [2026-09-22 21:09:34.283] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:09:44.149465167Z [2026-09-22 21:09:44.149] [amf_app] [info] 
+2026-09-22T19:09:44.149477517Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:09:44.149480732Z    |----------------------------------------------------------------------gNBs' Information---------------------------------------------------------------------|
+2026-09-22T19:09:44.149483421Z    |  Index |               Status               |              Global Id             |              gNB Name              |                PLMN                |
+2026-09-22T19:09:44.149485981Z    |    -   |                  -                 |                  -                 |                  -                 |                  -                 |
+2026-09-22T19:09:44.149488549Z    |------------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:09:44.149491078Z 
+2026-09-22T19:09:44.149493356Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:09:44.149496091Z    |---------------------------------------------------------------------UEs' Information----------------------------------------------------------------------|
+2026-09-22T19:09:44.149498616Z    |  Index |     5GMM State     |                IMSI/SUPI               |        GUTI        |   RAN UE NGAP ID   |   AMF UE NGAP ID   |        PLMN        |       Cell Id      |
+2026-09-22T19:09:44.149501204Z    |    -   |          -         |                    -                   |          -         |          -         |          -         |          -         |          -         |
+2026-09-22T19:09:44.149503790Z    |-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+2026-09-22T19:09:44.149506366Z 
+2026-09-22T19:09:44.283593274Z [2026-09-22 21:09:44.283] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:09:44.283652614Z [2026-09-22 21:09:44.283] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:09:44.283673114Z [2026-09-22 21:09:44.283] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:09:44.283684717Z [2026-09-22 21:09:44.283] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:09:44.283763894Z [2026-09-22 21:09:44.283] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:09:44.288453959Z [2026-09-22 21:09:44.288] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:09:44.288714486Z [2026-09-22 21:09:44.288] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:09:44.288746074Z [2026-09-22 21:09:44.288] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:09:44.288762548Z [2026-09-22 21:09:44.288] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:09:44.288778619Z [2026-09-22 21:09:44.288] [amf_app] [debug] Set a timer to the next Heart-beat (10)
+2026-09-22T19:09:54.290022386Z [2026-09-22 21:09:54.289] [amf_sbi] [info] Receive Update NF Instance Request, handling ...
+2026-09-22T19:09:54.290051057Z [2026-09-22 21:09:54.289] [amf_sbi] [debug] Send NF Update to NRF
+2026-09-22T19:09:54.290056185Z [2026-09-22 21:09:54.289] [amf_sbi] [info] Send HTTP message to http://nrf.5gc.mnc10.mcc999.3gppnetwork.org:8080/nnrf-nfm/v1/nf-instances/8fc803f5-920e-438f-8c8a-6567eab6708f
+2026-09-22T19:09:54.290060791Z [2026-09-22 21:09:54.289] [amf_sbi] [info] HTTP message Body: [{"op":"replace","path":"/nfStatus","value":"REGISTERED"}]
+2026-09-22T19:09:54.290065578Z [2026-09-22 21:09:54.289] [amf_sbi] [debug] Send a simple HTTP request
+2026-09-22T19:09:54.291487749Z [2026-09-22 21:09:54.291] [amf_sbi] [info] Get response with HTTP code (204)
+2026-09-22T19:09:54.291498637Z [2026-09-22 21:09:54.291] [amf_sbi] [info] Could not get JSON content from the response
+2026-09-22T19:09:54.291503358Z [2026-09-22 21:09:54.291] [amf_app] [debug] Received SBI_UPDATE_NF_INSTANCE_RESPONSE
+2026-09-22T19:09:54.291507192Z [2026-09-22 21:09:54.291] [amf_app] [debug] Handle NF Update response
+2026-09-22T19:09:54.291510870Z [2026-09-22 21:09:54.291] [amf_app] [debug] Set a timer to the next Heart-beat (10)
