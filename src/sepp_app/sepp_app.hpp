@@ -84,17 +84,15 @@ public:
       std::unordered_map<std::string, std::string> &resp_headers);
 
 private:
-  bool handle_nf_service_request_prins(const std::string &authority,
-                                       const std::string &path,
-                                       const std::string &method,
-                                       const std::string &body,
-                                       oai::sepp::app::nf_http_response &resp_data);
+  bool handle_nf_service_request_prins(
+      const std::string &authority, const std::string &path,
+      const std::string &method, const std::string &body,
+      oai::sepp::app::nf_http_response &resp_data);
 
-  bool handle_nf_service_request_tls(const std::string &authority,
-                                     const std::string &path,
-                                     const std::string &method,
-                                     const std::string &body,
-                                     oai::sepp::app::nf_http_response &resp_data);
+  bool handle_nf_service_request_tls(
+      const std::string &authority, const std::string &path,
+      const std::string &method, const std::string &body,
+      oai::sepp::app::nf_http_response &resp_data);
 
   sepp_profile m_nf_instance_profile;
   std::string m_sepp_instance_id;

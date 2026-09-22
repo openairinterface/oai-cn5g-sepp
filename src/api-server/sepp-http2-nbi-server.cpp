@@ -70,9 +70,9 @@ void sepp_http2_nbi_server::start() {
   running_server = true;
 
   if (sepp_cfg->is_tls_enabled()) {
-    Logger::sepp_nbi().info(
-        "NBI TLS enabled (disable_tls: no). Starting NBI HTTP2 TLS server on %s:%u...",
-        m_address.c_str(), m_port);
+    Logger::sepp_nbi().info("NBI TLS enabled (disable_tls: no). Starting NBI "
+                            "HTTP2 TLS server on %s:%u...",
+                            m_address.c_str(), m_port);
 
     try {
       boost::asio::ssl::context tls_ctx(boost::asio::ssl::context::sslv23);
@@ -91,7 +91,8 @@ void sepp_http2_nbi_server::start() {
 
       configure_tls_context_easy(ec, tls_ctx);
 
-      if (server.listen_and_serve(ec, tls_ctx, m_address, std::to_string(m_port))) {
+      if (server.listen_and_serve(ec, tls_ctx, m_address,
+                                  std::to_string(m_port))) {
         Logger::sepp_nbi().error("NBI TLS Server Listen Error: %s",
                                  ec.message().c_str());
       }
@@ -100,9 +101,9 @@ void sepp_http2_nbi_server::start() {
                                e.what());
     }
   } else {
-    Logger::sepp_nbi().info(
-        "NBI TLS disabled (disable_tls: yes). Starting plain NBI HTTP2 server on %s:%u...",
-        m_address.c_str(), m_port);
+    Logger::sepp_nbi().info("NBI TLS disabled (disable_tls: yes). Starting "
+                            "plain NBI HTTP2 server on %s:%u...",
+                            m_address.c_str(), m_port);
     if (server.listen_and_serve(ec, m_address, std::to_string(m_port))) {
       Logger::sepp_nbi().error("NBI Server Listen Error: %s",
                                ec.message().c_str());

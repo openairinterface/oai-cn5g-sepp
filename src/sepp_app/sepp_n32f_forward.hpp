@@ -89,7 +89,7 @@ private:
       const std::string &method_str, const std::string &payload,
       const std::unordered_map<std::string, std::string> &headers,
       nlohmann::json &response_json, long &status_code,
-      nf_http_response* raw_response = nullptr);
+      nf_http_response *raw_response = nullptr);
 
   bool build_reformatted_data(const std::string &method_or_status,
                               const std::string &path,
@@ -97,7 +97,8 @@ private:
                               const std::string &body,
                               const std::string &context_id,
                               oai::_3gpp::model::FlatJweJson &out_reformatted,
-                              const std::unordered_map<std::string, std::string>& response_headers = {});
+                              const std::unordered_map<std::string, std::string>
+                                  &response_headers = {});
 
   bool parse_aad(const std::string &decoded_aad, std::string &method,
                  std::string &path, std::string &authority,

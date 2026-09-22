@@ -16,7 +16,7 @@ namespace oai::sepp::app {
 class task_manager;
 class sepp_event {
 public:
-  sepp_event(){};
+  sepp_event() {};
   sepp_event(sepp_event const &) = delete;
   void operator=(sepp_event const &) = delete;
 

@@ -215,16 +215,18 @@ bool sepp_n32f_forward::handle_n32f_process_post(
   nlohmann::json nf_resp_json;
   nf_http_response producer_response;
   long status_code = 200;
-  if (!send_http_request_to_target(
-          target_req.authority, target_req.path, target_req.method,
-          target_req.body, target_req.headers, nf_resp_json, status_code, &producer_response)) {
+  if (!send_http_request_to_target(target_req.authority, target_req.path,
+                                   target_req.method, target_req.body,
+                                   target_req.headers, nf_resp_json,
+                                   status_code, &producer_response)) {
     return false;
   }
 
   FlatJweJson resp_reformatted;
   if (!build_reformatted_data(std::to_string(status_code), target_req.path,
                               target_req.authority, producer_response.body,
-                              context_id, resp_reformatted, producer_response.headers)) {
+                              context_id, resp_reformatted,
+                              producer_response.headers)) {
     return false;
   }
 
@@ -270,7 +272,7 @@ bool sepp_n32f_forward::build_reformatted_data(
     const std::string &method_or_status, const std::string &path,
     const std::string &authority, const std::string &body,
     const std::string &context_id, FlatJweJson &out_reformatted,
-    const std::unordered_map<std::string, std::string>& response_headers) {
+    const std::unordered_map<std::string, std::string> &response_headers) {
 
   std::string aad_raw = method_or_status + " " + path + " HTTP/2.0\r\n";
   if (!authority.empty()) {
@@ -284,8 +286,9 @@ bool sepp_n32f_forward::build_reformatted_data(
     aad_raw += "3gpp-sbi-target-apiroot: " + api_root + "\r\n";
   }
 
-  for (const auto& [key, value] : response_headers) {
-    if (key.find_first_of("\r\n") == std::string::npos && value.find_first_of("\r\n") == std::string::npos)
+  for (const auto &[key, value] : response_headers) {
+    if (key.find_first_of("\r\n") == std::string::npos &&
+        value.find_first_of("\r\n") == std::string::npos)
       aad_raw += key + ": " + value + "\r\n";
   }
   std::string aad_b64 = jose::base64url_encode(aad_raw);
@@ -364,7 +367,7 @@ bool sepp_n32f_forward::send_http_request_to_target(
     const std::string &method_str, const std::string &payload,
     const std::unordered_map<std::string, std::string> &headers,
     nlohmann::json &response_json, long &status_code,
-    nf_http_response* raw_response) {
+    nf_http_response *raw_response) {
 
   std::string target_endpoint;
   auto target_it = headers.find("3gpp-sbi-target-apiroot");
@@ -412,21 +415,23 @@ bool sepp_n32f_forward::send_http_request_to_target(
     }
   }
 
-  Logger::sepp_app().info("Prepared local NF HTTP request: %s", req.to_string().c_str());
+  Logger::sepp_app().info("Prepared local NF HTTP request: %s",
+                          req.to_string().c_str());
 
   auto http_response = client_inst->send_http_request(method, req);
   status_code = http_response.status_code;
-  if (status_code == 0) return false;
+  if (status_code == 0)
+    return false;
   if (raw_response) {
     raw_response->status_code = status_code;
     raw_response->body = http_response.body;
-    for (const auto& [key, value] : http_response.headers)
+    for (const auto &[key, value] : http_response.headers)
       if (key == "location" || key == "content-type" || key == "retry-after")
         raw_response->headers[key] = value;
   }
 
-  Logger::sepp_app().info("Received local NF HTTP response with status code: %ld",
-                          status_code);
+  Logger::sepp_app().info(
+      "Received local NF HTTP response with status code: %ld", status_code);
 
   if (!http_response.body.empty()) {
     try {

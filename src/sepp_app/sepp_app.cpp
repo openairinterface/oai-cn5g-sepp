@@ -325,11 +325,10 @@ bool sepp_app::handle_n32f_error(
 }
 
 //------------------------------------------------------------------------------
-bool sepp_app::handle_nf_service_request(const std::string &authority,
-                                         const std::string &path,
-                                         const std::string &method,
-                                         const std::string &body,
-                                         oai::sepp::app::nf_http_response &resp_data) {
+bool sepp_app::handle_nf_service_request(
+    const std::string &authority, const std::string &path,
+    const std::string &method, const std::string &body,
+    oai::sepp::app::nf_http_response &resp_data) {
   if (!m_sepp_n32f_forward_inst) {
     Logger::sepp_app().warn("N32-f forward instance is not initialized");
     return false;
@@ -355,11 +354,10 @@ bool sepp_app::handle_nf_service_request(const std::string &authority,
 }
 
 //------------------------------------------------------------------------------
-bool sepp_app::handle_nf_service_request_prins(const std::string &authority,
-                                               const std::string &path,
-                                               const std::string &method,
-                                               const std::string &body,
-                                               oai::sepp::app::nf_http_response &resp_data) {
+bool sepp_app::handle_nf_service_request_prins(
+    const std::string &authority, const std::string &path,
+    const std::string &method, const std::string &body,
+    oai::sepp::app::nf_http_response &resp_data) {
   nlohmann::json req_body;
   if (!m_sepp_n32f_forward_inst->create_n32f_process_request(
           authority, path, method, body, req_body)) {
@@ -416,10 +414,13 @@ bool sepp_app::handle_nf_service_request_prins(const std::string &authority,
     }
 
     std::string status, response_path, response_authority;
-    if (!m_sepp_n32f_forward_inst->parse_aad(jose::base64url_decode(aad_b64),
-            status, response_path, response_authority, resp_data.headers)) return false;
+    if (!m_sepp_n32f_forward_inst->parse_aad(
+            jose::base64url_decode(aad_b64), status, response_path,
+            response_authority, resp_data.headers))
+      return false;
     resp_data.status_code = std::stoi(status);
-    if (resp_data.status_code < 100 || resp_data.status_code > 599) return false;
+    if (resp_data.status_code < 100 || resp_data.status_code > 599)
+      return false;
     resp_data.body = decrypted_body;
     return true;
   } catch (const std::exception &e) {
@@ -430,11 +431,10 @@ bool sepp_app::handle_nf_service_request_prins(const std::string &authority,
 }
 
 //------------------------------------------------------------------------------
-bool sepp_app::handle_nf_service_request_tls(const std::string &authority,
-                                             const std::string &path,
-                                             const std::string &method,
-                                             const std::string &body,
-                                             oai::sepp::app::nf_http_response &resp_data) {
+bool sepp_app::handle_nf_service_request_tls(
+    const std::string &authority, const std::string &path,
+    const std::string &method, const std::string &body,
+    oai::sepp::app::nf_http_response &resp_data) {
   const std::string target_uri = *m_remote_sepp_url + path;
 
   method_e http_method = method_e::GET;
@@ -458,7 +458,8 @@ bool sepp_app::handle_nf_service_request_tls(const std::string &authority,
   req.headers["Accept"] = "application/json";
   if (!authority.empty()) {
     req.headers["Authority"] = authority;
-    std::string default_scheme = sepp_cfg->is_tls_enabled() ? "https://" : "http://";
+    std::string default_scheme =
+        sepp_cfg->is_tls_enabled() ? "https://" : "http://";
     std::string api_root = (authority.rfind("http://", 0) != 0 &&
                             authority.rfind("https://", 0) != 0)
                                ? default_scheme + authority
@@ -472,10 +473,12 @@ bool sepp_app::handle_nf_service_request_tls(const std::string &authority,
   Logger::sepp_app().info("Direct HTTP response status: %ld",
                           http_response.status_code);
 
-  if (http_response.status_code == 0) return false;
+  if (http_response.status_code == 0)
+    return false;
   resp_data.status_code = http_response.status_code;
   resp_data.body = http_response.body;
-  for (const auto& header : http_response.headers) resp_data.headers[header.first] = header.second;
+  for (const auto &header : http_response.headers)
+    resp_data.headers[header.first] = header.second;
   return true;
 }
 

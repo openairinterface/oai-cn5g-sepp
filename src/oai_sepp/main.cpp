@@ -113,22 +113,24 @@ int main(int argc, char **argv) {
   // // HTTP Client
   // http_client_inst = oai::http::http_client::create_instance(
   //     Logger::sepp_client(), oai::common::sbi::kNfDefaultHttpRequestTimeout,
-  //     sepp_cfg->local().get_sbi().get_if_name(), sepp_cfg->get_http_version());
+  //     sepp_cfg->local().get_sbi().get_if_name(),
+  //     sepp_cfg->get_http_version());
 
   //   // HTTP Client
   // http_client_inst_nbi = oai::http::http_client::create_instance(
   //     Logger::sepp_client(), oai::common::sbi::kNfDefaultHttpRequestTimeout,
-  //     sepp_cfg->local().get_nbi().get_if_name(), sepp_cfg->get_http_version());
+  //     sepp_cfg->local().get_nbi().get_if_name(),
+  //     sepp_cfg->get_http_version());
 
-// HTTP Client for SBI
-http_client_inst = std::make_shared<oai::http::http_client>(
-    Logger::sepp_client(), oai::common::sbi::kNfDefaultHttpRequestTimeout,
-    sepp_cfg->local().get_sbi().get_if_name(), sepp_cfg->get_http_version());
+  // HTTP Client for SBI
+  http_client_inst = std::make_shared<oai::http::http_client>(
+      Logger::sepp_client(), oai::common::sbi::kNfDefaultHttpRequestTimeout,
+      sepp_cfg->local().get_sbi().get_if_name(), sepp_cfg->get_http_version());
 
-// HTTP Client for NBI
-http_client_inst_nbi = std::make_shared<oai::http::http_client>(
-    Logger::sepp_client(), oai::common::sbi::kNfDefaultHttpRequestTimeout,
-    sepp_cfg->local().get_nbi().get_if_name(), sepp_cfg->get_http_version());
+  // HTTP Client for NBI
+  http_client_inst_nbi = std::make_shared<oai::http::http_client>(
+      Logger::sepp_client(), oai::common::sbi::kNfDefaultHttpRequestTimeout,
+      sepp_cfg->local().get_nbi().get_if_name(), sepp_cfg->get_http_version());
 
   // Event subsystem
   sepp_event ev;

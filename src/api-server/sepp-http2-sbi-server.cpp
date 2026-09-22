@@ -194,17 +194,18 @@ void sepp_http2_sbi_server::start() {
         }
 
         nf_http_response resp_data;
-        if (handle_nf_service_request(authority, full_path, req.method(), *body, resp_data)) {
+        if (handle_nf_service_request(authority, full_path, req.method(), *body,
+                                      resp_data)) {
           header_map headers;
-          for (const auto& [key, value] : resp_data.headers) {
-            if (key == "content-type" || key == "location" || key == "retry-after")
+          for (const auto &[key, value] : resp_data.headers) {
+            if (key == "content-type" || key == "location" ||
+                key == "retry-after")
               headers.emplace(key, header_value{value});
           }
           response.write_head(resp_data.status_code, headers);
           response.end(resp_data.status_code == 204 ? "" : resp_data.body);
         } else {
-          response.write_head(
-              oai::common::sbi::http_status_code::BAD_GATEWAY);
+          response.write_head(oai::common::sbi::http_status_code::BAD_GATEWAY);
           response.end("NF service forwarding failed");
         }
       }

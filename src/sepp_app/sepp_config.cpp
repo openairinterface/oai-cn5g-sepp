@@ -17,11 +17,9 @@ using namespace oai::common::sbi;
 sepp_config::sepp_config(const std::string &config_path, bool log_stdout,
                          bool log_rot_file)
     : config(config_path, SEPP_CONFIG_NAME, log_stdout, log_rot_file),
-      m_role("role", "c-sepp"),
-      m_security("security", "PRINS"),
+      m_role("role", "c-sepp"), m_security("security", "PRINS"),
       m_disable_tls("disable_tls", false),
-      m_server_private_key("private_key", ""),
-      m_server_cert("cert", ""),
+      m_server_private_key("private_key", ""), m_server_cert("cert", ""),
       m_client_cacert("cacert", "") {
   m_used_config_values = {LOG_LEVEL_CONFIG_NAME, REGISTER_NF_CONFIG_NAME,
                           NF_LIST_CONFIG_NAME,   SEPP_CONFIG_NAME,
@@ -123,14 +121,10 @@ const std::string &sepp_config::get_security() const {
 }
 
 //------------------------------------------------------------------------------
-bool sepp_config::is_tls_enabled() const {
-  return !m_disable_tls.get_value();
-}
+bool sepp_config::is_tls_enabled() const { return !m_disable_tls.get_value(); }
 
 //------------------------------------------------------------------------------
-bool sepp_config::is_tls_disabled() const {
-  return m_disable_tls.get_value();
-}
+bool sepp_config::is_tls_disabled() const { return m_disable_tls.get_value(); }
 
 //------------------------------------------------------------------------------
 bool sepp_config::init() { return config::init(); }
