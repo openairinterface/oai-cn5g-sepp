@@ -25,6 +25,8 @@ The script builds all core NFs first, then UERANSIM.
 
 Core NF sources are from [OpenAirInterface](https://github.com/openairinterface). SEPP uses this checkout's origin repository. UERANSIM uses [rohanrkharade/UERANSIM](https://github.com/rohanrkharade/UERANSIM). Set `SEPP_BRANCH=master` if that branch is required.
 
+The SEPP is built on Ubuntu 24.04 (`BASE_IMAGE_SEPP`, default `ubuntu:noble`); its build scripts reject 22.04.
+
 ## 2. Start both networks
 
 From `scripts/test`:

@@ -40,8 +40,8 @@ For third-party softwares, please refer to the [NOTICE](NOTICE) file.
 
 # Where to start
 
-The Openair-CN-5G SEPP code is written, executed, and tested on UBUNTU server bionic version.
-Other Linux distributions support will be added later on.
+The Openair-CN-5G SEPP code is built and tested on Ubuntu 24.04 (noble).
+RHEL 9 and Rocky Linux 9 are also supported by the build scripts.
 
 More details on the supported feature set is available on this [page](docs/FEATURE_SET.md).
 

@@ -128,31 +128,31 @@ If the synchronization fails, you may need to go into the path of the failing gi
 
 ## Coding Styles
 
-We are using `clang-format` as formatting tool on the C/C++ code.
+We are using `clang-format` version 19 as formatting tool on the C/C++ code, the version the CI uses.
 
-On a Ubuntu-22 server:
+On an Ubuntu 24.04 server:
 
 ```bash
 sudo apt-get update
-sudo apt-get install clang-format-12
-sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-12 20
-clang-format --version
-Ubuntu clang-format version 12.0.1-19ubuntu3
+sudo apt-get install clang-format-19
+clang-format-19 --version
+Ubuntu clang-format version 19.1.7 (20ubuntu4)
 ```
 
 How to test (as CI):
 
-```
+```bash
 # run the below command in the parent folder
-ci-scripts/common/bash/checkCodingFormattingRules.sh
+ci-scripts/common/bash/format-code.sh --dry-run
 ```
 
 How to format (fix issues reported by above script):
 
 ```bash
-cd myClonedWorkspace/src
-clang-format -i theFilesYouWantToFormat
+ci-scripts/common/bash/format-code.sh
 ```
+
+`format-code.sh` uses a local `clang-format-19` when available and otherwise runs it from a Docker image. See `ci-scripts/common/CONTRIBUTING.md` for all options.
 
 ## License
 

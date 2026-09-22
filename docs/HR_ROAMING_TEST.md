@@ -39,7 +39,7 @@ The script builds all core NFs first, then UERANSIM.
 
 Core NF sources are from [OpenAirInterface](https://github.com/openairinterface), as for LBO. `--plan` prints the selection without building and `--check` verifies that every branch exists.
 
-The AMF and SMF are built on Ubuntu 24.04 (`BASE_IMAGE_AMF`/`BASE_IMAGE_SMF`, default `ubuntu:noble`); their build scripts reject 22.04.
+The AMF, SMF and SEPP are built on Ubuntu 24.04 (`BASE_IMAGE_AMF`/`BASE_IMAGE_SMF`/`BASE_IMAGE_SEPP`, default `ubuntu:noble`); their build scripts reject 22.04.
 
 ## 2. Start both networks
 

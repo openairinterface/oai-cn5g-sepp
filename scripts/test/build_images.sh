@@ -15,9 +15,10 @@ SEPP_BRANCH="${SEPP_BRANCH:-}"
 UERANSIM_REPOSITORY="${UERANSIM_REPOSITORY:-https://github.com/rohanrkharade/UERANSIM.git}"
 UERANSIM_BRANCH="${UERANSIM_BRANCH:-}"
 BASE_IMAGE="${BASE_IMAGE:-ubuntu:jammy}"
-# The AMF and SMF build scripts support Ubuntu 24.04 only.
+# The AMF, SMF and SEPP build scripts support Ubuntu 24.04 only.
 BASE_IMAGE_AMF="${BASE_IMAGE_AMF:-ubuntu:noble}"
 BASE_IMAGE_SMF="${BASE_IMAGE_SMF:-ubuntu:noble}"
+BASE_IMAGE_SEPP="${BASE_IMAGE_SEPP:-ubuntu:noble}"
 IMAGE_TAG="${IMAGE_TAG:-roaming-lbo}"
 # Build the core NFs from existing local checkouts <LOCAL_SOURCE_ROOT>/oai-cn5g-<nf>
 # instead of cloning, e.g. for unpublished work. UERANSIM is still cloned.
@@ -34,7 +35,7 @@ Default: validate remote refs, build all eight core NFs, then build UERANSIM.
 --check: check every remote branch without cloning, building, or deploying.
 Overrides: NF_GIT_BASE, NF_BRANCH, <NF>_BRANCH (e.g. SMF_BRANCH), SEPP_REPOSITORY,
 SEPP_BRANCH, UERANSIM_REPOSITORY, UERANSIM_BRANCH, LBO_BUILD_DIR, BASE_IMAGE,
-BASE_IMAGE_AMF, BASE_IMAGE_SMF, TARGETPLATFORM, IMAGE_TAG (default roaming-lbo),
+BASE_IMAGE_AMF, BASE_IMAGE_SMF, BASE_IMAGE_SEPP, TARGETPLATFORM, IMAGE_TAG (default roaming-lbo),
 LOCAL_SOURCE_ROOT (build local checkouts <root>/oai-cn5g-<nf> as they are).
 Home-routed roaming images: IMAGE_TAG=roaming-hr with the AMF, SMF and UPF
 branches (or LOCAL_SOURCE_ROOT) that contain the home-routed changes.
