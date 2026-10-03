@@ -1,60 +1,45 @@
 #!/bin/bash
-set -e
+# SPDX-License-Identifier: MIT
 
-CONFIG_FILE="/openair-sepp/etc/config.yaml"
-TMP_FILE="/tmp/config.yaml.tmp"
+set -euo pipefail
+
+# The configuration given to the container (often a bind-mounted file) is never
+# modified: the interfaces detected at start-up are written to a runtime copy,
+# and the SEPP is started with that copy.
+CONFIG_FILE="${SEPP_CONFIG_FILE:-/openair-sepp/etc/config.yaml}"
+RUNTIME_CONFIG="${SEPP_RUNTIME_CONFIG:-/openair-sepp/etc/config.runtime.yaml}"
+# The N32 interface towards the peer SEPP (NBI; 3GPP TS 29.573 clause 4.2,
+# 3GPP TS 23.501 clause 6.2.17) is the one with an address in this prefix,
+# unless SEPP_NBI_INTERFACE names it directly.
+NBI_IP_PREFIX="${SEPP_NBI_IP_PREFIX:-192.168.72.}"
+
+# Print the first interface with an IPv4 address starting with $1
+interface_with_ip_prefix() {
+    ifconfig | awk -v prefix="$1" '
+        /^[^ \t]/ { iface = $1; sub(/:$/, "", iface) }
+        $1 == "inet" && index($2, prefix) == 1 { print iface; exit }'
+}
+
+cp "$CONFIG_FILE" "$RUNTIME_CONFIG"
 
 echo "[+] Detecting network interfaces..."
-
-# Detect interface with 192.168.72.x IP
-NBI_IFACE=$(ifconfig | grep -B1 'inet 192\.168\.72\.' | head -n1 | awk '{print $1}' | tr -d ':')
-
+NBI_IFACE="${SEPP_NBI_INTERFACE:-$(interface_with_ip_prefix "$NBI_IP_PREFIX")}"
 if [ -z "$NBI_IFACE" ]; then
-    echo "[-] Warning: 192.168.72.x IP not found. Defaulting NBI=eth1, SBI=eth0"
-    NBI_IFACE="eth1"
-    SBI_IFACE="eth0"
+    echo "[-] Warning: no interface with a ${NBI_IP_PREFIX} address; using the configured interfaces"
 else
-    if [ "$NBI_IFACE" == "eth1" ]; then
-        SBI_IFACE="eth0"
-    elif [ "$NBI_IFACE" == "eth0" ]; then
-        SBI_IFACE="eth1"
-    else
-        # Fallback to get the other eth interface
-        SBI_IFACE=$(ifconfig | grep -E '^eth[0-9]+' | awk '{print $1}' | tr -d ':' | grep -v "^${NBI_IFACE}$" | head -n1)
-    fi
+    # The SBI interface is the other ethX interface, unless set directly
+    SBI_IFACE="${SEPP_SBI_INTERFACE:-$(ifconfig | awk '/^eth[0-9]+/ { sub(/:$/, "", $1); print $1 }' | grep -vx "$NBI_IFACE" | head -n1)}"
+    echo "[+] Target NBI Interface: $NBI_IFACE"
+    echo "[+] Target SBI Interface: $SBI_IFACE"
+    NBI_IFACE="$NBI_IFACE" SBI_IFACE="$SBI_IFACE" yq -i '
+        .nfs.sepp.nbi.interface_name = strenv(NBI_IFACE) |
+        .nfs.sepp.sbi.interface_name = strenv(SBI_IFACE)' "$RUNTIME_CONFIG"
+    echo "[+] Configuration updated successfully: $RUNTIME_CONFIG"
 fi
 
-echo "[+] Target NBI Interface: $NBI_IFACE"
-echo "[+] Target SBI Interface: $SBI_IFACE"
-
-# Precise line-by-line replacement using AWK
-awk -v nbi="$NBI_IFACE" -v sbi="$SBI_IFACE" '
-BEGIN { in_sepp=0; section="" }
-
-# Track when we are inside the nfs -> sepp block
-$1 == "sepp:" && NR < 100 { in_sepp=1 }
-in_sepp && $1 == "database:" { in_sepp=0 }
-
-# Track section inside sepp
-in_sepp && $1 == "sbi:" { section="sbi" }
-in_sepp && $1 == "nbi:" { section="nbi" }
-
-# Perform precise replacement
-in_sepp && section == "sbi" && $1 == "interface_name:" {
-    sub(/interface_name: .*/, "interface_name: " sbi)
-}
-in_sepp && section == "nbi" && $1 == "interface_name:" {
-    sub(/interface_name: .*/, "interface_name: " nbi)
-}
-
-{ print }
-' "$CONFIG_FILE" > "$TMP_FILE"
-
-# Copy content back without breaking file inodes (fixes "Device or resource busy")
-cat "$TMP_FILE" > "$CONFIG_FILE"
-rm -f "$TMP_FILE"
-
-echo "[+] Configuration updated successfully!"
-
-# Execute main process passed via CMD
-exec "$@"
+# Execute the main process passed via CMD, with the runtime configuration
+args=()
+for arg in "$@"; do
+    if [ "$arg" = "$CONFIG_FILE" ]; then args+=("$RUNTIME_CONFIG"); else args+=("$arg"); fi
+done
+exec "${args[@]}"

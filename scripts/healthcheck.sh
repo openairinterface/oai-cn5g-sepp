@@ -4,8 +4,11 @@
 set -eo pipefail
 
 STATUS=0
-SEPP_INTERFACE_NAME_FOR_SBI=$(yq '.nfs.sepp.sbi.interface_name' /openair-sepp/etc/config.yaml)
-SEPP_INTERFACE_PORT_FOR_SBI=$(yq '.nfs.sepp.sbi.port' /openair-sepp/etc/config.yaml)
+# The entrypoint starts the SEPP with a runtime copy of the configuration
+CONFIG_FILE="${SEPP_RUNTIME_CONFIG:-/openair-sepp/etc/config.runtime.yaml}"
+[ -f "$CONFIG_FILE" ] || CONFIG_FILE="${SEPP_CONFIG_FILE:-/openair-sepp/etc/config.yaml}"
+SEPP_INTERFACE_NAME_FOR_SBI=$(yq '.nfs.sepp.sbi.interface_name' "$CONFIG_FILE")
+SEPP_INTERFACE_PORT_FOR_SBI=$(yq '.nfs.sepp.sbi.port' "$CONFIG_FILE")
 
 SEPP_IP_SBI_INTERFACE=$(ifconfig $SEPP_INTERFACE_NAME_FOR_SBI | grep inet | grep -v inet6 | awk {'print $2'})
 #Check if entrypoint properly configured the conf file and no parameter is unset(optional)

@@ -33,11 +33,12 @@ From `scripts/test`:
 
 ```bash
 docker compose -f docker-compose-basic-nrf-lbo-roaming.yaml up -d
-python3 align_sepp_interfaces.py
 docker compose -f docker-compose-basic-nrf-lbo-roaming.yaml ps
 ```
 
 Use `docker-compose` instead if the host has Compose v1.
+
+The SEPP container detects its N32 and SBI interfaces at start-up and runs with a runtime copy of its configuration, so the mounted file is not modified (`SEPP_NBI_IP_PREFIX`, default `192.168.72.`, selects the N32 interface).
 
 | Test setting | Value |
 |---|---|
