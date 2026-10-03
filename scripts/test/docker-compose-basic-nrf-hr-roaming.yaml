@@ -167,7 +167,7 @@ services:
         environment:
             - SSLKEYLOGFILE=/openair-sepp/certs/sslkeylog.log
         volumes:
-            - ./conf/roaming_config_partnerA.yaml:/openair-sepp/etc/config.yaml
+            - ./conf/roaming_config_partnerA.yaml:/openair-sepp/etc/config.yaml:ro
             - ./conf/certs:/openair-sepp/certs/
         cap_add:
             - NET_ADMIN
@@ -366,7 +366,7 @@ services:
             - 80/tcp
             - 8080/tcp
         volumes:
-            - ./conf/roaming_config_partnerB.yaml:/openair-sepp/etc/config.yaml
+            - ./conf/roaming_config_partnerB.yaml:/openair-sepp/etc/config.yaml:ro
             - ./conf/certs:/openair-sepp/certs/
         cap_add:
             - NET_ADMIN

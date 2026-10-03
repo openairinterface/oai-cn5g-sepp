@@ -47,12 +47,13 @@ Stop the LBO deployment first; both deployments use the same container names and
 
 ```bash
 docker compose -f docker-compose-basic-nrf-hr-roaming.yaml up -d
-python3 align_sepp_interfaces.py docker-compose-basic-nrf-hr-roaming.yaml
 python3 setup_n9_routing.py
 docker compose -f docker-compose-basic-nrf-hr-roaming.yaml ps
 ```
 
-Use `docker-compose` instead if the host has Compose v1. Run both scripts before the UE starts (it waits 50 s).
+Use `docker-compose` instead if the host has Compose v1. Run `setup_n9_routing.py` before the UE starts (it waits 50 s).
+
+The SEPP container detects its N32 and SBI interfaces at start-up and runs with a runtime copy of its configuration, so the mounted file is not modified (`SEPP_NBI_IP_PREFIX`, default `192.168.72.`, selects the N32 interface).
 
 `setup_n9_routing.py` attaches the V-UPF (`192.168.72.139`) and the H-UPF (`192.168.72.239`) to the inter-PLMN network shared by the SEPPs and routes each peer's GTP-U address through it. Each UPF keeps its N3/N4/N6 interface in its own PLMN, so the N9 tunnel crosses the inter-PLMN network like IPX:
 
